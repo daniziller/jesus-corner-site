@@ -15,12 +15,28 @@ const isPrivacyPath = currentPath === '/privacidade'
 const isTermsPath = currentPath === '/termos'
 const LANG_KEY = 'jc_site_lang'
 
+// O app (outro domínio, outro localStorage) linka pras páginas legais com
+// ?lang=pt|en pra abrir no mesmo idioma da conta — sem isso não teria como
+// o site saber em que idioma o app estava. Tratamos como escolha explícita,
+// no mesmo nível do toggle manual (vence a detecção por IP, e persiste pro
+// resto da navegação no site).
+const queryLang = typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('lang') : null
+const isValidLang = (l) => l === 'pt' || l === 'en'
+
 export default function App() {
-  const [lang, setLangState] = useState(() => localStorage.getItem(LANG_KEY) ?? 'pt')
+  const [lang, setLangState] = useState(() => {
+    if (isValidLang(queryLang)) return queryLang
+    return localStorage.getItem(LANG_KEY) ?? 'pt'
+  })
 
   // Só detecta por IP se a pessoa nunca escolheu um idioma manualmente
-  // aqui no site — uma escolha explícita (o toggle PT/EN) sempre vence.
+  // aqui no site — uma escolha explícita (o toggle PT/EN, ou um ?lang= vindo
+  // do app) sempre vence.
   useEffect(() => {
+    if (isValidLang(queryLang)) {
+      localStorage.setItem(LANG_KEY, queryLang)
+      return
+    }
     if (localStorage.getItem(LANG_KEY)) return
     detectLanguageFromIp().then(detected => {
       if (detected && !localStorage.getItem(LANG_KEY)) setLangState(detected)
