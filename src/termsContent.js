@@ -22,7 +22,7 @@ export const termsContent = {
       },
       {
         heading: '4. Conteúdo bíblico e propriedade intelectual',
-        body: 'O texto bíblico exibido no app (na versão NVI/NIV, ou outras que venham a ser adicionadas) pertence às suas respectivas editoras e detentoras de direitos autorais — o Jesus\' Corner não reivindica propriedade sobre as Escrituras. O conteúdo original do app (contexto histórico e geográfico, estudos temáticos, curiosidades, design e funcionalidades) é de propriedade do Jesus\' Corner e não pode ser copiado ou redistribuído sem autorização. Suas anotações e pedidos de oração continuam sendo seus — como explicado na nossa Política de Privacidade, esse conteúdo fica salvo apenas no seu próprio dispositivo.',
+        body: 'O texto bíblico exibido no app (na versão NVI/NIV, ou outras que venham a ser adicionadas) pertence às suas respectivas editoras e detentoras de direitos autorais — o Jesus\' Corner não reivindica propriedade sobre as Escrituras. O conteúdo original do app (contexto histórico e geográfico, estudos temáticos, curiosidades, design e funcionalidades) é de propriedade do Jesus\' Corner e não pode ser copiado ou redistribuído sem autorização. Suas anotações e pedidos de oração continuam sendo seus — como explicado na nossa Política de Privacidade, esse conteúdo fica salvo na sua conta e sincroniza entre os seus dispositivos.',
       },
       {
         heading: '5. Uso aceitável',
@@ -73,7 +73,7 @@ export const termsContent = {
       },
       {
         heading: '4. Bible content and intellectual property',
-        body: 'The Bible text shown in the app (in the NVI/NIV translation, or others that may be added later) belongs to its respective publishers and copyright holders — Jesus\' Corner does not claim ownership over Scripture. The app\'s original content (historical and geographical context, thematic studies, trivia, design, and features) is owned by Jesus\' Corner and may not be copied or redistributed without permission. Your notes and prayer requests remain yours — as explained in our Privacy Policy, that content is stored only on your own device.',
+        body: 'The Bible text shown in the app (in the NVI/NIV translation, or others that may be added later) belongs to its respective publishers and copyright holders — Jesus\' Corner does not claim ownership over Scripture. The app\'s original content (historical and geographical context, thematic studies, trivia, design, and features) is owned by Jesus\' Corner and may not be copied or redistributed without permission. Your notes and prayer requests remain yours — as explained in our Privacy Policy, that content is stored in your account and syncs across your devices.',
       },
       {
         heading: '5. Acceptable use',
