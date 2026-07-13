@@ -37,8 +37,9 @@ export const content = {
     featuresSubtitle: 'Sem complicação, sem culpa — só um passo de cada vez.',
     features: [
       { icon: 'Flame', title: 'Rotina diária com Deus', desc: 'Oração, leitura e reflexão — três passos simples todo dia, com uma sequência que só conta quando os três são feitos, e um calendário do seu histórico.' },
-      { icon: 'BookOpen', title: 'Planos de leitura flexíveis', desc: 'Leve, Padrão ou Intensivo — escolha o ritmo que cabe na sua rotina, troque quando quiser, e use a busca pra achar qualquer livro na hora.' },
+      { icon: 'BookOpen', title: 'Planos de leitura flexíveis', desc: 'Leve, Padrão, Intensivo ou Livre (sem tempo definido) — escolha o ritmo que cabe na sua rotina, troque quando quiser, e use a busca pra achar qualquer livro na hora.' },
       { icon: 'HandHeart', title: 'Oração guiada (ACTS)', desc: 'Adoração, Confissão, Gratidão e Súplica, com um temporizador que avança sozinho de etapa em etapa e avisa com um som na troca.' },
+      { icon: 'PenLine', title: 'Reflexão guiada', desc: 'Termine sua leitura com um roteiro guiado em 3 etapas — Reviver, Entender e Aplicar — com temporizador, pra fechar o dia com o que Deus falou com você.' },
       { icon: 'Compass', title: 'Jornada por blocos', desc: 'Pentateuco, Históricos, Poéticos, Profetas e mais — organizados por Antigo e Novo Testamento, com progresso visual de cada um.' },
       { icon: 'GraduationCap', title: 'Estudos aprofundados', desc: 'Estudos temáticos (como o do Pentateuco) com contexto histórico, geográfico e teológico, em sessões curtas com perguntas de reflexão.' },
       { icon: 'BarChart3', title: 'Acompanhamento de progresso', desc: 'Estatísticas por livro, por bloco e no total da Bíblia, sempre atualizadas.' },
@@ -74,7 +75,7 @@ export const content = {
     comingSoon: 'Em breve',
     faqTitle: 'Perguntas frequentes',
     faq: [
-      { q: 'Preciso pagar pra usar o Jesus\' Corner?', a: 'Sim — o Jesus\' Corner é um app por assinatura, mensal (R$19,90) ou anual com desconto (R$159,90), com acesso completo a todos os recursos: planos de leitura, oração guiada, estudos, progresso e conquistas.' },
+      { q: 'Preciso pagar pra usar o Jesus\' Corner?', a: 'Ainda não — a assinatura (mensal R$19,90 ou anual com desconto R$159,90) está em preparação e vai liberar acesso completo a todos os recursos. Por enquanto, o app já está disponível gratuitamente com planos de leitura, oração guiada, estudos, progresso e conquistas.' },
       { q: 'Funciona sem internet?', a: 'Sim. Como é um Web App instalável (PWA), o conteúdo já visitado fica salvo no seu dispositivo e funciona offline.' },
       { q: 'Em quais idiomas o app está disponível?', a: 'Português e inglês, com troca de idioma a qualquer momento direto no seu perfil.' },
       { q: 'Vai ter versão nativa na Play Store e App Store?', a: 'Sim, estão em preparação. Enquanto isso, você já pode instalar o Web App na tela inicial do seu celular e usar como um app normal.' },
@@ -124,8 +125,9 @@ export const content = {
     featuresSubtitle: 'No complications, no guilt — just one step at a time.',
     features: [
       { icon: 'Flame', title: 'Daily routine with God', desc: 'Prayer, reading, and reflection — three simple steps every day, with a streak that only counts when all three are done, and a calendar of your history.' },
-      { icon: 'BookOpen', title: 'Flexible reading plans', desc: 'Light, Standard, or Intensive — pick the pace that fits your routine, switch anytime, and use search to find any book instantly.' },
+      { icon: 'BookOpen', title: 'Flexible reading plans', desc: 'Light, Standard, Intensive, or Free (no time target) — pick the pace that fits your routine, switch anytime, and use search to find any book instantly.' },
       { icon: 'HandHeart', title: 'Guided prayer (ACTS)', desc: 'Adoration, Confession, Thanksgiving, and Supplication, with a timer that moves through each step on its own and plays a sound at each transition.' },
+      { icon: 'PenLine', title: 'Guided reflection', desc: 'Wrap up your reading with a guided 3-step routine — Recall, Understand, and Apply — with a timer, to close the day with what God spoke to you.' },
       { icon: 'Compass', title: 'Journey through blocks', desc: 'Pentateuch, Historical, Poetic, Prophets, and more — organized by Old and New Testament, with visual progress for each one.' },
       { icon: 'GraduationCap', title: 'In-depth studies', desc: 'Thematic studies (like the Pentateuch one) with historical, geographical, and theological context, in short sessions with reflection questions.' },
       { icon: 'BarChart3', title: 'Progress tracking', desc: 'Stats by book, by block, and across the whole Bible, always up to date.' },
@@ -161,7 +163,7 @@ export const content = {
     comingSoon: 'Coming soon',
     faqTitle: 'Frequently asked questions',
     faq: [
-      { q: 'Do I need to pay to use Jesus\' Corner?', a: 'Yes — Jesus\' Corner is a subscription app, monthly ($9.90) or discounted annual ($79.90), with full access to every feature: reading plans, guided prayer, studies, progress, and achievements.' },
+      { q: 'Do I need to pay to use Jesus\' Corner?', a: 'Not yet — the subscription (monthly $9.90 or discounted annual $79.90) is in the works and will unlock full access to every feature. For now, the app is already free to use, with reading plans, guided prayer, studies, progress, and achievements.' },
       { q: 'Does it work without internet?', a: 'Yes. As an installable Web App (PWA), content you\'ve already visited is saved on your device and works offline.' },
       { q: 'What languages is the app available in?', a: 'Portuguese and English, switchable anytime right from your profile.' },
       { q: 'Will there be a native version on the Play Store and App Store?', a: 'Yes, it\'s in the works. In the meantime, you can already install the Web App on your home screen and use it like a regular app.' },

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import {
   BookOpen, HandHeart, Compass, BarChart3, Award, Globe, GraduationCap, Users, User,
-  ArrowRight, Check, Smartphone, ChevronRight, ArrowLeft, Flame,
+  ArrowRight, Check, Smartphone, ChevronRight, ArrowLeft, Flame, PenLine,
 } from 'lucide-react'
 import { content } from './content'
 import { privacyContent } from './privacyContent'
@@ -9,7 +9,7 @@ import { termsContent } from './termsContent'
 import { detectLanguageFromIp } from './langDetect'
 
 const APP_URL = 'https://app.jesuscorner.app'
-const ICONS = { BookOpen, HandHeart, Compass, BarChart3, Award, Globe, GraduationCap, Users, User, Flame }
+const ICONS = { BookOpen, HandHeart, Compass, BarChart3, Award, Globe, GraduationCap, Users, User, Flame, PenLine }
 const currentPath = typeof window !== 'undefined' ? window.location.pathname.replace(/\/$/, '') : ''
 const isPrivacyPath = currentPath === '/privacidade'
 const isTermsPath = currentPath === '/termos'
