@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import {
   BookOpen, HandHeart, Compass, BarChart3, Award, Globe, GraduationCap, Users, User,
   ArrowRight, Check, Smartphone, ChevronRight, ArrowLeft, Flame, PenLine, CheckCircle2,
+  Menu, X,
 } from 'lucide-react'
 import { content } from './content'
 import { privacyContent } from './privacyContent'
@@ -101,6 +102,12 @@ function LegalPage({ lang, content }) {
 }
 
 function Nav({ lang, setLang, t }) {
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  // Fecha o menu ao trocar de idioma ou ao navegar por um link — sem isso
+  // ficaria aberto cobrindo a seção que a pessoa acabou de escolher.
+  function closeMenu() { setMenuOpen(false) }
+
   return (
     <header className="nav">
       <div className="nav-inner">
@@ -136,8 +143,28 @@ function Nav({ lang, setLang, t }) {
           <a href={APP_URL} target="_blank" rel="noreferrer" className="btn btn-primary btn-sm">
             {t.navCta}
           </a>
+          {/* Só aparece em telas ≤860px (ver CSS) — abaixo desse ponto
+              .nav-links vira display:none, então esse é o único jeito de
+              chegar nas seções sem rolar a página inteira. */}
+          <button
+            className="nav-hamburger"
+            onClick={() => setMenuOpen(v => !v)}
+            aria-label={menuOpen ? t.navCloseMenu : t.navOpenMenu}
+            aria-expanded={menuOpen}
+          >
+            {menuOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
         </div>
       </div>
+
+      {menuOpen && (
+        <nav className="nav-mobile-menu">
+          <a href="#features" onClick={closeMenu}>{t.navFeatures}</a>
+          <a href="#pricing" onClick={closeMenu}>{t.navPricing}</a>
+          <a href="#faq" onClick={closeMenu}>{t.navFaq}</a>
+          <a href="#contact" onClick={closeMenu}>{t.navContact}</a>
+        </nav>
+      )}
     </header>
   )
 }
