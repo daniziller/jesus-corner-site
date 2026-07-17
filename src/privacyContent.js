@@ -11,7 +11,7 @@ export const privacyContent = {
     sections: [
       {
         heading: '1. Quem somos',
-        body: 'O Jesus\' Corner é operado por uma empresa brasileira (razão social e CNPJ serão publicados aqui assim que o registro da empresa for concluído). Para qualquer dúvida sobre privacidade, entre em contato pelo e-mail no fim desta página.',
+        body: 'O Jesus\' Corner é operado pela JCORNER DESENVOLVIMENTO DE SOFTWARE LTDA, CNPJ 68.029.736/0001-26. Para qualquer dúvida sobre privacidade, entre em contato pelo e-mail no fim desta página.',
       },
       {
         heading: '2. Quais dados coletamos',
@@ -66,7 +66,7 @@ export const privacyContent = {
     sections: [
       {
         heading: '1. Who we are',
-        body: 'Jesus\' Corner is operated by a Brazilian company (legal name and tax ID will be published here once company registration is complete). For any privacy questions, reach out via the email at the bottom of this page.',
+        body: 'Jesus\' Corner is operated by JCORNER DESENVOLVIMENTO DE SOFTWARE LTDA, Brazilian company registration (CNPJ) 68.029.736/0001-26. For any privacy questions, reach out via the email at the bottom of this page.',
       },
       {
         heading: '2. What data we collect',

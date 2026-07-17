@@ -46,7 +46,7 @@ export const termsContent = {
       },
       {
         heading: '10. Lei aplicável',
-        body: 'Estes termos são regidos pelas leis do Brasil. O Jesus\' Corner é operado por uma empresa brasileira (razão social e CNPJ serão publicados aqui assim que o registro da empresa for concluído).',
+        body: 'Estes termos são regidos pelas leis do Brasil. O Jesus\' Corner é operado pela JCORNER DESENVOLVIMENTO DE SOFTWARE LTDA, CNPJ 68.029.736/0001-26.',
       },
       {
         heading: '11. Contato',
@@ -97,7 +97,7 @@ export const termsContent = {
       },
       {
         heading: '10. Governing law',
-        body: 'These terms are governed by the laws of Brazil. Jesus\' Corner is operated by a Brazilian company (legal name and tax ID will be published here once company registration is complete).',
+        body: 'These terms are governed by the laws of Brazil. Jesus\' Corner is operated by JCORNER DESENVOLVIMENTO DE SOFTWARE LTDA, Brazilian company registration (CNPJ) 68.029.736/0001-26.',
       },
       {
         heading: '11. Contact',
