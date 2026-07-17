@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react'
 import {
   BookOpen, HandHeart, Compass, BarChart3, Award, Globe, GraduationCap, Users, User,
-  ArrowRight, Check, Smartphone, ChevronRight, ArrowLeft, Flame, PenLine,
+  ArrowRight, Check, Smartphone, ChevronRight, ArrowLeft, Flame, PenLine, CheckCircle2,
 } from 'lucide-react'
 import { content } from './content'
 import { privacyContent } from './privacyContent'
 import { termsContent } from './termsContent'
 import { detectLanguageFromIp } from './langDetect'
+import { submitContactMessage } from './lib/supabaseClient'
 
 const APP_URL = 'https://app.jesuscorner.app'
 const ICONS = { BookOpen, HandHeart, Compass, BarChart3, Award, Globe, GraduationCap, Users, User, Flame, PenLine }
@@ -73,6 +74,7 @@ export default function App() {
       <Pricing t={t} />
       <Download t={t} />
       <Faq t={t} />
+      <Contact t={t} />
       <Footer t={t} />
     </div>
   )
@@ -110,6 +112,7 @@ function Nav({ lang, setLang, t }) {
           <a href="#features">{t.navFeatures}</a>
           <a href="#pricing">{t.navPricing}</a>
           <a href="#faq">{t.navFaq}</a>
+          <a href="#contact">{t.navContact}</a>
         </nav>
         <div className="nav-actions">
           {/* Alterna idioma — mostra as duas opções lado a lado (em vez de só
@@ -317,6 +320,68 @@ function Faq({ t }) {
           </details>
         ))}
       </div>
+    </section>
+  )
+}
+
+function Contact({ t }) {
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
+  const [sending, setSending] = useState(false)
+  const [error, setError] = useState('')
+  const [sent, setSent] = useState(false)
+
+  async function handleSubmit(e) {
+    e.preventDefault()
+    if (!name.trim() || !email.trim() || !message.trim()) {
+      setError(t.contactRequiredError)
+      return
+    }
+    setSending(true)
+    setError('')
+    try {
+      await submitContactMessage({ name: name.trim(), email: email.trim(), message: message.trim() })
+      setSent(true)
+      setMessage('')
+    } catch (err) {
+      setError(err.message)
+    } finally {
+      setSending(false)
+    }
+  }
+
+  return (
+    <section id="contact" className="section">
+      <h2>{t.contactTitle}</h2>
+      <p className="section-sub">{t.contactSubtitle}</p>
+      {sent ? (
+        <div className="contact-success">
+          <CheckCircle2 size={38} color="#22C55E" />
+          <h3>{t.contactSuccessTitle}</h3>
+          <p>{t.contactSuccessSub}</p>
+          <button className="btn btn-ghost btn-sm" onClick={() => setSent(false)}>{t.contactSendAnother}</button>
+        </div>
+      ) : (
+        <form className="contact-form" onSubmit={handleSubmit}>
+          <div className="contact-field">
+            <label htmlFor="contact-name">{t.contactNameLabel}</label>
+            <input id="contact-name" type="text" value={name} onChange={e => setName(e.target.value)} placeholder={t.contactNamePlaceholder} />
+          </div>
+          <div className="contact-field">
+            <label htmlFor="contact-email">{t.contactEmailLabel}</label>
+            <input id="contact-email" type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder={t.contactEmailPlaceholder} />
+          </div>
+          <div className="contact-field">
+            <label htmlFor="contact-message">{t.contactMessageLabel}</label>
+            <textarea id="contact-message" rows={6} value={message} onChange={e => setMessage(e.target.value)} placeholder={t.contactMessagePlaceholder} />
+          </div>
+          {error && <p className="contact-error">{error}</p>}
+          <button type="submit" className="btn btn-primary btn-lg" disabled={sending}>
+            {sending ? t.contactSending : t.contactSubmitBtn}
+          </button>
+        </form>
+      )}
     </section>
   )
 }
