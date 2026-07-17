@@ -10,7 +10,7 @@ export const termsContent = {
     sections: [
       {
         heading: '1. O que é o Jesus\' Corner',
-        body: 'Jesus\' Corner é um aplicativo de leitura bíblica com planos de leitura personalizáveis, oração guiada (método ACTS), estudos temáticos, acompanhamento de progresso e uma Comunidade opcional (amigos, grupos de leitura e desafios em conjunto). É oferecido como um Web App (PWA) e, futuramente, como app nativo nas lojas Google Play e App Store.',
+        body: 'Jesus\' Corner é um aplicativo de leitura bíblica com planos de leitura personalizáveis (Leve, Padrão, Intensivo ou Livre, sem tempo definido), oração guiada (método ACTS), reflexão guiada sobre a leitura do dia, uma aba de Rotina para ajustar a duração de cada etapa e ver o tempo total do dia, estudos temáticos, acompanhamento de progresso e uma Comunidade opcional (amigos, grupos de leitura e desafios em conjunto). É oferecido como um Web App (PWA) e, futuramente, como app nativo nas lojas Google Play e App Store.',
       },
       {
         heading: '2. Contas de usuário',
@@ -61,7 +61,7 @@ export const termsContent = {
     sections: [
       {
         heading: '1. What Jesus\' Corner is',
-        body: 'Jesus\' Corner is a Bible reading app with customizable reading plans, guided prayer (the ACTS method), thematic studies, progress tracking, and an optional Community (friends, reading groups, and shared challenges). It\'s offered as a Web App (PWA) and, in the future, as a native app on the Google Play and App Store.',
+        body: 'Jesus\' Corner is a Bible reading app with customizable reading plans (Light, Standard, Intensive, or Free — no time limit), guided prayer (the ACTS method), guided reflection on the day\'s reading, a Routine tab to adjust the length of each step and see your total time for the day, thematic studies, progress tracking, and an optional Community (friends, reading groups, and shared challenges). It\'s offered as a Web App (PWA) and, in the future, as a native app on the Google Play and App Store.',
       },
       {
         heading: '2. User accounts',
