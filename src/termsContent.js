@@ -50,7 +50,7 @@ export const termsContent = {
       },
       {
         heading: '11. Contato',
-        body: 'Dúvidas sobre estes termos? Escreva pra gente: contato@jesuscorner.app',
+        body: 'Dúvidas sobre estes termos? Escreva pra gente: info@jesuscorner.app',
       },
     ],
   },
@@ -101,7 +101,7 @@ export const termsContent = {
       },
       {
         heading: '11. Contact',
-        body: 'Questions about these terms? Write to us: contato@jesuscorner.app',
+        body: 'Questions about these terms? Write to us: info@jesuscorner.app',
       },
     ],
   },

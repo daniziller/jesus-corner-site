@@ -55,7 +55,7 @@ export const privacyContent = {
       },
       {
         heading: '12. Contato',
-        body: 'Dúvidas sobre privacidade? Escreva pra gente: privacidade@jesuscorner.app',
+        body: 'Dúvidas sobre privacidade? Escreva pra gente: info@jesuscorner.app',
       },
     ],
   },
@@ -110,7 +110,7 @@ export const privacyContent = {
       },
       {
         heading: '12. Contact',
-        body: 'Questions about privacy? Write to us: privacidade@jesuscorner.app',
+        body: 'Questions about privacy? Write to us: info@jesuscorner.app',
       },
     ],
   },
