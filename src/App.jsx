@@ -252,7 +252,10 @@ function Features({ t }) {
           const Icon = ICONS[f.icon]
           return (
             <div key={i} className="feature-card">
-              <div className="feature-icon"><Icon size={22} color="#F97316" /></div>
+              <div className="feature-card-head">
+                <div className="feature-icon"><Icon size={22} color="#F97316" /></div>
+                {f.premium && <span className="feature-premium-tag">{t.premiumTag}</span>}
+              </div>
               <h3>{f.title}</h3>
               <p>{f.desc}</p>
             </div>
@@ -280,7 +283,7 @@ function Pricing({ t }) {
               <li key={i}><Check size={16} color="#22C55E" /> {item}</li>
             ))}
           </ul>
-          <span className="btn btn-disabled">{t.pricingCta} · {t.comingSoon}</span>
+          <a href={APP_URL} target="_blank" rel="noreferrer" className="btn btn-ghost btn-lg">{t.pricingCta}</a>
         </div>
         <div className="pricing-card pricing-premium">
           <span className="pricing-badge">{t.pricingAnnualBadge}</span>
@@ -295,7 +298,7 @@ function Pricing({ t }) {
               <li key={i}><Check size={16} color="var(--or-lt)" /> {item}</li>
             ))}
           </ul>
-          <span className="btn btn-disabled">{t.pricingCta} · {t.comingSoon}</span>
+          <a href={APP_URL} target="_blank" rel="noreferrer" className="btn btn-primary btn-lg">{t.pricingCta}</a>
         </div>
       </div>
     </section>
