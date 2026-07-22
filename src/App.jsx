@@ -69,6 +69,7 @@ export default function App() {
     <div className="page">
       <Nav lang={lang} setLang={setLang} t={t} />
       <Hero t={t} lang={lang} />
+      <Purpose t={t} />
       <AboutName t={t} />
       <Showcase t={t} lang={lang} />
       <Features t={t} />
@@ -206,6 +207,18 @@ function Phone({ src, alt, small, tilt = 'left' }) {
       <div className="phone-shadow" />
       <img src={src} alt={alt} className="phone-screenshot" />
     </div>
+  )
+}
+
+function Purpose({ t }) {
+  return (
+    <section className="purpose">
+      <div className="purpose-card">
+        <span className="eyebrow">{t.purposeEyebrow}</span>
+        <h2>{t.purposeTitle}</h2>
+        <p className="purpose-body">{t.purposeBody}</p>
+      </div>
+    </section>
   )
 }
 

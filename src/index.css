@@ -163,6 +163,16 @@ img { display: block; max-width: 100%; }
 }
 .phone-screenshot { width: 100%; height: auto; border-radius: 30px; display: block; }
 
+/* Purpose */
+.purpose { max-width: var(--max-width); margin: 0 auto; width: 100%; padding: 50px 20px 10px; display: flex; justify-content: center; }
+.purpose-card {
+  max-width: 720px; text-align: center; background: var(--surface); border: 1px solid var(--border);
+  border-radius: 22px; padding: 44px 40px;
+}
+.purpose-card .eyebrow { display: block; margin-bottom: 10px; }
+.purpose-card h2 { font-size: 26px; font-weight: 900; color: white; letter-spacing: -0.4px; margin: 0 0 16px; }
+.purpose-body { font-size: 15px; color: var(--g5); line-height: 1.7; margin: 0; }
+
 /* About the name */
 .about-name { max-width: var(--max-width); margin: 0 auto; width: 100%; padding: 10px 20px 60px; display: flex; justify-content: center; }
 .about-name-card {
