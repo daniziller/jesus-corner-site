@@ -18,7 +18,7 @@ export const termsContent = {
       },
       {
         heading: '3. Assinatura e pagamento',
-        body: 'O Jesus\' Corner funciona por assinatura: plano mensal (R$ 19,90) ou anual com desconto (R$ 159,90). A cobrança é recorrente e renovada automaticamente até que você cancele. Você pode cancelar a qualquer momento; o acesso continua até o fim do período já pago, sem reembolso proporcional pelo tempo não utilizado, salvo quando exigido por lei. Podemos ajustar os preços no futuro, sempre avisando com antecedência.',
+        body: 'A maior parte do Jesus\' Corner é grátis pra sempre: leitura diária em todos os planos, oração guiada, o texto bíblico completo, amigos e seu perfil. Uma assinatura premium opcional libera recursos adicionais — estudos temáticos aprofundados, reflexão guiada, contexto histórico por livro, grupos e desafios na Comunidade, estatísticas avançadas e notas ilimitadas — veja o site pra lista completa e preços atualizados. A assinatura tem plano mensal (R$ 19,90 no Brasil, ou o equivalente em dólares fora do Brasil, com o preço determinado automaticamente pelo país detectado no momento da assinatura) ou anual com desconto (R$ 159,90 no Brasil). O pagamento é processado pelo Stripe (ver nossa Política de Privacidade, seção 9). A cobrança é recorrente e renovada automaticamente até que você cancele. Você pode cancelar a qualquer momento pelo app (Perfil → Gerenciar assinatura); o acesso aos recursos premium continua até o fim do período já pago, sem reembolso proporcional pelo tempo não utilizado, salvo quando exigido por lei. Podemos ajustar os preços no futuro, sempre avisando com antecedência.',
       },
       {
         heading: '4. Conteúdo bíblico e propriedade intelectual',
@@ -42,7 +42,7 @@ export const termsContent = {
       },
       {
         heading: '9. Alterações nestes termos',
-        body: 'Podemos atualizar estes termos conforme o app evolui, especialmente quando a assinatura paga entrar no ar. Sempre que isso acontecer, atualizaremos a data no topo desta página.',
+        body: 'Podemos atualizar estes termos conforme o app evolui. Sempre que isso acontecer, atualizaremos a data no topo desta página.',
       },
       {
         heading: '10. Lei aplicável',
@@ -69,7 +69,7 @@ export const termsContent = {
       },
       {
         heading: '3. Subscription and payment',
-        body: 'Jesus\' Corner runs on a subscription: monthly ($9.90) or discounted annual ($79.90). Billing is recurring and renews automatically until you cancel. You can cancel anytime; access continues until the end of the period already paid for, with no prorated refund for unused time, except where required by law. We may adjust prices in the future, always with advance notice.',
+        body: 'Most of Jesus\' Corner is free forever: daily reading on every plan, guided prayer, the full Bible text, friends, and your profile. An optional premium subscription unlocks additional features — in-depth thematic studies, guided reflection, historical context per book, groups and challenges in Community, advanced stats, and unlimited notes — see the site for the full list and current pricing. The subscription has a monthly plan ($6.99 outside Brazil, or the Brazilian-real equivalent inside Brazil, with the price determined automatically by the country detected at the time you subscribe) or a discounted annual plan ($59.99 outside Brazil). Payment is processed by Stripe (see our Privacy Policy, section 9). Billing is recurring and renews automatically until you cancel. You can cancel anytime from within the app (Profile → Manage subscription); access to premium features continues until the end of the period already paid for, with no prorated refund for unused time, except where required by law. We may adjust prices in the future, always with advance notice.',
       },
       {
         heading: '4. Bible content and intellectual property',
@@ -93,7 +93,7 @@ export const termsContent = {
       },
       {
         heading: '9. Changes to these terms',
-        body: 'We may update these terms as the app evolves, especially once the paid subscription goes live. Whenever that happens, we\'ll update the date at the top of this page.',
+        body: 'We may update these terms as the app evolves. Whenever that happens, we\'ll update the date at the top of this page.',
       },
       {
         heading: '10. Governing law',
