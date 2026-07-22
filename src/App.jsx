@@ -252,10 +252,7 @@ function Features({ t }) {
           const Icon = ICONS[f.icon]
           return (
             <div key={i} className="feature-card">
-              <div className="feature-card-head">
-                <div className="feature-icon"><Icon size={22} color="#F97316" /></div>
-                {f.premium && <span className="feature-premium-tag">{t.premiumTag}</span>}
-              </div>
+              <div className="feature-icon"><Icon size={22} color="#F97316" /></div>
               <h3>{f.title}</h3>
               <p>{f.desc}</p>
             </div>

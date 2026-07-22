@@ -204,9 +204,7 @@ img { display: block; max-width: 100%; }
 .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; text-align: left; }
 .feature-card { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 26px; transition: border-color .15s, transform .15s; }
 .feature-card:hover { border-color: var(--border-2); transform: translateY(-2px); }
-.feature-card-head { display: flex; align-items: flex-start; justify-content: space-between; }
 .feature-icon { width: 46px; height: 46px; border-radius: 13px; background: rgba(249,115,22,.12); border: 1px solid rgba(249,115,22,.25); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
-.feature-premium-tag { font-size: 10px; font-weight: 800; letter-spacing: .3px; color: #F97316; background: rgba(249,115,22,.12); border: 1px solid rgba(249,115,22,.3); border-radius: 999px; padding: 3px 9px; white-space: nowrap; }
 .feature-card h3 { font-size: 15.5px; font-weight: 800; margin: 0 0 8px; color: white; }
 .feature-card p { font-size: 13.5px; color: var(--g4); line-height: 1.55; margin: 0; }
 
