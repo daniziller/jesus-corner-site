@@ -19,8 +19,8 @@ export const content = {
     purposeBody: 'A Bíblia conta a história de um Deus que ama, busca e nunca desiste do Seu povo — do Éden até a eternidade. O Jesus\' Corner existe pra te aproximar dessa história todos os dias, com uma plataforma completa pra acompanhar sua caminhada de leitura. E porque essa história é pra todo mundo, o valor da sua contribuição fica com você: pode ser R$0, mensal, anual, o que fizer sentido — o acesso completo nunca fica bloqueado por dinheiro.',
     aboutNameEyebrow: 'A origem do nome',
     aboutNameTitle: 'Por que "Jesus\' Corner"?',
-    aboutNameVerseText: 'Mas, quando você orar, entre no seu quarto, feche a porta e ore a seu Pai, que está em secreto. Então o seu Pai, que vê em secreto, o recompensará.',
-    aboutNameVerseRef: 'Mateus 6:6 · NVI',
+    aboutNameVerseText: 'Porém tu, quando orares, entra em teu quarto, fecha tua porta, e ora ao teu Pai, que está em segredo; e teu Pai, que vê em segredo, ele te recompensará em público.',
+    aboutNameVerseRef: 'Mateus 6:6 · Bíblia Livre (BLIVRE)',
     aboutNameBody: 'O nome nasce desse "quarto": um cantinho só seu, sem plateia, sem comparação — só você, a Bíblia e Deus. Não é sobre grandes gestos religiosos, é sobre criar esse espaço todo dia, no seu tempo, pra um tempo de qualidade que é só seu.',
     showcaseEyebrow: 'Direto do app',
     showcase: [
@@ -119,8 +119,8 @@ export const content = {
     purposeBody: "The Bible tells the story of a God who loves, pursues, and never gives up on His people — from Eden to eternity. Jesus' Corner exists to bring you closer to that story every day, with a complete platform to track your reading journey. And because that story is for everyone, how much you contribute is up to you: it can be $0, monthly, annual, whatever makes sense for you — full access is never locked behind money.",
     aboutNameEyebrow: 'Where the name comes from',
     aboutNameTitle: 'Why "Jesus\' Corner"?',
-    aboutNameVerseText: 'But when you pray, go into your room, close the door and pray to your Father, who is unseen. Then your Father, who sees what is done in secret, will reward you.',
-    aboutNameVerseRef: 'Matthew 6:6 · NIV',
+    aboutNameVerseText: 'But you, when you pray, enter into your inner room, and having shut your door, pray to your Father who is in secret, and your Father who sees in secret will reward you openly.',
+    aboutNameVerseRef: 'Matthew 6:6 · World English Bible',
     aboutNameBody: "The name comes from that \"room\": a corner that's just yours, no audience, no comparison — just you, the Bible, and God. It's not about grand religious gestures, it's about creating that space every day, in your own time, for quality time that's yours alone.",
     showcaseEyebrow: 'Straight from the app',
     showcase: [
