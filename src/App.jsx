@@ -281,28 +281,9 @@ function Pricing({ t }) {
     <section id="pricing" className="section section-alt">
       <h2>{t.pricingTitle}</h2>
       <p className="section-sub">{t.pricingSubtitle}</p>
-      <div className="pricing-grid">
-        <div className="pricing-card">
-          <h3>{t.pricingMonthlyTitle}</h3>
-          <div className="pricing-price">
-            <span className="pricing-amount">{t.pricingMonthlyPrice}</span>
-            <span className="pricing-period">{t.pricingMonthlyPeriod}</span>
-          </div>
-          <ul>
-            {t.pricingMemberItems.map((item, i) => (
-              <li key={i}><Check size={16} color="#22C55E" /> {item}</li>
-            ))}
-          </ul>
-          <a href={APP_URL} target="_blank" rel="noreferrer" className="btn btn-ghost btn-lg">{t.pricingCta}</a>
-        </div>
+      <div className="pricing-single">
         <div className="pricing-card pricing-premium">
-          <span className="pricing-badge">{t.pricingAnnualBadge}</span>
-          <h3>{t.pricingAnnualTitle}</h3>
-          <div className="pricing-price">
-            <span className="pricing-amount">{t.pricingAnnualPrice}</span>
-            <span className="pricing-period">{t.pricingAnnualPeriod}</span>
-          </div>
-          <p className="pricing-annual-note">{t.pricingAnnualNote}</p>
+          <p className="pricing-body">{t.pricingBody}</p>
           <ul>
             {t.pricingMemberItems.map((item, i) => (
               <li key={i}><Check size={16} color="var(--or-lt)" /> {item}</li>
