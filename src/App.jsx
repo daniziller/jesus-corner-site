@@ -215,7 +215,8 @@ function Purpose({ t }) {
     <section className="purpose">
       <div className="purpose-card">
         <span className="eyebrow">{t.purposeEyebrow}</span>
-        <h2>{t.purposeTitle}</h2>
+        <h2 className="purpose-title">{t.purposeTitle}</h2>
+        <p className="purpose-subtitle">{t.purposeSubtitle}</p>
         <p className="purpose-body">{t.purposeBody}</p>
       </div>
     </section>

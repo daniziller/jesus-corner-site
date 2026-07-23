@@ -170,7 +170,11 @@ img { display: block; max-width: 100%; }
   border-radius: 22px; padding: 44px 40px;
 }
 .purpose-card .eyebrow { display: block; margin-bottom: 10px; }
-.purpose-card h2 { font-size: 26px; font-weight: 900; color: white; letter-spacing: -0.4px; margin: 0 0 16px; }
+.purpose-title {
+  font-size: 34px; font-weight: 800; font-style: italic; letter-spacing: -0.6px; line-height: 1.2; margin: 0 0 8px;
+  background: var(--grad-vivid); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+}
+.purpose-subtitle { font-size: 17px; font-weight: 700; color: white; margin: 0 0 18px; }
 .purpose-body { font-size: 15px; color: var(--g5); line-height: 1.7; margin: 0; }
 
 /* About the name */
@@ -284,6 +288,8 @@ img { display: block; max-width: 100%; }
   .hero-text { display: flex; flex-direction: column; align-items: center; }
   .hero h1 { font-size: 34px; }
   .hero-sub { max-width: 460px; }
+  .purpose-title { font-size: 27px; }
+  .purpose-card { padding: 36px 26px; }
   .features-grid { grid-template-columns: 1fr 1fr; }
   .download-grid { grid-template-columns: 1fr; }
   .nav-links { display: none; }
