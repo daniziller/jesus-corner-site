@@ -54,6 +54,11 @@ img { display: block; max-width: 100%; }
 .nav-links a { font-size: 13px; font-weight: 600; color: var(--g4); transition: color .15s; }
 .nav-links a:hover { color: white; }
 .nav-actions { display: flex; align-items: center; gap: 10px; }
+.nav-instagram-link {
+  display: flex; align-items: center; justify-content: center; width: 34px; height: 34px;
+  border-radius: 999px; color: var(--g4); border: 1px solid var(--border-2); flex-shrink: 0;
+}
+.nav-instagram-link:hover { color: var(--or-lt); border-color: var(--or-lt); }
 .lang-toggle {
   display: flex; align-items: center; gap: 2px;
   border: 1px solid var(--border-2); background: var(--surface-2); border-radius: 10px;

@@ -140,6 +140,14 @@ function Nav({ lang, setLang, t }) {
           <a href="#contact">{t.navContact}</a>
         </nav>
         <div className="nav-actions">
+          <a
+            href="https://www.instagram.com/jesuscorner.app/"
+            target="_blank" rel="noreferrer"
+            className="nav-instagram-link"
+            aria-label={t.footerInstagramLabel}
+          >
+            <InstagramIcon size={18} />
+          </a>
           {/* Alterna idioma — mostra as duas opções lado a lado (em vez de só
               a atual) pra deixar claro que dá pra trocar, não é só um rótulo. */}
           <div className="lang-toggle" role="group" aria-label="Idioma / Language">
