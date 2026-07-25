@@ -32,6 +32,7 @@ const ICONS = { BookOpen, HandHeart, Compass, BarChart3, Award, Globe, Graduatio
 const currentPath = typeof window !== 'undefined' ? window.location.pathname.replace(/\/$/, '') : ''
 const isPrivacyPath = currentPath === '/privacidade'
 const isTermsPath = currentPath === '/termos'
+const isInstallPath = currentPath === '/instalar'
 const LANG_KEY = 'jc_site_lang'
 
 // O app (outro domínio, outro localStorage) linka pras páginas legais com
@@ -82,6 +83,16 @@ export default function App() {
     )
   }
 
+  if (isInstallPath) {
+    return (
+      <div className="page">
+        <Nav lang={lang} setLang={setLang} t={t} />
+        <InstallGuide t={t} lang={lang} />
+        <Footer t={t} />
+      </div>
+    )
+  }
+
   return (
     <div className="page">
       <Nav lang={lang} setLang={setLang} t={t} />
@@ -114,6 +125,41 @@ function LegalPage({ lang, content }) {
             <p>{s.body}</p>
           </div>
         ))}
+      </div>
+    </section>
+  )
+}
+
+// Tutorial de "adicionar à tela inicial" — pra quem clica no card "Web App"
+// da seção de Download em vez de ir direto pro app, já que instalar um PWA
+// não é um fluxo óbvio pra quem nunca fez isso. Mostra as duas plataformas
+// sempre (sem detectar o aparelho), pra funcionar igual pra quem compartilha
+// o link com alguém de outro sistema.
+function InstallGuide({ t, lang }) {
+  return (
+    <section className="legal">
+      <div className="legal-inner">
+        <a href="/" className="legal-back"><ArrowLeft size={16} /> {lang === 'en' ? 'Back to home' : 'Voltar pro início'}</a>
+        <h1>{t.installTitle}</h1>
+        <p className="legal-intro">{t.installSubtitle}</p>
+
+        <div className="install-section">
+          <h2>{t.installIosTitle}</h2>
+          <ol className="install-steps">
+            {t.installIosSteps.map((step, i) => <li key={i}>{step}</li>)}
+          </ol>
+        </div>
+
+        <div className="install-section">
+          <h2>{t.installAndroidTitle}</h2>
+          <ol className="install-steps">
+            {t.installAndroidSteps.map((step, i) => <li key={i}>{step}</li>)}
+          </ol>
+        </div>
+
+        <a href={APP_URL} target="_blank" rel="noreferrer" className="btn btn-primary btn-lg install-cta">
+          {t.installCta}
+        </a>
       </div>
     </section>
   )
@@ -324,7 +370,10 @@ function Pricing({ t }) {
 
 function Download({ t }) {
   const items = [
-    { title: t.downloadWebTitle, desc: t.downloadWebDesc, href: APP_URL, live: true },
+    // Leva pro tutorial de instalação (mesma aba), não direto pro app —
+    // "adicionar à tela inicial" não é um fluxo óbvio pra quem nunca
+    // instalou um PWA antes (ver InstallGuide).
+    { title: t.downloadWebTitle, desc: t.downloadWebDesc, href: '/instalar', live: true, external: false },
     { title: t.downloadPlayTitle, desc: t.comingSoon, href: null, live: false },
     { title: t.downloadAppleTitle, desc: t.comingSoon, href: null, live: false },
   ]
@@ -337,8 +386,8 @@ function Download({ t }) {
           <a
             key={i}
             href={item.href ?? undefined}
-            target={item.href ? '_blank' : undefined}
-            rel={item.href ? 'noreferrer' : undefined}
+            target={item.href && item.external !== false ? '_blank' : undefined}
+            rel={item.href && item.external !== false ? 'noreferrer' : undefined}
             className={`download-card ${item.live ? '' : 'download-disabled'}`}
             onClick={e => { if (!item.href) e.preventDefault() }}
           >
