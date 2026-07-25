@@ -175,15 +175,15 @@ function Nav({ lang, setLang, t }) {
   return (
     <header className="nav">
       <div className="nav-inner">
-        <a href="#top" className="brand">
+        <a href="/#top" className="brand">
           <img src="/icon-192.png" alt="" className="brand-icon" />
           <span>Jesus' Corner</span>
         </a>
         <nav className="nav-links">
-          <a href="#features">{t.navFeatures}</a>
-          <a href="#pricing">{t.navPricing}</a>
-          <a href="#faq">{t.navFaq}</a>
-          <a href="#contact">{t.navContact}</a>
+          <a href="/#features">{t.navFeatures}</a>
+          <a href="/#pricing">{t.navPricing}</a>
+          <a href="/#faq">{t.navFaq}</a>
+          <a href="/#contact">{t.navContact}</a>
         </nav>
         <div className="nav-actions">
           <a
@@ -231,10 +231,10 @@ function Nav({ lang, setLang, t }) {
 
       {menuOpen && (
         <nav className="nav-mobile-menu">
-          <a href="#features" onClick={closeMenu}>{t.navFeatures}</a>
-          <a href="#pricing" onClick={closeMenu}>{t.navPricing}</a>
-          <a href="#faq" onClick={closeMenu}>{t.navFaq}</a>
-          <a href="#contact" onClick={closeMenu}>{t.navContact}</a>
+          <a href="/#features" onClick={closeMenu}>{t.navFeatures}</a>
+          <a href="/#pricing" onClick={closeMenu}>{t.navPricing}</a>
+          <a href="/#faq" onClick={closeMenu}>{t.navFaq}</a>
+          <a href="/#contact" onClick={closeMenu}>{t.navContact}</a>
         </nav>
       )}
     </header>
