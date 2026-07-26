@@ -169,7 +169,7 @@ img { display: block; max-width: 100%; }
 .phone-screenshot { width: 100%; height: auto; border-radius: 30px; display: block; }
 
 /* Purpose */
-.purpose { max-width: var(--max-width); margin: 0 auto; width: 100%; padding: 50px 20px 10px; display: flex; justify-content: center; }
+.purpose { max-width: var(--max-width); margin: 0 auto; width: 100%; padding: 50px 20px 10px; display: flex; flex-direction: column; align-items: center; gap: 28px; }
 .purpose-card {
   max-width: 720px; text-align: center; background: var(--surface); border: 1px solid var(--border);
   border-radius: 22px; padding: 44px 40px;
@@ -183,7 +183,7 @@ img { display: block; max-width: 100%; }
 .purpose-body { font-size: 15px; color: var(--g5); line-height: 1.7; margin: 0; }
 
 /* About the name */
-.about-name { max-width: var(--max-width); margin: 0 auto; width: 100%; padding: 10px 20px 60px; display: flex; justify-content: center; }
+.about-name { max-width: var(--max-width); margin: 0 auto; width: 100%; padding: 10px 20px 60px; display: flex; flex-direction: column; align-items: center; gap: 28px; }
 .about-name-card {
   max-width: 720px; text-align: center; background: var(--surface); border: 1px solid var(--border);
   border-radius: 22px; padding: 44px 40px;
@@ -219,6 +219,8 @@ img { display: block; max-width: 100%; }
 .section-alt > * { max-width: var(--max-width); margin-left: auto; margin-right: auto; }
 .section h2 { font-size: 32px; font-weight: 900; letter-spacing: -0.6px; margin: 0 0 12px; color: white; }
 .section-sub { font-size: 15px; color: var(--g4); margin: 0 0 46px; }
+.section-cta { display: flex; flex-direction: column; align-items: center; gap: 14px; margin-top: 52px; }
+.section-cta-text { font-size: 15px; font-weight: 700; color: var(--g6); margin: 0; text-align: center; }
 
 .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; text-align: left; }
 .feature-card { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 26px; transition: border-color .15s, transform .15s; }

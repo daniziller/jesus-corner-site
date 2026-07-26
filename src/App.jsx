@@ -281,6 +281,20 @@ function Phone({ src, alt, small, tilt = 'left' }) {
   )
 }
 
+// Botão de registro reaproveitado depois de várias seções — pra manter o
+// caminho de cadastro sempre à mão conforme a pessoa rola a página, em vez
+// de só no Hero e na Pricing lá embaixo.
+function SectionCta({ text, cta }) {
+  return (
+    <div className="section-cta">
+      <p className="section-cta-text">{text}</p>
+      <a href={APP_URL} target="_blank" rel="noreferrer" className="btn btn-primary btn-lg">
+        {cta} <ArrowRight size={18} />
+      </a>
+    </div>
+  )
+}
+
 function Purpose({ t }) {
   return (
     <section className="purpose">
@@ -290,6 +304,7 @@ function Purpose({ t }) {
         <p className="purpose-subtitle">{t.purposeSubtitle}</p>
         <p className="purpose-body">{t.purposeBody}</p>
       </div>
+      <SectionCta text={t.ctaPurposeText} cta={t.ctaPurposeBtn} />
     </section>
   )
 }
@@ -304,6 +319,7 @@ function AboutName({ t }) {
         <p className="about-name-ref">{t.aboutNameVerseRef}</p>
         <p className="about-name-body">{t.aboutNameBody}</p>
       </div>
+      <SectionCta text={t.ctaAboutNameText} cta={t.ctaAboutNameBtn} />
     </section>
   )
 }
@@ -323,6 +339,7 @@ function Showcase({ t, lang }) {
           </div>
         </div>
       ))}
+      <SectionCta text={t.ctaShowcaseText} cta={t.ctaShowcaseBtn} />
     </section>
   )
 }
@@ -344,6 +361,7 @@ function Features({ t }) {
           )
         })}
       </div>
+      <SectionCta text={t.ctaFeaturesText} cta={t.ctaFeaturesBtn} />
     </section>
   )
 }
@@ -416,6 +434,7 @@ function Faq({ t }) {
           </details>
         ))}
       </div>
+      <SectionCta text={t.ctaFaqText} cta={t.ctaFaqBtn} />
     </section>
   )
 }
