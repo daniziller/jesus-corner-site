@@ -29,10 +29,6 @@ import { submitContactMessage } from './lib/supabaseClient'
 
 const APP_URL = 'https://app.jesuscorner.app'
 const ICONS = { BookOpen, HandHeart, Compass, BarChart3, Award, Globe, GraduationCap, Users, User, Flame, PenLine }
-const currentPath = typeof window !== 'undefined' ? window.location.pathname.replace(/\/$/, '') : ''
-const isPrivacyPath = currentPath === '/privacidade'
-const isTermsPath = currentPath === '/termos'
-const isInstallPath = currentPath === '/instalar'
 const LANG_KEY = 'jc_site_lang'
 
 // O app (outro domínio, outro localStorage) linka pras páginas legais com
@@ -43,9 +39,20 @@ const LANG_KEY = 'jc_site_lang'
 const queryLang = typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('lang') : null
 const isValidLang = (l) => l === 'pt' || l === 'en'
 
-export default function App() {
+// initialPath: só usado pelo script de pré-renderização (scripts/prerender.mjs),
+// que roda o mesmo componente várias vezes no mesmo processo Node — sem
+// window disponível ali, precisa injetar a rota de fora em vez de ler de
+// window.location. No navegador normal, o parâmetro nunca é passado e cai
+// no window.location de sempre.
+export default function App({ initialPath } = {}) {
+  const currentPath = initialPath ?? (typeof window !== 'undefined' ? window.location.pathname.replace(/\/$/, '') : '')
+  const isPrivacyPath = currentPath === '/privacidade'
+  const isTermsPath = currentPath === '/termos'
+  const isInstallPath = currentPath === '/instalar'
+
   const [lang, setLangState] = useState(() => {
     if (isValidLang(queryLang)) return queryLang
+    if (typeof localStorage === 'undefined') return 'pt'
     return localStorage.getItem(LANG_KEY) ?? 'pt'
   })
 
