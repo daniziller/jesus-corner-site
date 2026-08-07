@@ -5,7 +5,7 @@
 export const termsContent = {
   pt: {
     title: 'Termos de Uso',
-    updated: 'Última atualização: julho de 2026',
+    updated: 'Última atualização: agosto de 2026',
     intro: 'Estes termos explicam as regras pra usar o Jesus\' Corner. Ao criar uma conta ou usar o app, você concorda com o que está escrito aqui. Escrevemos em linguagem simples, sem juridiquês desnecessário.',
     sections: [
       {
@@ -22,7 +22,7 @@ export const termsContent = {
       },
       {
         heading: '4. Conteúdo bíblico e propriedade intelectual',
-        body: 'O texto bíblico exibido no app (World English Bible em inglês e Bíblia Livre — BLIVRE em português, ou outras versões que venham a ser adicionadas) pertence às suas respectivas fontes e detentoras de direitos — o Jesus\' Corner não reivindica propriedade sobre as Escrituras. O conteúdo original do app (contexto histórico e geográfico, estudos temáticos, curiosidades, design e funcionalidades) é de propriedade do Jesus\' Corner e não pode ser copiado ou redistribuído sem autorização. Suas anotações e pedidos de oração continuam sendo seus — como explicado na nossa Política de Privacidade, esse conteúdo fica salvo na sua conta e sincroniza entre os seus dispositivos.',
+        body: 'O texto bíblico exibido no app (Nova Versão Transformadora — NVT em português e New Living Translation — NLT em inglês, licenciadas via API.Bible e Tyndale House Foundation, ou outras versões que venham a ser adicionadas) pertence às suas respectivas fontes e detentoras de direitos — o Jesus\' Corner não reivindica propriedade sobre as Escrituras. O conteúdo original do app (contexto histórico e geográfico, estudos temáticos, curiosidades, design e funcionalidades) é de propriedade do Jesus\' Corner e não pode ser copiado ou redistribuído sem autorização. Suas anotações e pedidos de oração continuam sendo seus — como explicado na nossa Política de Privacidade, esse conteúdo fica salvo na sua conta e sincroniza entre os seus dispositivos.',
       },
       {
         heading: '5. Uso aceitável',
@@ -56,7 +56,7 @@ export const termsContent = {
   },
   en: {
     title: 'Terms of Use',
-    updated: 'Last updated: July 2026',
+    updated: 'Last updated: August 2026',
     intro: 'These terms explain the rules for using Jesus\' Corner. By creating an account or using the app, you agree to what\'s written here. We\'ve written it in plain language, without unnecessary legalese.',
     sections: [
       {
@@ -73,7 +73,7 @@ export const termsContent = {
       },
       {
         heading: '4. Bible content and intellectual property',
-        body: 'The Bible text shown in the app (World English Bible in English and Bíblia Livre — BLIVRE in Portuguese, or other versions that may be added later) belongs to its respective sources and rights holders — Jesus\' Corner does not claim ownership over Scripture. The app\'s original content (historical and geographical context, thematic studies, trivia, design, and features) is owned by Jesus\' Corner and may not be copied or redistributed without permission. Your notes and prayer requests remain yours — as explained in our Privacy Policy, that content is stored in your account and syncs across your devices.',
+        body: 'The Bible text shown in the app (New Living Translation — NLT in English and Nova Versão Transformadora — NVT in Portuguese, licensed through API.Bible and Tyndale House Foundation, or other versions that may be added later) belongs to its respective sources and rights holders — Jesus\' Corner does not claim ownership over Scripture. The app\'s original content (historical and geographical context, thematic studies, trivia, design, and features) is owned by Jesus\' Corner and may not be copied or redistributed without permission. Your notes and prayer requests remain yours — as explained in our Privacy Policy, that content is stored in your account and syncs across your devices.',
       },
       {
         heading: '5. Acceptable use',
