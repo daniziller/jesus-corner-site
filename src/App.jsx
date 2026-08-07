@@ -364,17 +364,28 @@ function Showcase({ t, lang }) {
     <section className="showcase">
       <BookGlow variant="divider" />
       <span className="eyebrow">{t.showcaseEyebrow}</span>
-      {t.showcase.map((item, i) => (
-        <div key={i} className={`showcase-row ${i % 2 === 1 ? 'reverse' : ''}`}>
-          <div className="showcase-text">
-            <h3>{item.title}</h3>
-            <p>{item.desc}</p>
+      {t.showcase.map((item, i) => {
+        // O tracker de progresso ganha um tratamento visual à parte (cartão
+        // com fundo/borda em degradê) pra se destacar das outras 2 linhas,
+        // que ficam só com texto + telefone soltos no fundo escuro.
+        const isHighlight = item.image === 'progresso'
+        return (
+          <div key={i} className={`showcase-row ${i % 2 === 1 ? 'reverse' : ''} ${isHighlight ? 'showcase-row-highlight' : ''}`}>
+            <div className="showcase-text">
+              {isHighlight && (
+                <span className="showcase-highlight-tag">
+                  <BarChart3 size={12} /> {t.showcaseFeaturedTag}
+                </span>
+              )}
+              <h3>{item.title}</h3>
+              <p>{item.desc}</p>
+            </div>
+            <div className="showcase-visual">
+              <Phone src={screenshotSrc(item.image, lang)} alt={item.title} small tilt={i % 2 === 1 ? 'right' : 'left'} />
+            </div>
           </div>
-          <div className="showcase-visual">
-            <Phone src={screenshotSrc(item.image, lang)} alt={item.title} small tilt={i % 2 === 1 ? 'right' : 'left'} />
-          </div>
-        </div>
-      ))}
+        )
+      })}
       <SectionCta text={t.ctaShowcaseText} cta={t.ctaShowcaseBtn} />
     </section>
   )

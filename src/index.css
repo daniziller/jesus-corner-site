@@ -258,6 +258,24 @@ img { display: block; max-width: 100%; }
 .showcase-text p { font-size: 15px; color: var(--g4); line-height: 1.65; margin: 0; max-width: 420px; }
 .showcase-visual { flex: 1; display: flex; justify-content: center; min-width: 260px; perspective: 1800px; }
 
+/* Linha em destaque do Showcase (hoje: o tracker de progresso) — cartão com
+   fundo/borda em degradê pra se diferenciar das linhas soltas no fundo
+   escuro, sem mudar a estrutura texto+telefone que já existe. */
+.showcase-row-highlight {
+  background: linear-gradient(160deg, rgba(249,115,22,.10), rgba(219,39,119,.03));
+  border: 1px solid rgba(249,115,22,.25);
+  border-radius: 28px;
+  padding: 40px;
+  box-shadow: 0 24px 70px rgba(249,115,22,.10);
+}
+.showcase-highlight-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(249,115,22,.14); color: var(--or-lt);
+  border: 1px solid rgba(249,115,22,.32);
+  font-size: 11px; font-weight: 800; letter-spacing: .5px; text-transform: uppercase;
+  padding: 5px 12px; border-radius: 999px; margin-bottom: 14px;
+}
+
 /* Sections */
 .section { max-width: var(--max-width); margin: 0 auto; width: 100%; padding: 80px 20px; text-align: center; }
 .section-alt { background: var(--surface); max-width: none; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
@@ -360,6 +378,7 @@ img { display: block; max-width: 100%; }
   .nav-mobile-menu { display: flex; }
   .showcase-row, .showcase-row.reverse { flex-direction: column; text-align: center; gap: 30px; }
   .showcase-text { display: flex; flex-direction: column; align-items: center; }
+  .showcase-row-highlight { padding: 28px 20px; }
   .eyebrow { margin-bottom: 0; }
 }
 @media (max-width: 520px) {

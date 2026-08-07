@@ -28,6 +28,7 @@ export const content = {
     ctaAboutNameText: 'Seu cantinho com Deus está a um clique de distância.',
     ctaAboutNameBtn: 'Criar meu cantinho',
     showcaseEyebrow: 'Direto do app',
+    showcaseFeaturedTag: 'Em destaque',
     showcase: [
       { image: 'leitura', title: 'Leia a Bíblia inteira, capítulo por capítulo', desc: 'Cada capítulo traz o texto bíblico completo, com contexto histórico, mapa e curiosidades — numa coluna larga e confortável de ler. Termine e marque como lido sem sair da tela; um toque leva direto pro próximo capítulo.' },
       { image: 'rotina', title: 'Sua rotina com Deus, num só lugar', desc: 'Oração, leitura e reflexão organizadas numa linha do tempo que se preenche conforme você avança. Veja a sessão de leitura do dia, o tempo de cada passo, e comece por onde quiser — tudo na aba Rotina.' },
@@ -150,6 +151,7 @@ export const content = {
     ctaAboutNameText: 'Your corner with God is just one click away.',
     ctaAboutNameBtn: 'Create my corner',
     showcaseEyebrow: 'Straight from the app',
+    showcaseFeaturedTag: 'Featured',
     showcase: [
       { image: 'leitura', title: 'Read the whole Bible, chapter by chapter', desc: 'Every chapter brings the full Bible text, with historical context, a map, and trivia — in a wide, comfortable reading column. Finish and mark it as read without leaving the screen; one tap takes you straight to the next chapter.' },
       { image: 'rotina', title: 'Your routine with God, in one place', desc: "Prayer, reading, and reflection laid out on a timeline that fills in as you go. See today's reading session, how long each step takes, and start wherever you like — all from the Routine tab." },
