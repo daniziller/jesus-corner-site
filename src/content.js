@@ -13,7 +13,7 @@ export const content = {
     heroCtaPrimary: 'Começar agora',
     heroCtaSecondary: 'Ver recursos',
     heroNote: 'Funciona no navegador, sem instalação. Em breve na Play Store e App Store.',
-    mockSessionLabel: 'SESSÃO DE HOJE',
+    mockSessionLabel: 'Tela de leitura da Bíblia no app',
     purposeEyebrow: 'Nosso propósito',
     purposeTitle: 'A história de amor mais bonita já contada.',
     purposeSubtitle: 'E ela é pra todo mundo.',
@@ -32,7 +32,7 @@ export const content = {
     showcase: [
       { image: 'leitura', title: 'Leia a Bíblia inteira, capítulo por capítulo', desc: 'Cada capítulo traz o texto bíblico completo, com contexto histórico, mapa e curiosidades — numa coluna larga e confortável de ler. Termine e marque como lido sem sair da tela; um toque leva direto pro próximo capítulo.' },
       { image: 'progresso', title: 'Veja seu progresso pela Bíblia inteira', desc: 'Um anel mostra quanto você já leu no total, seguido do progresso em cada bloco — Pentateuco, Históricos, Profetas e mais. Some sua sequência de dias, capítulos lidos, níveis e conquistas, tudo numa tela só.' },
-      { image: 'rotina', title: 'Sua rotina com Deus, num só lugar', desc: 'Oração, leitura e reflexão organizadas numa linha do tempo que se preenche conforme você avança. Veja a sessão de leitura do dia, o tempo de cada passo, e comece por onde quiser — tudo na aba Rotina.' },
+      { image: 'rotina', title: 'Sua rotina com Deus, num só lugar', desc: 'Oração, leitura e reflexão organizadas numa linha do tempo que se preenche conforme você avança. Veja a sessão de leitura do dia, o tempo de cada passo, e acompanhe sua constância das últimas semanas — tudo na aba Rotina.' },
     ],
     ctaShowcaseText: 'Viu como funciona? Agora é sua vez de experimentar.',
     ctaShowcaseBtn: 'Quero começar',
@@ -41,7 +41,7 @@ export const content = {
     features: [
       { icon: 'Flame', title: 'Rotina diária com Deus', desc: 'Oração, leitura e reflexão — três passos simples todo dia, com uma sequência que só conta quando os três são feitos, e um calendário do seu histórico.' },
       { icon: 'BookOpen', title: 'Planos de leitura flexíveis', desc: 'Leve, Padrão, Intensivo ou Livre (sem tempo definido) — escolha o ritmo que cabe na sua rotina, troque quando quiser, e use a busca pra achar qualquer livro na hora.' },
-      { icon: 'HandHeart', title: 'Oração guiada (ACTS)', desc: 'Adoração, Confissão, Gratidão e Súplica, com um temporizador que avança sozinho de etapa em etapa e avisa com um som na troca.' },
+      { icon: 'HandHeart', title: 'Oração guiada (ACTS)', desc: 'Adoração, Confissão, Gratidão e Súplica, com um temporizador que avança sozinho de etapa em etapa, avisa com um som na troca e destaca em qual etapa você está.' },
       { icon: 'PenLine', title: 'Reflexão guiada', desc: 'Termine sua leitura com um roteiro guiado em 3 etapas — Reviver, Entender e Aplicar — com temporizador, pra fechar o dia com o que Deus falou com você.' },
       { icon: 'Compass', title: 'Jornada por blocos', desc: 'Pentateuco, Históricos, Poéticos, Profetas e mais — organizados por Antigo e Novo Testamento, com progresso visual de cada um.' },
       { icon: 'GraduationCap', title: 'Estudos aprofundados', desc: 'Quatro estudos temáticos — Pentateuco, Cronologia da Bíblia, Salmos e As Alianças de Deus — com contexto histórico, geográfico e teológico, 43 sessões com perguntas de reflexão.' },
@@ -136,7 +136,7 @@ export const content = {
     heroCtaPrimary: 'Get started',
     heroCtaSecondary: 'See features',
     heroNote: 'Works right in your browser, no install needed. Coming soon to the Play Store and App Store.',
-    mockSessionLabel: "TODAY'S SESSION",
+    mockSessionLabel: 'Bible reading screen in the app',
     purposeEyebrow: 'Our purpose',
     purposeTitle: "The most beautiful love story ever told.",
     purposeSubtitle: "And it's for everyone.",
@@ -155,7 +155,7 @@ export const content = {
     showcase: [
       { image: 'leitura', title: 'Read the whole Bible, chapter by chapter', desc: 'Every chapter brings the full Bible text, with historical context, a map, and trivia — in a wide, comfortable reading column. Finish and mark it as read without leaving the screen; one tap takes you straight to the next chapter.' },
       { image: 'progresso', title: 'See your progress through the whole Bible', desc: 'A ring shows how much you\'ve read overall, followed by progress in each block — Pentateuch, Historical, Prophets, and more. Add your day streak, chapters read, levels, and achievements, all in one screen.' },
-      { image: 'rotina', title: 'Your routine with God, in one place', desc: "Prayer, reading, and reflection laid out on a timeline that fills in as you go. See today's reading session, how long each step takes, and start wherever you like — all from the Routine tab." },
+      { image: 'rotina', title: 'Your routine with God, in one place', desc: "Prayer, reading, and reflection laid out on a timeline that fills in as you go. See today's reading session, how long each step takes, and track your consistency over the past few weeks — all from the Routine tab." },
     ],
     ctaShowcaseText: 'See how it works? Now it\'s your turn to try it.',
     ctaShowcaseBtn: 'I want to start',
@@ -164,7 +164,7 @@ export const content = {
     features: [
       { icon: 'Flame', title: 'Daily routine with God', desc: 'Prayer, reading, and reflection — three simple steps every day, with a streak that only counts when all three are done, and a calendar of your history.' },
       { icon: 'BookOpen', title: 'Flexible reading plans', desc: 'Light, Standard, Intensive, or Free (no time target) — pick the pace that fits your routine, switch anytime, and use search to find any book instantly.' },
-      { icon: 'HandHeart', title: 'Guided prayer (ACTS)', desc: 'Adoration, Confession, Thanksgiving, and Supplication, with a timer that moves through each step on its own and plays a sound at each transition.' },
+      { icon: 'HandHeart', title: 'Guided prayer (ACTS)', desc: 'Adoration, Confession, Thanksgiving, and Supplication, with a timer that moves through each step on its own, plays a sound at each transition, and highlights which step you\'re in.' },
       { icon: 'PenLine', title: 'Guided reflection', desc: 'Wrap up your reading with a guided 3-step routine — Recall, Understand, and Apply — with a timer, to close the day with what God spoke to you.' },
       { icon: 'Compass', title: 'Journey through blocks', desc: 'Pentateuch, Historical, Poetic, Prophets, and more — organized by Old and New Testament, with visual progress for each one.' },
       { icon: 'GraduationCap', title: 'In-depth studies', desc: 'Four thematic studies — Pentateuch, Bible Chronology, Psalms, and The Covenants of God — with historical, geographical, and theological context, 43 sessions with reflection questions.' },
