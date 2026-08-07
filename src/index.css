@@ -156,6 +156,7 @@ img { display: block; max-width: 100%; }
 }
 .phone:hover { transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg); }
 .phone-sm { width: 220px; }
+.phone-lg { width: 290px; }
 .phone-glow {
   position: absolute; inset: -46px; z-index: -1;
   background: radial-gradient(closest-side, rgba(249,115,22,.35), rgba(249,115,22,.08) 55%, transparent 75%);
@@ -167,6 +168,49 @@ img { display: block; max-width: 100%; }
   filter: blur(8px);
 }
 .phone-screenshot { width: 100%; height: auto; border-radius: 30px; display: block; }
+
+/* Book glow — motivo ilustrado só em CSS (brilho quente + "páginas" em
+   leque), evocando um livro aberto com luz. Puramente decorativo
+   (aria-hidden no componente), atrás do conteúdo (z-index negativo). */
+.book-glow { position: absolute; inset: 0; pointer-events: none; z-index: -1; overflow: hidden; }
+.book-glow-orb {
+  position: absolute; left: 50%; top: 40%; transform: translate(-50%, -50%);
+  width: 560px; height: 560px; border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(249,115,22,.32), rgba(219,39,119,.10) 55%, transparent 78%);
+  filter: blur(20px);
+}
+.book-glow-rays { position: absolute; left: 50%; top: 42%; width: 2px; height: 2px; }
+.book-glow-ray {
+  position: absolute; left: 0; top: 0; width: 3px; height: 240px;
+  background: linear-gradient(to top, rgba(251,191,36,.5), transparent);
+  transform-origin: bottom center;
+  transform: rotate(calc(var(--i) * 18deg - 54deg)) translateY(-30px);
+  border-radius: 3px;
+  animation: book-glow-pulse 5.5s ease-in-out infinite;
+  animation-delay: calc(var(--i) * .3s);
+}
+@keyframes book-glow-pulse { 0%, 100% { opacity: .3; } 50% { opacity: .75; } }
+.book-glow-pages {
+  position: absolute; left: 50%; top: 58%; transform: translate(-50%, -50%);
+  width: 360px; height: 220px;
+}
+.book-glow-page {
+  position: absolute; inset: 0; border-radius: 20px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: linear-gradient(160deg, rgba(255,255,255,.05), rgba(255,255,255,0));
+}
+.book-glow-page.page-1 { transform: rotate(-7deg) scale(.9); }
+.book-glow-page.page-2 { transform: rotate(4deg) scale(.96); }
+.book-glow-page.page-3 { transform: rotate(-1.5deg); }
+
+.book-glow.book-glow-divider { inset: auto; top: -80px; left: 0; right: 0; height: 340px; }
+.book-glow.book-glow-divider .book-glow-orb { width: 420px; height: 420px; top: 50%; opacity: .8; }
+.book-glow.book-glow-divider .book-glow-ray { height: 160px; }
+.book-glow.book-glow-divider .book-glow-pages { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .book-glow-ray { animation: none; opacity: .5; }
+}
 
 /* Purpose */
 .purpose { max-width: var(--max-width); margin: 0 auto; width: 100%; padding: 50px 20px 10px; display: flex; flex-direction: column; align-items: center; gap: 28px; }
@@ -196,6 +240,7 @@ img { display: block; max-width: 100%; }
 
 /* Showcase */
 .showcase {
+  position: relative;
   max-width: var(--max-width); margin: 0 auto; width: 100%;
   padding: 40px 20px 90px;
   display: flex; flex-direction: column; align-items: center; gap: 70px;

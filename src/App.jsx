@@ -252,6 +252,7 @@ function Hero({ t, lang }) {
   return (
     <section id="top" className="hero">
       <div className="hero-glow" />
+      <BookGlow variant="hero" />
       <div className="hero-text">
         <span className="badge">{t.heroBadge}</span>
         <h1>{t.heroTitle}</h1>
@@ -265,7 +266,10 @@ function Hero({ t, lang }) {
         <p className="hero-note">{t.heroNote}</p>
       </div>
       <div className="hero-visual">
-        <Phone src={screenshotSrc('home', lang)} alt={t.mockSessionLabel} tilt="left" />
+        {/* A tela de leitura é a imagem mais forte do app hoje (texto largo,
+            legível, com o capítulo em destaque) — vira o rosto do Hero em
+            vez de um screenshot genérico da Home. */}
+        <Phone src={screenshotSrc('leitura', lang)} alt={t.mockSessionLabel} tilt="left" lg />
       </div>
     </section>
   )
@@ -278,9 +282,33 @@ function screenshotSrc(name, lang) {
   return `/screenshot-${name}${lang === 'en' ? '-en' : ''}.png`
 }
 
-function Phone({ src, alt, small, tilt = 'left' }) {
+// Motivo ilustrado (só CSS, sem depender de fotos de banco que não temos
+// como buscar): um brilho quente + "páginas" abertas em leque, evocando um
+// livro aberto com luz — pano de fundo decorativo atrás do Hero, e versão
+// mais discreta como divisor antes do Showcase. Puramente decorativo
+// (aria-hidden) e com um brilho sutil que respeita prefers-reduced-motion
+// (ver index.css).
+function BookGlow({ variant = 'hero' }) {
   return (
-    <div className={`phone tilt-${tilt} ${small ? 'phone-sm' : ''}`}>
+    <div className={`book-glow book-glow-${variant}`} aria-hidden="true">
+      <div className="book-glow-orb" />
+      <div className="book-glow-rays">
+        {Array.from({ length: 7 }).map((_, i) => (
+          <span key={i} className="book-glow-ray" style={{ '--i': i }} />
+        ))}
+      </div>
+      <div className="book-glow-pages">
+        <span className="book-glow-page page-1" />
+        <span className="book-glow-page page-2" />
+        <span className="book-glow-page page-3" />
+      </div>
+    </div>
+  )
+}
+
+function Phone({ src, alt, small, lg, tilt = 'left' }) {
+  return (
+    <div className={`phone tilt-${tilt} ${small ? 'phone-sm' : ''} ${lg ? 'phone-lg' : ''}`}>
       <div className="phone-glow" />
       <div className="phone-shadow" />
       <img src={src} alt={alt} className="phone-screenshot" />
@@ -334,6 +362,7 @@ function AboutName({ t }) {
 function Showcase({ t, lang }) {
   return (
     <section className="showcase">
+      <BookGlow variant="divider" />
       <span className="eyebrow">{t.showcaseEyebrow}</span>
       {t.showcase.map((item, i) => (
         <div key={i} className={`showcase-row ${i % 2 === 1 ? 'reverse' : ''}`}>
