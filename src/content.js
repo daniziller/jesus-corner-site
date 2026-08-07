@@ -32,7 +32,7 @@ export const content = {
     showcase: [
       { image: 'leitura', title: 'Leia a Bíblia inteira, capítulo por capítulo', desc: 'Cada capítulo traz o texto bíblico completo, com contexto histórico, mapa e curiosidades — numa coluna larga e confortável de ler. Termine e marque como lido sem sair da tela; um toque leva direto pro próximo capítulo.' },
       { image: 'rotina', title: 'Sua rotina com Deus, num só lugar', desc: 'Oração, leitura e reflexão organizadas numa linha do tempo que se preenche conforme você avança. Veja a sessão de leitura do dia, o tempo de cada passo, e comece por onde quiser — tudo na aba Rotina.' },
-      { image: 'progresso', title: 'Acompanhe sua constância, semana a semana', desc: 'Um gráfico mostra quantos dias você orou, leu e refletiu nas últimas semanas, com a semana atual sempre em destaque — além de estatísticas por livro, por bloco, níveis e conquistas.' },
+      { image: 'progresso', title: 'Veja seu progresso pela Bíblia inteira', desc: 'Um anel mostra quanto você já leu no total, seguido do progresso em cada bloco — Pentateuco, Históricos, Profetas e mais. Some sua sequência de dias, capítulos lidos, níveis e conquistas, tudo numa tela só.' },
     ],
     ctaShowcaseText: 'Viu como funciona? Agora é sua vez de experimentar.',
     ctaShowcaseBtn: 'Quero começar',
@@ -155,7 +155,7 @@ export const content = {
     showcase: [
       { image: 'leitura', title: 'Read the whole Bible, chapter by chapter', desc: 'Every chapter brings the full Bible text, with historical context, a map, and trivia — in a wide, comfortable reading column. Finish and mark it as read without leaving the screen; one tap takes you straight to the next chapter.' },
       { image: 'rotina', title: 'Your routine with God, in one place', desc: "Prayer, reading, and reflection laid out on a timeline that fills in as you go. See today's reading session, how long each step takes, and start wherever you like — all from the Routine tab." },
-      { image: 'progresso', title: 'Track your consistency, week by week', desc: 'A chart shows how many days you prayed, read, and reflected over the past few weeks, with the current week always highlighted — plus stats by book, by block, levels, and achievements.' },
+      { image: 'progresso', title: 'See your progress through the whole Bible', desc: 'A ring shows how much you\'ve read overall, followed by progress in each block — Pentateuch, Historical, Prophets, and more. Add your day streak, chapters read, levels, and achievements, all in one screen.' },
     ],
     ctaShowcaseText: 'See how it works? Now it\'s your turn to try it.',
     ctaShowcaseBtn: 'I want to start',
