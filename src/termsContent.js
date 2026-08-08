@@ -14,11 +14,11 @@ export const termsContent = {
       },
       {
         heading: '2. Contas de usuário',
-        body: 'Pra usar o app, você cria uma conta com nome, e-mail, data de nascimento e uma senha numérica de 6 dígitos. Você é responsável por manter essas informações corretas e por não compartilhar sua senha com terceiros. A data de nascimento é usada pra liberar recursos com restrição de idade — a Comunidade (amigos, grupos e desafios) é disponível só a partir de 16 anos. Criar uma conta não dá acesso ao app por si só — é preciso escolher seu valor de contribuição, inclusive R$0, pra liberar o acesso (ver seção 3).',
+        body: 'Pra usar o app, você cria uma conta com nome, e-mail, data de nascimento e uma senha numérica de 6 dígitos. Você é responsável por manter essas informações corretas e por não compartilhar sua senha com terceiros. A data de nascimento é usada pra liberar recursos com restrição de idade — a Comunidade (amigos, grupos e desafios) é disponível só a partir de 16 anos. Criar uma conta não dá acesso ao app por si só — é preciso assinar um dos planos (mensal ou anual) pra liberar o acesso (ver seção 3).',
       },
       {
-        heading: '3. Contribuição e pagamento',
-        body: 'O Jesus\' Corner funciona por contribuição de valor livre — você escolhe quanto quer contribuir, mensalmente ou anualmente, incluindo R$0 (que libera acesso completo ao app, sem nenhuma cobrança). Se você escolher um valor acima de zero, o pagamento é processado pelo Stripe (ver nossa Política de Privacidade, seção 9), você mesmo escolhe a moeda (reais ou dólares) na tela de contribuição, e a cobrança é recorrente, renovada automaticamente até que você cancele ou troque de valor. Você pode cancelar ou trocar seu valor a qualquer momento pelo app (Perfil → Minha assinatura); o acesso ao app continua até o fim do período já pago, sem reembolso proporcional pelo tempo não utilizado, salvo quando exigido por lei.',
+        heading: '3. Assinatura e pagamento',
+        body: 'O Jesus\' Corner funciona por assinatura, mensal ou anual, com preço fixo: R$16,90/mês ou R$169,90/ano (em reais), e US$6,90/mês ou US$69,90/ano (em dólares) — você escolhe a moeda na tela de assinatura. O pagamento é processado pelo Stripe (ver nossa Política de Privacidade, seção 9) ou, no app instalado a partir da Google Play Store ou da App Store, pelo sistema de cobrança da própria loja (Google Play Billing ou Apple StoreKit). A cobrança é recorrente, renovada automaticamente até que você cancele ou troque de plano. Você pode cancelar ou trocar de plano a qualquer momento pelo app (Perfil → Minha assinatura) ou, se assinou por uma loja, pelas configurações de assinatura dessa loja; o acesso ao app continua até o fim do período já pago, sem reembolso proporcional pelo tempo não utilizado, salvo quando exigido por lei.',
       },
       {
         heading: '4. Conteúdo bíblico e propriedade intelectual',
@@ -65,11 +65,11 @@ export const termsContent = {
       },
       {
         heading: '2. User accounts',
-        body: 'To use the app, you create an account with your name, email, date of birth, and a 6-digit numeric password. You\'re responsible for keeping this information accurate and for not sharing your password with others. Your date of birth is used to unlock age-restricted features — the Community (friends, groups, and challenges) is only available from age 16. Creating an account doesn\'t grant access to the app on its own — you need to choose your contribution amount, including $0, to unlock access (see section 3).',
+        body: 'To use the app, you create an account with your name, email, date of birth, and a 6-digit numeric password. You\'re responsible for keeping this information accurate and for not sharing your password with others. Your date of birth is used to unlock age-restricted features — the Community (friends, groups, and challenges) is only available from age 16. Creating an account doesn\'t grant access to the app on its own — you need to subscribe to one of the plans (monthly or annual) to unlock access (see section 3).',
       },
       {
-        heading: '3. Contribution and payment',
-        body: 'Jesus\' Corner runs on a pay-what-you-want model — you choose how much to contribute, monthly or annually, including $0 (which unlocks full access to the app, with no charge at all). If you choose an amount above zero, payment is processed by Stripe (see our Privacy Policy, section 9), you pick the currency yourself (Brazilian reais or US dollars) on the contribution screen, and billing is recurring, renewing automatically until you cancel or change your amount. You can cancel or change your amount anytime from within the app (Profile → My subscription); access to the app continues until the end of the period already paid for, with no prorated refund for unused time, except where required by law.',
+        heading: '3. Subscription and payment',
+        body: "Jesus' Corner runs on a subscription, monthly or annual, at a fixed price: R$16.90/mo or R$169.90/yr (in Brazilian reais), and US$6.90/mo or US$69.90/yr (in US dollars) — you choose the currency on the subscription screen. Payment is processed by Stripe (see our Privacy Policy, section 9) or, on the app installed from the Google Play Store or App Store, by that store's own billing system (Google Play Billing or Apple StoreKit). Billing is recurring, renewing automatically until you cancel or switch plans. You can cancel or switch plans anytime from within the app (Profile → My subscription) or, if you subscribed through a store, from that store's subscription settings; access to the app continues until the end of the period already paid for, with no prorated refund for unused time, except where required by law.",
       },
       {
         heading: '4. Bible content and intellectual property',

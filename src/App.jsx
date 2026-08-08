@@ -420,6 +420,16 @@ function Pricing({ t }) {
       <p className="section-sub">{t.pricingSubtitle}</p>
       <div className="pricing-single">
         <div className="pricing-card pricing-premium">
+          <div className="pricing-plans">
+            {t.pricingPlans.map((plan, i) => (
+              <div className="pricing-plan" key={i}>
+                {plan.badge && <span className="pricing-plan-badge">{plan.badge}</span>}
+                <p className="pricing-plan-label">{plan.label}</p>
+                <p className="pricing-plan-price">{plan.brl}<span className="pricing-plan-per">{plan.per}</span></p>
+                <p className="pricing-plan-usd">{plan.usd}{plan.per}</p>
+              </div>
+            ))}
+          </div>
           <p className="pricing-body">{t.pricingBody}</p>
           <ul>
             {t.pricingMemberItems.map((item, i) => (
