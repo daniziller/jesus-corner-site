@@ -26,7 +26,7 @@ const ROUTES = [
     path: '/',
     outFile: 'index.html',
     title: "Jesus' Corner — Seu tempo. Sua rotina. Sua conexão com Deus.",
-    description: "Jesus' Corner — a história de amor mais bonita já contada, disponível pra todo mundo. Leitura bíblica estruturada, oração guiada e acompanhamento de progresso, com contribuição de valor livre.",
+    description: "Jesus' Corner — a história de amor mais bonita já contada, disponível pra todo mundo. Leitura bíblica estruturada, oração guiada e acompanhamento de progresso, com assinatura mensal ou anual a partir de R$16,90.",
   },
   {
     path: '/instalar',
