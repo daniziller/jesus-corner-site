@@ -184,7 +184,7 @@ function Nav({ lang, setLang, t }) {
       <div className="nav-inner">
         <a href="/#top" className="brand">
           <img src="/icon-192.png" alt="" className="brand-icon" />
-          <span>Jesus' Corner</span>
+          <span>Jesus' <span style={{ color: 'var(--or)' }}>Corner</span></span>
         </a>
         <nav className="nav-links">
           <a href="/#features">{t.navFeatures}</a>
