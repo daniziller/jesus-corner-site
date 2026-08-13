@@ -25,8 +25,8 @@ const ROUTES = [
   {
     path: '/',
     outFile: 'index.html',
-    title: "Jesus' Corner — Seu tempo. Sua rotina. Sua conexão com Deus.",
-    description: "Jesus' Corner — a história de amor mais bonita já contada, disponível pra todo mundo. Leitura bíblica estruturada, oração guiada e acompanhamento de progresso, com assinatura mensal ou anual a partir de R$16,90.",
+    title: "Jesus' Corner — App de leitura bíblica e oração guiada",
+    description: "Jesus' Corner — o app pra ler a Bíblia com constância. Plano de leitura bíblica no seu ritmo, oração guiada (ACTS), plano cronológico e por tema com IA, e acompanhamento de progresso. Assinatura mensal ou anual a partir de R$16,90.",
   },
   {
     path: '/instalar',

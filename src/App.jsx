@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import {
   BookOpen, HandHeart, Compass, BarChart3, Award, Globe, GraduationCap, Users, User,
   ArrowRight, Check, Smartphone, ChevronRight, ArrowLeft, Flame, PenLine, CheckCircle2,
-  Menu, X,
+  Menu, X, Hourglass, Sparkles, Highlighter, StickyNote,
 } from 'lucide-react'
 
 // A versão de lucide-react instalada (1.23.0) não inclui o ícone do
@@ -28,7 +28,7 @@ import { detectLanguageFromIp } from './langDetect'
 import { submitContactMessage } from './lib/supabaseClient'
 
 const APP_URL = 'https://app.jesuscorner.app'
-const ICONS = { BookOpen, HandHeart, Compass, BarChart3, Award, Globe, GraduationCap, Users, User, Flame, PenLine }
+const ICONS = { BookOpen, HandHeart, Compass, BarChart3, Award, Globe, GraduationCap, Users, User, Flame, PenLine, Hourglass, Sparkles, Highlighter, StickyNote }
 const LANG_KEY = 'jc_site_lang'
 
 // O app (outro domínio, outro localStorage) linka pras páginas legais com
@@ -401,7 +401,7 @@ function Features({ t }) {
           const Icon = ICONS[f.icon]
           return (
             <div key={i} className="feature-card">
-              <div className="feature-icon"><Icon size={22} color="#F97316" /></div>
+              <div className="feature-icon"><Icon size={22} color="var(--or)" /></div>
               <h3>{f.title}</h3>
               <p>{f.desc}</p>
             </div>
@@ -466,12 +466,12 @@ function Download({ t }) {
             className={`download-card ${item.live ? '' : 'download-disabled'}`}
             onClick={e => { if (!item.href) e.preventDefault() }}
           >
-            <Smartphone size={22} color={item.live ? '#F97316' : '#71717A'} />
+            <Smartphone size={22} color={item.live ? 'var(--or)' : 'var(--g5)'} />
             <div>
               <p className="download-title">{item.title}</p>
               <p className="download-desc">{item.desc}</p>
             </div>
-            {item.live && <ChevronRight size={18} color="#71717A" />}
+            {item.live && <ChevronRight size={18} color="var(--g5)" />}
           </a>
         ))}
       </div>
@@ -529,7 +529,7 @@ function Contact({ t }) {
       <p className="section-sub">{t.contactSubtitle}</p>
       {sent ? (
         <div className="contact-success">
-          <CheckCircle2 size={38} color="#22C55E" />
+          <CheckCircle2 size={38} color="var(--gr)" />
           <h3>{t.contactSuccessTitle}</h3>
           <p>{t.contactSuccessSub}</p>
           <button className="btn btn-ghost btn-sm" onClick={() => setSent(false)}>{t.contactSendAnother}</button>
