@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import {
   BookOpen, HandHeart, Compass, BarChart3, Award, Globe, GraduationCap, Users, User,
   ArrowRight, Check, Smartphone, ChevronRight, ArrowLeft, Flame, PenLine, CheckCircle2,
-  Menu, X, Hourglass, Sparkles, Highlighter, StickyNote,
+  Menu, X, Hourglass, Sparkles, Highlighter, StickyNote, HelpCircle, Mail, Share2,
 } from 'lucide-react'
 
 // A versão de lucide-react instalada (1.23.0) não inclui o ícone do
@@ -28,7 +28,7 @@ import { detectLanguageFromIp } from './langDetect'
 import { submitContactMessage } from './lib/supabaseClient'
 
 const APP_URL = 'https://app.jesuscorner.app'
-const ICONS = { BookOpen, HandHeart, Compass, BarChart3, Award, Globe, GraduationCap, Users, User, Flame, PenLine, Hourglass, Sparkles, Highlighter, StickyNote }
+const ICONS = { BookOpen, HandHeart, Compass, BarChart3, Award, Globe, GraduationCap, Users, User, Flame, PenLine, Hourglass, Sparkles, Highlighter, StickyNote, HelpCircle, Mail, Share2 }
 const LANG_KEY = 'jc_site_lang'
 
 // O app (outro domínio, outro localStorage) linka pras páginas legais com
