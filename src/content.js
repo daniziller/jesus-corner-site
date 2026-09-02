@@ -30,7 +30,7 @@ export const content = {
     showcaseEyebrow: 'Direto do app',
     showcaseFeaturedTag: 'Em destaque',
     showcase: [
-      { image: 'leitura', title: 'Leia a Bíblia inteira, capítulo por capítulo', desc: 'Cada capítulo traz o texto bíblico completo, com contexto histórico, mapa e curiosidades — numa coluna larga e confortável de ler. Termine e marque como lido sem sair da tela; um toque leva direto pro próximo capítulo.' },
+      { image: 'leitura', title: 'Leia a Bíblia inteira, capítulo por capítulo', desc: 'Cada capítulo traz o texto bíblico completo, com contexto histórico, mapa e curiosidades — numa coluna larga e confortável de ler. Ouça em voz alta ali mesmo, termine e marque como lido sem sair da tela; um toque leva direto pro próximo capítulo.' },
       { image: 'progresso', title: 'Veja seu progresso pela Bíblia inteira', desc: 'Um anel mostra quanto você já leu no total, seguido do progresso em cada bloco — Pentateuco, Históricos, Profetas e mais. Some sua sequência de dias, capítulos lidos, níveis e conquistas, tudo numa tela só.' },
       { image: 'rotina', title: 'Sua rotina com Deus, num só lugar', desc: 'Oração, leitura e reflexão organizadas numa linha do tempo que se preenche conforme você avança. Toque em Iniciar e ela se conduz sozinha, um passo abrindo o próximo — ou faça tudo só ouvindo, no modo mãos-livres.' },
       { image: 'indutivo', title: 'Monte seu próprio estudo indutivo', desc: 'Escolha um livro inteiro da Bíblia e siga o método indutivo — observe, interprete e aplique cada capítulo, no seu ritmo, sem hora marcada.' },
@@ -170,7 +170,7 @@ export const content = {
     showcaseEyebrow: 'Straight from the app',
     showcaseFeaturedTag: 'Featured',
     showcase: [
-      { image: 'leitura', title: 'Read the whole Bible, chapter by chapter', desc: 'Every chapter brings the full Bible text, with historical context, a map, and trivia — in a wide, comfortable reading column. Finish and mark it as read without leaving the screen; one tap takes you straight to the next chapter.' },
+      { image: 'leitura', title: 'Read the whole Bible, chapter by chapter', desc: 'Every chapter brings the full Bible text, with historical context, a map, and trivia — in a wide, comfortable reading column. Listen to it out loud right there, finish and mark it as read without leaving the screen; one tap takes you straight to the next chapter.' },
       { image: 'progresso', title: 'See your progress through the whole Bible', desc: 'A ring shows how much you\'ve read overall, followed by progress in each block — Pentateuch, Historical, Prophets, and more. Add your day streak, chapters read, levels, and achievements, all in one screen.' },
       { image: 'rotina', title: 'Your routine with God, in one place', desc: "Prayer, reading, and reflection laid out on a timeline that fills in as you go. Tap Start and it runs on its own, each step opening the next — or do it all just by listening, in hands-free mode." },
       { image: 'indutivo', title: 'Build your own inductive study', desc: 'Pick a whole book of the Bible and follow the inductive method — observe, interpret, and apply each chapter, at your own pace, with no set schedule.' },
