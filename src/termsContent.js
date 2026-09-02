@@ -14,7 +14,7 @@ export const termsContent = {
       },
       {
         heading: '2. Contas de usuário',
-        body: 'Pra usar o app, você cria uma conta com nome, e-mail, idade e uma senha forte (mínimo 8 caracteres, com letra maiúscula, minúscula, número e caractere especial). Você é responsável por manter essas informações corretas e por não compartilhar sua senha com terceiros. Menores de 12 anos não podem criar conta. A idade é usada pra liberar recursos com restrição etária — a Comunidade (amigos, grupos e desafios) é disponível só a partir de 16 anos. Criar uma conta já dá acesso ao plano grátis; os planos pagos (Premium e Premium + IA) são opcionais e liberam recursos adicionais (ver seção 3).',
+        body: 'Pra usar o app, você cria uma conta com nome, e-mail, idade e uma senha forte (mínimo 8 caracteres, com letra maiúscula, minúscula, número e caractere especial). Você é responsável por manter essas informações corretas e por não compartilhar sua senha com terceiros. O Jesus\' Corner é destinado a maiores de 18 anos — é preciso ter pelo menos 18 anos para criar uma conta, e ao se cadastrar você declara que atende a esse requisito (ver também a seção 12 da nossa Política de Privacidade). Criar uma conta já dá acesso ao plano grátis; os planos pagos (Premium e Premium + IA) são opcionais e liberam recursos adicionais (ver seção 3).',
       },
       {
         heading: '3. Planos e pagamento',
@@ -65,7 +65,7 @@ export const termsContent = {
       },
       {
         heading: '2. User accounts',
-        body: 'To use the app, you create an account with your name, email, age, and a strong password (minimum 8 characters, with an uppercase letter, lowercase letter, number, and special character). You\'re responsible for keeping this information accurate and for not sharing your password with others. People under 12 cannot create an account. Your age is used to unlock age-restricted features — the Community (friends, groups, and challenges) is only available from age 16. Creating an account already grants access to the free plan; the paid plans (Premium and Premium + AI) are optional and unlock additional features (see section 3).',
+        body: "To use the app, you create an account with your name, email, age, and a strong password (minimum 8 characters, with an uppercase letter, lowercase letter, number, and special character). You're responsible for keeping this information accurate and for not sharing your password with others. Jesus' Corner is intended for people 18 and older — you must be at least 18 to create an account, and by signing up you confirm that you meet this requirement (see also section 12 of our Privacy Policy). Creating an account already grants access to the free plan; the paid plans (Premium and Premium + AI) are optional and unlock additional features (see section 3).",
       },
       {
         heading: '3. Plans and payment',
