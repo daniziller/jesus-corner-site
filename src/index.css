@@ -167,7 +167,7 @@ img { display: block; max-width: 100%; }
 }
 .phone:hover { transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg); }
 .phone-sm { width: 220px; }
-.phone-lg { width: 290px; }
+.phone-lg { width: 265px; }
 .phone-glow {
   position: absolute; inset: -46px; z-index: -1;
   background: radial-gradient(closest-side, rgba(157,67,0,.22), rgba(157,67,0,.05) 55%, transparent 75%);
