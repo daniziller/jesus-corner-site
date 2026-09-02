@@ -267,10 +267,10 @@ function Hero({ t, lang }) {
         <p className="hero-note">{t.heroNote}</p>
       </div>
       <div className="hero-visual">
-        {/* A tela de leitura é a imagem mais forte do app hoje (texto largo,
-            legível, com o capítulo em destaque) — vira o rosto do Hero em
-            vez de um screenshot genérico da Home. */}
-        <Phone src={screenshotSrc('leitura', lang)} alt={t.mockSessionLabel} tilt="left" lg />
+        {/* Tela inicial do app — a métrica de progresso pela Bíblia em
+            destaque, a rotina do dia e a sequência: o resumo mais claro do
+            que o app faz. */}
+        <Phone src={screenshotSrc('inicio', lang)} alt={t.mockSessionLabel} tilt="left" lg />
       </div>
     </section>
   )
