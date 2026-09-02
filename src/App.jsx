@@ -419,27 +419,29 @@ function Pricing({ t }) {
     <section id="pricing" className="section section-alt">
       <h2>{t.pricingTitle}</h2>
       <p className="section-sub">{t.pricingSubtitle}</p>
-      <div className="pricing-single">
-        <div className="pricing-card pricing-premium">
-          <div className="pricing-plans">
-            {t.pricingPlans.map((plan, i) => (
-              <div className="pricing-plan" key={i}>
-                {plan.badge && <span className="pricing-plan-badge">{plan.badge}</span>}
-                <p className="pricing-plan-label">{plan.label}</p>
-                <p className="pricing-plan-price">{plan.brl}<span className="pricing-plan-per">{plan.per}</span></p>
-                <p className="pricing-plan-usd">{plan.usd}{plan.per}</p>
-              </div>
-            ))}
+      <div className="pricing-tiers">
+        {t.pricingTiers.map((tier, i) => (
+          <div className={`pricing-card pricing-tier${tier.badge ? ' pricing-tier-featured' : ''}`} key={i}>
+            {tier.badge && <span className="pricing-plan-badge">{tier.badge}</span>}
+            <p className="pricing-tier-name">{tier.name}</p>
+            <p className="pricing-tier-price">
+              {tier.price}
+              {tier.per && <span className="pricing-plan-per">{tier.per}</span>}
+            </p>
+            <p className="pricing-tier-alt">
+              {tier.priceUsd}{tier.per || ''}{tier.annual ? ` · ${tier.annual}` : ''}
+            </p>
+            <p className="pricing-tier-tagline">{tier.tagline}</p>
+            <ul>
+              {tier.items.map((item, j) => (
+                <li key={j}><Check size={16} color="var(--or-lt)" /> {item}</li>
+              ))}
+            </ul>
+            <a href={APP_URL} target="_blank" rel="noreferrer" className={`btn btn-lg ${tier.badge ? 'btn-primary' : 'btn-ghost'}`}>{tier.cta}</a>
           </div>
-          <p className="pricing-body">{t.pricingBody}</p>
-          <ul>
-            {t.pricingMemberItems.map((item, i) => (
-              <li key={i}><Check size={16} color="var(--or-lt)" /> {item}</li>
-            ))}
-          </ul>
-          <a href={APP_URL} target="_blank" rel="noreferrer" className="btn btn-primary btn-lg">{t.pricingCta}</a>
-        </div>
+        ))}
       </div>
+      <p className="pricing-note">{t.pricingNote}</p>
     </section>
   )
 }
