@@ -6,12 +6,12 @@
 export const privacyContent = {
   pt: {
     title: 'Política de Privacidade',
-    updated: 'Última atualização: agosto de 2026',
+    updated: 'Última atualização: setembro de 2026',
     intro: 'Esta política explica quais dados o Jesus\' Corner coleta, como eles são usados e guardados, e quais são os seus direitos. Escrevemos em linguagem simples — sem juridiquês desnecessário — porque acreditamos que privacidade só funciona quando é compreensível.',
     sections: [
       {
         heading: '1. Quem somos',
-        body: 'O Jesus\' Corner é operado pela JCORNER DESENVOLVIMENTO DE SOFTWARE LTDA, CNPJ 68.029.736/0001-26. Para qualquer dúvida sobre privacidade, entre em contato pelo e-mail no fim desta página.',
+        body: 'O Jesus\' Corner é operado pela JCORNER DESENVOLVIMENTO DE SOFTWARE LTDA, CNPJ 68.029.736/0001-26. A Encarregada pelo Tratamento de Dados Pessoais (DPO), conforme o art. 41 da LGPD, é Daniela Ziller, que pode ser contatada pelo e-mail info@jesuscorner.app. Para qualquer dúvida sobre privacidade ou pra exercer seus direitos como titular de dados, use esse mesmo contato.',
       },
       {
         heading: '2. Quais dados coletamos',
@@ -19,7 +19,7 @@ export const privacyContent = {
       },
       {
         heading: '3. Recursos com Inteligência Artificial (IA)',
-        body: 'Alguns recursos do Jesus\' Corner usam um modelo de IA pra gerar conteúdo ou responder perguntas: montar um plano de leitura ou um estudo a partir de um tema que você escreve, responder perguntas sobre o texto bíblico durante a leitura (chat com IA), buscar suas próprias anotações por assunto em vez de palavra exata, e montar o resumo do seu boletim semanal a partir das anotações que você escreveu naquela semana. Pra cada um desses recursos, só a informação necessária pra aquele pedido específico é enviada ao provedor de IA — o tema digitado, a pergunta feita, ou o texto das anotações relevantes, conforme o caso — através do Vercel AI Gateway, que roteia a requisição para o provedor de modelos de IA usado no momento (atualmente, a Anthropic, com os modelos Claude). Essa informação é usada só pra gerar aquela resposta específica, não é usada pra treinar modelos de terceiros e não é combinada com outros dados seus para fins de publicidade. Como medida de segurança, se uma pergunta feita ao chat sobre o texto sugerir risco de automutilação ou suicídio, o app sempre mostra, junto da resposta, o contato do CVV (Centro de Valorização da Vida) — independente do que a IA responder.',
+        body: 'Alguns recursos do Jesus\' Corner usam um modelo de IA pra gerar conteúdo ou responder perguntas: montar um plano de leitura ou um estudo a partir de um tema que você escreve, responder perguntas sobre o texto bíblico durante a leitura (chat com IA), buscar suas próprias anotações por assunto em vez de palavra exata, montar o resumo do seu boletim semanal a partir das anotações que você escreveu naquela semana, e converter o texto bíblico em voz alta (leitura em áudio e modo mãos-livres). Pra cada um desses recursos, só a informação necessária pra aquele pedido específico é enviada — o tema digitado, a pergunta feita, o texto das anotações relevantes, ou apenas o trecho da Bíblia a ser narrado, conforme o caso — através do Vercel AI Gateway, que roteia a requisição para os provedores de modelos de IA usados no momento: a Anthropic (modelos Claude) para os recursos de texto, e a OpenAI para a conversão de texto em voz. No caso da narração em áudio, o que é enviado é apenas o próprio texto bíblico do capítulo — nenhum dado pessoal, nenhuma anotação sua. Essa informação é usada só pra gerar aquela resposta específica, não é usada pra treinar modelos de terceiros e não é combinada com outros dados seus para fins de publicidade. Como medida de segurança, se uma pergunta feita ao chat sobre o texto sugerir risco de automutilação ou suicídio, o app sempre mostra, junto da resposta, o contato do CVV (Centro de Valorização da Vida) — independente do que a IA responder.',
       },
       {
         heading: '4. E-mails e notificações',
@@ -63,7 +63,7 @@ export const privacyContent = {
       },
       {
         heading: '14. Seus direitos (LGPD)',
-        body: 'Conforme a Lei Geral de Proteção de Dados (LGPD), você tem direito a acessar, corrigir ou apagar seus dados. Dentro do app, você pode reiniciar seu progresso de leitura a qualquer momento (Perfil → Reiniciar leitura), sair de um grupo, desfazer uma amizade, apagar um comentário ou anotação que você escreveu, desativar o boletim semanal e os lembretes push (Perfil), ou sair da sua conta (Perfil → Sair). Você também pode excluir sua conta por completo a qualquer momento, direto pelo app (Perfil → Excluir conta): seu e-mail, senha, anotações, pedidos de oração privados, progresso e assinatura são apagados de vez do nosso banco de dados. A única exceção são comentários e outros conteúdos que você tenha postado em grupos de leitura — eles continuam visíveis para os outros membros (pra não quebrar a conversa deles), mas totalmente desvinculados da sua identidade. Essa exclusão é imediata e não pode ser desfeita. Se preferir, também pode pedir a exclusão por e-mail; atenderemos em até 15 dias.',
+        body: 'Conforme a Lei Geral de Proteção de Dados (LGPD), você tem direito a acessar, corrigir, portar ou apagar seus dados. Dentro do app, você pode baixar uma cópia de tudo que guardamos sobre você (Perfil → Exportar meus dados), reiniciar seu progresso de leitura a qualquer momento (Perfil → Reiniciar leitura), sair de um grupo, desfazer uma amizade, apagar um comentário ou anotação que você escreveu, desativar o boletim semanal e os lembretes push (Perfil), ou sair da sua conta (Perfil → Sair). Você também pode excluir sua conta por completo a qualquer momento, direto pelo app (Perfil → Excluir conta): seu e-mail, senha, anotações, pedidos de oração privados, progresso e assinatura são apagados de vez do nosso banco de dados. A única exceção são comentários e outros conteúdos que você tenha postado em grupos de leitura — eles continuam visíveis para os outros membros (pra não quebrar a conversa deles), mas totalmente desvinculados da sua identidade. Essa exclusão é imediata e não pode ser desfeita. Se preferir, também pode exercer qualquer desses direitos por e-mail, falando com a Encarregada (ver seção 1); atenderemos em até 15 dias. Se entender que seus direitos não foram atendidos, você também pode apresentar uma reclamação à Autoridade Nacional de Proteção de Dados (ANPD), em gov.br/anpd.',
       },
       {
         heading: '15. Mudanças nesta política',
@@ -71,18 +71,18 @@ export const privacyContent = {
       },
       {
         heading: '16. Contato',
-        body: 'Dúvidas sobre privacidade? Escreva pra gente: info@jesuscorner.app',
+        body: 'Dúvidas sobre privacidade, ou pra exercer seus direitos como titular de dados, escreva para a Encarregada (Daniela Ziller): info@jesuscorner.app',
       },
     ],
   },
   en: {
     title: 'Privacy Policy',
-    updated: 'Last updated: August 2026',
+    updated: 'Last updated: September 2026',
     intro: 'This policy explains what data Jesus\' Corner collects, how it\'s used and stored, and what your rights are. We\'ve written it in plain language — no unnecessary legalese — because we believe privacy only works when it\'s actually understandable.',
     sections: [
       {
         heading: '1. Who we are',
-        body: 'Jesus\' Corner is operated by JCORNER DESENVOLVIMENTO DE SOFTWARE LTDA, Brazilian company registration (CNPJ) 68.029.736/0001-26. For any privacy questions, reach out via the email at the bottom of this page.',
+        body: 'Jesus\' Corner is operated by JCORNER DESENVOLVIMENTO DE SOFTWARE LTDA, Brazilian company registration (CNPJ) 68.029.736/0001-26. The Data Protection Officer (Encarregada, under article 41 of Brazil\'s LGPD) is Daniela Ziller, reachable at info@jesuscorner.app. For any privacy questions or to exercise your data-subject rights, use that same contact.',
       },
       {
         heading: '2. What data we collect',
@@ -90,7 +90,7 @@ export const privacyContent = {
       },
       {
         heading: '3. AI-powered features',
-        body: 'Some Jesus\' Corner features use an AI model to generate content or answer questions: building a reading plan or a study from a topic you type in, answering questions about the Bible text as you read (AI chat), searching your own notes by subject instead of exact word, and putting together the summary in your weekly digest from the notes you wrote that week. For each of these features, only the information needed for that specific request is sent to the AI provider — the topic you typed, the question you asked, or the relevant notes\' text, depending on the feature — through Vercel AI Gateway, which routes the request to the AI model provider currently in use (at the moment, Anthropic, using Claude models). That information is used only to generate that specific response, is not used to train third-party models, and is not combined with your other data for advertising purposes. As a safety measure, if a question asked in the text chat suggests risk of self-harm or suicide, the app always shows, alongside the response, contact info for a crisis support line — regardless of what the AI itself responds.',
+        body: 'Some Jesus\' Corner features use an AI model to generate content or answer questions: building a reading plan or a study from a topic you type in, answering questions about the Bible text as you read (AI chat), searching your own notes by subject instead of exact word, putting together the summary in your weekly digest from the notes you wrote that week, and reading the Bible text aloud (audio reading and hands-free mode). For each of these features, only the information needed for that specific request is sent — the topic you typed, the question you asked, the relevant notes\' text, or just the Bible passage to be narrated, depending on the feature — through Vercel AI Gateway, which routes the request to the AI model providers currently in use: Anthropic (Claude models) for the text features, and OpenAI for text-to-speech. For the audio narration, what\'s sent is only the chapter\'s Bible text itself — no personal data, none of your notes. That information is used only to generate that specific response, is not used to train third-party models, and is not combined with your other data for advertising purposes. As a safety measure, if a question asked in the text chat suggests risk of self-harm or suicide, the app always shows, alongside the response, contact info for a crisis support line — regardless of what the AI itself responds.',
       },
       {
         heading: '4. Emails and notifications',
@@ -134,7 +134,7 @@ export const privacyContent = {
       },
       {
         heading: '14. Your rights',
-        body: 'Depending on where you live, you may have rights to access, correct, or delete your data (for example, under Brazil\'s LGPD or similar laws elsewhere). Inside the app, you can restart your reading progress at any time (Profile → Restart reading), leave a group, unfriend someone, delete a comment or note you wrote, turn off the weekly digest and push reminders (Profile), or log out (Profile → Log out). You can also delete your account entirely at any time, right from the app (Profile → Delete account): your email, password, notes, private prayer requests, progress, and subscription are permanently erased from our database. The one exception is comments and other content you posted in reading groups — they stay visible to other members (so their conversation isn\'t broken), but fully unlinked from your identity. This deletion is immediate and cannot be undone. If you\'d prefer, you can also request deletion by email; we\'ll handle it within 15 days.',
+        body: 'Depending on where you live, you may have rights to access, correct, port, or delete your data (for example, under Brazil\'s LGPD or similar laws elsewhere). Inside the app, you can download a copy of everything we store about you (Profile → Export my data), restart your reading progress at any time (Profile → Restart reading), leave a group, unfriend someone, delete a comment or note you wrote, turn off the weekly digest and push reminders (Profile), or log out (Profile → Log out). You can also delete your account entirely at any time, right from the app (Profile → Delete account): your email, password, notes, private prayer requests, progress, and subscription are permanently erased from our database. The one exception is comments and other content you posted in reading groups — they stay visible to other members (so their conversation isn\'t broken), but fully unlinked from your identity. This deletion is immediate and cannot be undone. If you\'d prefer, you can also exercise any of these rights by email, contacting the Data Protection Officer (see section 1); we\'ll handle it within 15 days. If you believe your rights haven\'t been respected, you can also file a complaint with Brazil\'s National Data Protection Authority (ANPD), at gov.br/anpd.',
       },
       {
         heading: '15. Changes to this policy',
@@ -142,7 +142,7 @@ export const privacyContent = {
       },
       {
         heading: '16. Contact',
-        body: 'Questions about privacy? Write to us: info@jesuscorner.app',
+        body: 'Questions about privacy, or to exercise your data-subject rights, write to the Data Protection Officer (Daniela Ziller): info@jesuscorner.app',
       },
     ],
   },
