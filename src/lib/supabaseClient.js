@@ -19,3 +19,17 @@ export async function submitContactMessage({ name, email, message }) {
     .insert({ name, email, message, source: 'site' })
   if (error) throw error
 }
+
+// Lista de espera do Google Play/App Store (redesign 1h, seção Instalar) —
+// mesma tabela do formulário "Fale Conosco" (sem tabela nova pra isso).
+// `source` tem CHECK constraint só aceitando 'app'/'site' (ver
+// 0014_contact_messages.sql no repo do app) — por isso o texto fixo em
+// `name`/`message` é o que diferencia um cadastro de lista de espera de
+// uma mensagem de contato de verdade, não uma coluna própria.
+export async function submitWaitlistSignup({ email }) {
+  if (!supabase) throw new Error('Supabase not configured')
+  const { error } = await supabase
+    .from('contact_messages')
+    .insert({ name: '[Lista de espera Play/App Store]', email, message: 'Quer ser avisado(a) quando o app nativo (Google Play / App Store) estiver disponível.', source: 'site' })
+  if (error) throw error
+}

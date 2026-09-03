@@ -248,6 +248,46 @@ img { display: block; max-width: 100%; }
 .about-name-ref { font-size: 12px; font-weight: 700; color: var(--or); letter-spacing: 0.5px; margin: 10px 0 22px; }
 .about-name-body { font-size: 14px; color: var(--g5); line-height: 1.65; margin: 0; }
 
+/* Redesign 1h — link de texto no lugar do botão repetido em seções
+   intermediárias (ver SectionLink em App.jsx); só Hero e Pricing têm botão
+   em destaque agora. */
+.section-link {
+  display: inline-flex; align-items: center; gap: 6px; margin-top: 40px;
+  font-size: 15px; font-weight: 700; color: var(--or); text-decoration: none;
+}
+.section-link:hover { text-decoration: underline; }
+
+/* Redesign 1h — "Como funciona", os 3 passos do dia. */
+.how-it-works { max-width: var(--max-width); margin: 0 auto; width: 100%; padding: 70px 20px 30px; text-align: center; }
+.how-it-works h2 { font-family: var(--font-display); font-size: 32px; font-weight: 900; letter-spacing: -0.6px; margin: 0 0 12px; color: var(--bk); }
+.how-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: left; margin-top: 20px; }
+.how-step { position: relative; background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 30px 24px 26px; }
+.how-step-number {
+  position: absolute; top: 20px; right: 22px; font-family: var(--font-display); font-size: 13px; font-weight: 800;
+  color: var(--g4);
+}
+.how-step-icon {
+  width: 44px; height: 44px; border-radius: 12px; background: var(--card-highlight-bg);
+  display: flex; align-items: center; justify-content: center; margin-bottom: 16px;
+}
+.how-step h3 { font-family: var(--font-display); font-size: 19px; font-weight: 800; color: var(--bk); margin: 0 0 8px; }
+.how-step p { font-size: 14px; color: var(--g6); line-height: 1.6; margin: 0; }
+
+/* Redesign 1h — "Por que fiz o app" (Purpose + AboutName fundidos). */
+.why { max-width: var(--max-width); margin: 0 auto; width: 100%; padding: 70px 20px 40px; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.why-card {
+  max-width: 720px; text-align: center; background: var(--surface); border: 1px solid var(--border);
+  border-radius: 22px; padding: 44px 40px;
+}
+.why-card .eyebrow { display: block; margin-bottom: 10px; }
+.why-card h2 {
+  font-family: var(--font-display); font-size: 28px; font-weight: 800; letter-spacing: -0.5px; line-height: 1.25; margin: 0 0 20px;
+  background: var(--grad-vivid); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+}
+.why-body { font-size: 15px; color: var(--g6); line-height: 1.7; margin: 0 0 24px; text-align: left; }
+.why-card blockquote { margin: 0; font-size: 16px; font-style: italic; color: var(--g6); line-height: 1.6; }
+.why-verse-ref { font-size: 12px; font-weight: 700; color: var(--or); letter-spacing: 0.5px; margin: 10px 0 0; }
+
 /* Showcase */
 .showcase {
   position: relative;
@@ -332,15 +372,26 @@ img { display: block; max-width: 100%; }
 }
 .pricing-note { font-size: 12.5px; color: var(--g5); line-height: 1.6; max-width: 640px; margin: 24px auto 0; text-align: center; }
 
-.download-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; text-align: left; }
+/* Redesign 1h — só o Web App vira cartão agora; Google Play/App Store
+   viram a linha de lista de espera logo abaixo (.waitlist-*). */
 .download-card {
   display: flex; align-items: center; gap: 12px; background: var(--surface); border: 1px solid var(--border);
   border-radius: 16px; padding: 18px; transition: transform .15s, border-color .15s;
+  max-width: 420px; margin: 0 auto; text-align: left; text-decoration: none;
 }
-.download-card:not(.download-disabled):hover { transform: translateY(-2px); border-color: rgba(157,67,0,.3); box-shadow: var(--shadow-premium); }
-.download-disabled { opacity: .55; cursor: default; }
+.download-card:hover { transform: translateY(-2px); border-color: rgba(157,67,0,.3); box-shadow: var(--shadow-premium); }
 .download-title { font-size: 14px; font-weight: 800; margin: 0; color: var(--bk); }
 .download-desc { font-size: 11.5px; color: var(--g5); margin: 3px 0 0; }
+
+.waitlist-row { max-width: 480px; margin: 26px auto 0; text-align: center; }
+.waitlist-text { font-size: 13.5px; color: var(--g5); margin: 0 0 12px; }
+.waitlist-field { display: flex; gap: 8px; }
+.waitlist-field input {
+  flex: 1; min-width: 0; border: 1px solid var(--border-2); border-radius: 10px; padding: 11px 13px;
+  font-size: 14px; font-family: inherit; color: var(--bk); background: var(--white);
+}
+.waitlist-field input:focus { border-color: var(--or); outline: none; }
+.waitlist-success { font-size: 13.5px; font-weight: 700; color: var(--or); margin: 26px auto 0; max-width: 480px; }
 
 .contact-form { max-width: 560px; margin: 0 auto; text-align: left; display: flex; flex-direction: column; gap: 16px; }
 .contact-field { display: flex; flex-direction: column; gap: 6px; }
@@ -361,6 +412,26 @@ img { display: block; max-width: 100%; }
 .faq-item { background: var(--white); border: 1px solid var(--border-2); border-radius: 14px; padding: 18px 20px; }
 .faq-item summary { font-size: 14.5px; font-weight: 700; cursor: pointer; color: var(--bk); }
 .faq-item p { font-size: 13.5px; color: var(--g6); line-height: 1.6; margin: 14px 0 0; }
+
+/* Redesign 1h — FAQ e Contato fundidos numa seção só; este é o divisor
+   entre a lista de perguntas e o formulário. */
+.faq-contact-divider { border-top: 1px solid var(--border-2); margin: 56px 0 30px; padding-top: 46px; text-align: center; }
+.faq-contact-divider h3 { font-family: var(--font-display); font-size: 24px; font-weight: 900; letter-spacing: -0.4px; margin: 0 0 10px; color: var(--bk); }
+
+/* Redesign 1h — barra fixa discreta (ver StickyCtaBar em App.jsx): a única
+   chamada que persiste na rolagem, fora do Hero e da Pricing. */
+.sticky-cta-bar {
+  position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%); z-index: 40;
+  display: flex; align-items: center; gap: 14px;
+  background: var(--bk); color: var(--white); border-radius: 999px;
+  padding: 10px 10px 10px 20px; box-shadow: 0 12px 30px rgba(0,0,0,.25);
+  max-width: calc(100% - 32px);
+}
+.sticky-cta-text { font-size: 13.5px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+@media (max-width: 560px) {
+  .sticky-cta-text { display: none; }
+  .sticky-cta-bar { padding: 8px 8px 8px 16px; }
+}
 
 .footer { text-align: center; padding: 56px 20px 44px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
 .footer-icon { width: 40px; height: 40px; border-radius: 10px; }
@@ -400,9 +471,10 @@ img { display: block; max-width: 100%; }
   .hero h1 { font-size: 34px; }
   .hero-sub { max-width: 460px; }
   .purpose-title { font-size: 27px; }
-  .purpose-card { padding: 36px 26px; }
+  .purpose-card, .why-card { padding: 36px 26px; }
+  .why-card h2 { font-size: 23px; }
+  .how-steps { grid-template-columns: 1fr; }
   .features-grid { grid-template-columns: 1fr 1fr; }
-  .download-grid { grid-template-columns: 1fr; }
   .nav-links { display: none; }
   .nav-hamburger { display: flex; }
   .nav-mobile-menu { display: flex; }
@@ -418,4 +490,5 @@ img { display: block; max-width: 100%; }
   .features-grid { grid-template-columns: 1fr; }
   .phone { width: 210px; }
   .phone-sm { width: 190px; }
+  .waitlist-field { flex-direction: column; }
 }
