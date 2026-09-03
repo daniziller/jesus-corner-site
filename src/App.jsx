@@ -26,7 +26,7 @@ import { content } from './content'
 import { privacyContent } from './privacyContent'
 import { termsContent } from './termsContent'
 import { detectLanguageFromIp } from './langDetect'
-import { submitContactMessage } from './lib/supabaseClient'
+import { submitContactMessage, submitWaitlistSignup } from './lib/supabaseClient'
 
 const APP_URL = 'https://app.jesuscorner.app'
 const ICONS = { BookOpen, HandHeart, Compass, BarChart3, Award, Globe, GraduationCap, Users, User, Flame, PenLine, Hourglass, Sparkles, Highlighter, StickyNote, HelpCircle, Mail, Share2, Headphones, Route }
@@ -101,19 +101,24 @@ export default function App({ initialPath } = {}) {
     )
   }
 
+  // Redesign 1h — nova ordem: Hero → Como funciona (nova) → Telas → Recursos
+  // → Preço → Instalar → Por que fiz o app → Perguntas+Contato. Só duas
+  // chamadas em destaque na página inteira (Hero e Preço) — as demais viram
+  // link de texto (ver SectionLink) + a barra fixa discreta abaixo, que só
+  // aparece depois da primeira dobra.
   return (
     <div className="page">
       <Nav lang={lang} setLang={setLang} t={t} />
       <Hero t={t} lang={lang} />
-      <Purpose t={t} />
-      <AboutName t={t} />
+      <HowItWorks t={t} />
       <Showcase t={t} lang={lang} />
       <Features t={t} />
       <Pricing t={t} />
       <Download t={t} />
-      <Faq t={t} />
-      <Contact t={t} />
+      <Why t={t} />
+      <FaqAndContact t={t} />
       <Footer t={t} />
+      <StickyCtaBar t={t} />
     </div>
   )
 }
@@ -267,10 +272,9 @@ function Hero({ t, lang }) {
         <p className="hero-note">{t.heroNote}</p>
       </div>
       <div className="hero-visual">
-        {/* Tela inicial do app — a métrica de progresso pela Bíblia em
-            destaque, a rotina do dia e a sequência: o resumo mais claro do
-            que o app faz. */}
-        <Phone src={screenshotSrc('inicio', lang)} alt={t.mockSessionLabel} tilt="left" lg />
+        {/* Tela de Leitura, não a Home (redesign 1h) — é o que a pessoa vai
+            de fato fazer no app, em vez de uma tela de resumo. */}
+        <Phone src={screenshotSrc('leitura', lang)} alt={t.mockSessionLabel} tilt="left" lg />
       </div>
     </section>
   )
@@ -317,45 +321,60 @@ function Phone({ src, alt, small, lg, tilt = 'left' }) {
   )
 }
 
-// Botão de registro reaproveitado depois de várias seções — pra manter o
-// caminho de cadastro sempre à mão conforme a pessoa rola a página, em vez
-// de só no Hero e na Pricing lá embaixo.
-function SectionCta({ text, cta }) {
+// Link de texto reaproveitado depois de seções intermediárias — redesign
+// 1h: só o Hero e a Pricing têm botão em destaque; qualquer convite no meio
+// da página vira um link discreto com a frase daquela seção, não o mesmo
+// botão laranja repetido (ver "barra fixa" mais abaixo pra o convite que
+// persiste na rolagem).
+function SectionLink({ text }) {
   return (
-    <div className="section-cta">
-      <p className="section-cta-text">{text}</p>
-      <a href={APP_URL} target="_blank" rel="noreferrer" className="btn btn-primary btn-lg">
-        {cta} <ArrowRight size={18} />
-      </a>
-    </div>
+    <a href={APP_URL} target="_blank" rel="noreferrer" className="section-link">
+      {text} <ArrowRight size={15} />
+    </a>
   )
 }
 
-function Purpose({ t }) {
+// Seção "Como funciona" (nova, redesign 1h) — os três passos do dia (Oração
+// → Leitura → Reflexão) são a ideia central do app e não apareciam em
+// lugar nenhum do site.
+function HowItWorks({ t }) {
+  const ICON_FOR = [HandHeart, BookOpen, PenLine]
   return (
-    <section className="purpose">
-      <div className="purpose-card">
-        <span className="eyebrow">{t.purposeEyebrow}</span>
-        <h2 className="purpose-title">{t.purposeTitle}</h2>
-        <p className="purpose-subtitle">{t.purposeSubtitle}</p>
-        <p className="purpose-body">{t.purposeBody}</p>
+    <section className="how-it-works">
+      <span className="eyebrow">{t.howEyebrow}</span>
+      <h2>{t.howTitle}</h2>
+      <p className="section-sub">{t.howSubtitle}</p>
+      <div className="how-steps">
+        {t.howSteps.map((step, i) => {
+          const Icon = ICON_FOR[i]
+          return (
+            <div className="how-step" key={i}>
+              <span className="how-step-number">{i + 1}</span>
+              <div className="how-step-icon"><Icon size={22} color="var(--or)" /></div>
+              <h3>{step.title}</h3>
+              <p>{step.desc}</p>
+            </div>
+          )
+        })}
       </div>
-      <SectionCta text={t.ctaPurposeText} cta={t.ctaPurposeBtn} />
     </section>
   )
 }
 
-function AboutName({ t }) {
+// Propósito + origem do nome, fundidos num parágrafo só em primeira pessoa
+// (redesign 1h) — antes eram duas seções separadas (Purpose/AboutName),
+// cada uma com seu próprio botão laranja repetido.
+function Why({ t }) {
   return (
-    <section className="about-name">
-      <div className="about-name-card">
-        <span className="eyebrow">{t.aboutNameEyebrow}</span>
-        <h2>{t.aboutNameTitle}</h2>
-        <blockquote>"{t.aboutNameVerseText}"</blockquote>
-        <p className="about-name-ref">{t.aboutNameVerseRef}</p>
-        <p className="about-name-body">{t.aboutNameBody}</p>
+    <section className="why">
+      <div className="why-card">
+        <span className="eyebrow">{t.whyEyebrow}</span>
+        <h2>{t.whyTitle}</h2>
+        <p className="why-body">{t.whyBody}</p>
+        <blockquote>"{t.whyVerseText}"</blockquote>
+        <p className="why-verse-ref">{t.whyVerseRef}</p>
       </div>
-      <SectionCta text={t.ctaAboutNameText} cta={t.ctaAboutNameBtn} />
+      <SectionLink text={t.whyLinkText} />
     </section>
   )
 }
@@ -387,7 +406,7 @@ function Showcase({ t, lang }) {
           </div>
         )
       })}
-      <SectionCta text={t.ctaShowcaseText} cta={t.ctaShowcaseBtn} />
+      <SectionLink text={t.ctaShowcaseBtn} />
     </section>
   )
 }
@@ -409,7 +428,7 @@ function Features({ t }) {
           )
         })}
       </div>
-      <SectionCta text={t.ctaFeaturesText} cta={t.ctaFeaturesBtn} />
+      <SectionLink text={t.ctaFeaturesBtn} />
     </section>
   )
 }
@@ -446,60 +465,61 @@ function Pricing({ t }) {
   )
 }
 
+// Redesign 1h — só o Web App vira cartão (já disponível); Google Play e
+// App Store viram uma linha só de lista de espera com campo de e-mail, em
+// vez de dois cartões apagados com "em breve".
 function Download({ t }) {
-  const items = [
-    // Leva pro tutorial de instalação (mesma aba), não direto pro app —
-    // "adicionar à tela inicial" não é um fluxo óbvio pra quem nunca
-    // instalou um PWA antes (ver InstallGuide).
-    { title: t.downloadWebTitle, desc: t.downloadWebDesc, href: '/instalar', live: true, external: false },
-    { title: t.downloadPlayTitle, desc: t.comingSoon, href: null, live: false },
-    { title: t.downloadAppleTitle, desc: t.comingSoon, href: null, live: false },
-  ]
+  const [email, setEmail] = useState('')
+  const [status, setStatus] = useState('idle') // 'idle' | 'sending' | 'sent' | 'error'
+
+  async function handleWaitlist(e) {
+    e.preventDefault()
+    if (!email.trim() || status === 'sending') return
+    setStatus('sending')
+    try {
+      await submitWaitlistSignup({ email: email.trim() })
+      setStatus('sent')
+    } catch {
+      setStatus('error')
+    }
+  }
+
   return (
     <section className="section">
       <h2>{t.downloadTitle}</h2>
       <p className="section-sub">{t.downloadSubtitle}</p>
-      <div className="download-grid">
-        {items.map((item, i) => (
-          <a
-            key={i}
-            href={item.href ?? undefined}
-            target={item.href && item.external !== false ? '_blank' : undefined}
-            rel={item.href && item.external !== false ? 'noreferrer' : undefined}
-            className={`download-card ${item.live ? '' : 'download-disabled'}`}
-            onClick={e => { if (!item.href) e.preventDefault() }}
-          >
-            <Smartphone size={22} color={item.live ? 'var(--or)' : 'var(--g5)'} />
-            <div>
-              <p className="download-title">{item.title}</p>
-              <p className="download-desc">{item.desc}</p>
-            </div>
-            {item.live && <ChevronRight size={18} color="var(--g5)" />}
-          </a>
-        ))}
-      </div>
+      <a href="/instalar" className="download-card">
+        <Smartphone size={22} color="var(--or)" />
+        <div>
+          <p className="download-title">{t.downloadWebTitle}</p>
+          <p className="download-desc">{t.downloadWebDesc}</p>
+        </div>
+        <ChevronRight size={18} color="var(--g5)" />
+      </a>
+      {status === 'sent' ? (
+        <p className="waitlist-success">{t.waitlistSuccess}</p>
+      ) : (
+        <form className="waitlist-row" onSubmit={handleWaitlist}>
+          <p className="waitlist-text">{t.waitlistText}</p>
+          <div className="waitlist-field">
+            <input
+              type="email" required value={email} onChange={e => setEmail(e.target.value)}
+              placeholder={t.waitlistPlaceholder} aria-label={t.waitlistPlaceholder}
+            />
+            <button type="submit" className="btn btn-ghost btn-sm" disabled={status === 'sending'}>
+              {status === 'sending' ? t.waitlistSending : t.waitlistBtn}
+            </button>
+          </div>
+          {status === 'error' && <p className="contact-error">{t.waitlistError}</p>}
+        </form>
+      )}
     </section>
   )
 }
 
-function Faq({ t }) {
-  return (
-    <section id="faq" className="section section-alt">
-      <h2>{t.faqTitle}</h2>
-      <div className="faq-list">
-        {t.faq.map((item, i) => (
-          <details key={i} className="faq-item">
-            <summary>{item.q}</summary>
-            <p>{item.a}</p>
-          </details>
-        ))}
-      </div>
-      <SectionCta text={t.ctaFaqText} cta={t.ctaFaqBtn} />
-    </section>
-  )
-}
-
-function Contact({ t }) {
+// Fundidos (redesign 1h) — perguntas frequentes e o formulário de contato
+// eram duas seções separadas, cada uma com seu próprio título grande.
+function FaqAndContact({ t }) {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
@@ -527,9 +547,21 @@ function Contact({ t }) {
   }
 
   return (
-    <section id="contact" className="section">
-      <h2>{t.contactTitle}</h2>
-      <p className="section-sub">{t.contactSubtitle}</p>
+    <section id="faq" className="section section-alt">
+      <h2>{t.faqTitle}</h2>
+      <div className="faq-list">
+        {t.faq.map((item, i) => (
+          <details key={i} className="faq-item">
+            <summary>{item.q}</summary>
+            <p>{item.a}</p>
+          </details>
+        ))}
+      </div>
+
+      <div id="contact" className="faq-contact-divider">
+        <h3>{t.contactTitle}</h3>
+        <p className="section-sub">{t.contactSubtitle}</p>
+      </div>
       {sent ? (
         <div className="contact-success">
           <CheckCircle2 size={38} color="var(--gr)" />
@@ -558,6 +590,37 @@ function Contact({ t }) {
         </form>
       )}
     </section>
+  )
+}
+
+// Barra fixa discreta (redesign 1h) — aparece só depois da primeira dobra
+// (passar da altura do Hero), pra manter o cadastro sempre a 1 toque sem
+// repetir o botão grande do Hero a cada seção. Some de novo perto do
+// rodapé, que já tem seus próprios links — não faz sentido flutuar por
+// cima dele.
+function StickyCtaBar({ t }) {
+  const [visible, setVisible] = useState(false)
+
+  useEffect(() => {
+    function onScroll() {
+      const heroHeight = document.getElementById('top')?.offsetHeight ?? 600
+      const footer = document.querySelector('.footer')
+      const nearFooter = footer ? window.scrollY + window.innerHeight > footer.offsetTop : false
+      setVisible(window.scrollY > heroHeight && !nearFooter)
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    onScroll()
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  if (!visible) return null
+  return (
+    <div className="sticky-cta-bar" role="complementary">
+      <span className="sticky-cta-text">{t.stickyBarText}</span>
+      <a href={APP_URL} target="_blank" rel="noreferrer" className="btn btn-primary btn-sm">
+        {t.stickyBarBtn}
+      </a>
+    </div>
   )
 }
 
