@@ -1,9 +1,6 @@
 import { useState, useEffect } from 'react'
 import {
-  BookOpen, HandHeart, Compass, BarChart3, Award, Globe, GraduationCap, Users, User,
-  ArrowRight, Check, Smartphone, ChevronRight, ArrowLeft, Flame, PenLine, CheckCircle2,
-  Menu, X, Hourglass, Sparkles, Highlighter, StickyNote, HelpCircle, Mail, Share2,
-  Headphones, Route,
+  ArrowRight, Check, Smartphone, ChevronRight, ArrowLeft, CheckCircle2, Menu, X,
 } from 'lucide-react'
 
 // A versão de lucide-react instalada (1.23.0) não inclui o ícone do
@@ -29,7 +26,6 @@ import { detectLanguageFromIp } from './langDetect'
 import { submitContactMessage, submitWaitlistSignup } from './lib/supabaseClient'
 
 const APP_URL = 'https://app.jesuscorner.app'
-const ICONS = { BookOpen, HandHeart, Compass, BarChart3, Award, Globe, GraduationCap, Users, User, Flame, PenLine, Hourglass, Sparkles, Highlighter, StickyNote, HelpCircle, Mail, Share2, Headphones, Route }
 const LANG_KEY = 'jc_site_lang'
 
 // O app (outro domínio, outro localStorage) linka pras páginas legais com
@@ -423,22 +419,18 @@ function ReadingAssistant({ t }) {
 
 function Features({ t }) {
   return (
-    <section id="recursos" className="section">
+    <section id="recursos" className="features">
+      <span className="features-eyebrow">{t.navFeatures}</span>
       <h2>{t.featuresTitle}</h2>
-      <p className="section-sub">{t.featuresSubtitle}</p>
+      <p className="features-sub">{t.featuresSubtitle}</p>
       <div className="features-grid">
-        {t.features.map((f, i) => {
-          const Icon = ICONS[f.icon]
-          return (
-            <div key={i} className="feature-card">
-              <div className="feature-icon"><Icon size={22} color="var(--or)" /></div>
-              <h3>{f.title}</h3>
-              <p>{f.desc}</p>
-            </div>
-          )
-        })}
+        {t.features.map((f, i) => (
+          <div key={i} className="feature-item">
+            <h3>{f.title}</h3>
+            <p>{f.desc}</p>
+          </div>
+        ))}
       </div>
-      <SectionLink text={t.ctaFeaturesBtn} />
     </section>
   )
 }
