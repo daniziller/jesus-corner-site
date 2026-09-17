@@ -342,24 +342,22 @@ function SectionLink({ text }) {
 // → Leitura → Reflexão) são a ideia central do app e não apareciam em
 // lugar nenhum do site.
 function HowItWorks({ t }) {
-  const ICON_FOR = [HandHeart, BookOpen, PenLine]
   return (
     <section id="como" className="how-it-works">
-      <span className="eyebrow">{t.howEyebrow}</span>
+      <span className="how-eyebrow">{t.howEyebrow}</span>
       <h2>{t.howTitle}</h2>
-      <p className="section-sub">{t.howSubtitle}</p>
+      <p className="how-subtitle">{t.howSubtitle}</p>
       <div className="how-steps">
-        {t.howSteps.map((step, i) => {
-          const Icon = ICON_FOR[i]
-          return (
-            <div className="how-step" key={i}>
+        {t.howSteps.map((step, i) => (
+          <div className="how-step" key={i}>
+            <div className="how-step-head">
               <span className="how-step-number">{i + 1}</span>
-              <div className="how-step-icon"><Icon size={22} color="var(--or)" /></div>
-              <h3>{step.title}</h3>
-              <p>{step.desc}</p>
+              <span className="how-step-time">{step.time}</span>
             </div>
-          )
-        })}
+            <h3>{step.title}</h3>
+            <p>{step.desc}</p>
+          </div>
+        ))}
       </div>
     </section>
   )
