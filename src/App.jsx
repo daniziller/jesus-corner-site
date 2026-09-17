@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import {
-  ArrowRight, Smartphone, ChevronRight, ArrowLeft, CheckCircle2, Menu, X,
+  ArrowRight, ArrowLeft, CheckCircle2, Menu, X,
 } from 'lucide-react'
 
 // A versão de lucide-react instalada (1.23.0) não inclui o ícone do
@@ -489,34 +489,33 @@ function Download({ t }) {
   }
 
   return (
-    <section className="section">
-      <h2>{t.downloadTitle}</h2>
-      <p className="section-sub">{t.downloadSubtitle}</p>
-      <a href="/instalar" className="download-card">
-        <Smartphone size={22} color="var(--or)" />
-        <div>
-          <p className="download-title">{t.downloadWebTitle}</p>
-          <p className="download-desc">{t.downloadWebDesc}</p>
-        </div>
-        <ChevronRight size={18} color="var(--g5)" />
-      </a>
-      {status === 'sent' ? (
-        <p className="waitlist-success">{t.waitlistSuccess}</p>
-      ) : (
-        <form className="waitlist-row" onSubmit={handleWaitlist}>
-          <p className="waitlist-text">{t.waitlistText}</p>
-          <div className="waitlist-field">
-            <input
-              type="email" required value={email} onChange={e => setEmail(e.target.value)}
-              placeholder={t.waitlistPlaceholder} aria-label={t.waitlistPlaceholder}
-            />
-            <button type="submit" className="btn btn-ghost btn-sm" disabled={status === 'sending'}>
-              {status === 'sending' ? t.waitlistSending : t.waitlistBtn}
-            </button>
-          </div>
-          {status === 'error' && <p className="contact-error">{t.waitlistError}</p>}
-        </form>
-      )}
+    <section className="download">
+      <div className="download-col">
+        <span className="download-eyebrow">{t.downloadEyebrow}</span>
+        <h2>{t.downloadHeading}</h2>
+        <p>{t.downloadBody}</p>
+        <a href="/instalar" className="download-cta">{t.downloadCta}</a>
+      </div>
+      <div className="download-col">
+        <span className="download-eyebrow">{t.waitlistEyebrow}</span>
+        <p>{t.waitlistText}</p>
+        {status === 'sent' ? (
+          <p className="waitlist-success">{t.waitlistSuccess}</p>
+        ) : (
+          <form onSubmit={handleWaitlist}>
+            <div className="waitlist-field">
+              <input
+                type="email" required value={email} onChange={e => setEmail(e.target.value)}
+                placeholder={t.waitlistPlaceholder} aria-label={t.waitlistPlaceholder}
+              />
+              <button type="submit" disabled={status === 'sending'}>
+                {status === 'sending' ? t.waitlistSending : t.waitlistBtn}
+              </button>
+            </div>
+            {status === 'error' && <p className="contact-error">{t.waitlistError}</p>}
+          </form>
+        )}
+      </div>
     </section>
   )
 }

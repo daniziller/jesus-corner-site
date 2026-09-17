@@ -237,7 +237,7 @@ img { display: block; max-width: 100%; }
    do body em vez do rótulo pequeno e discreto. Corrigido na etapa 6, e
    compartilhada com Recursos/Planos desde então — um lugar só pro rótulo
    pequeno em maiúsculas que se repete no topo de cada seção. */
-.how-eyebrow, .features-eyebrow, .pricing-eyebrow {
+.how-eyebrow, .features-eyebrow, .pricing-eyebrow, .download-eyebrow {
   display: block;
   font-family: var(--font); font-size: 10.5px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
   color: var(--g4); margin: 0 0 14px;
@@ -384,26 +384,33 @@ img { display: block; max-width: 100%; }
 .pricing-cta-accent { background: var(--or); }
 .pricing-note { font-size: 12.5px; font-weight: 500; color: var(--g4); line-height: 1.65; margin: 22px 0 0; max-width: 640px; }
 
-/* Redesign 1h — só o Web App vira cartão agora; Google Play/App Store
-   viram a linha de lista de espera logo abaixo (.waitlist-*). */
-.download-card {
-  display: flex; align-items: center; gap: 12px; background: var(--surface); border: 1px solid var(--border);
-  border-radius: 16px; padding: 18px; transition: transform .15s, border-color .15s;
-  max-width: 420px; margin: 0 auto; text-align: left; text-decoration: none;
+/* Etapa 8 (Bento) — "Baixe onde quiser / Lista de espera": 2 colunas de
+   texto, cada uma com seu próprio rótulo — não é mais 1 título de seção
+   com um cartão (Web App) + uma linha (lista de espera) embaixo. */
+.download {
+  max-width: var(--max-width); margin: 0 auto; width: 100%;
+  padding: clamp(40px, 6vw, 72px) 24px;
+  border-top: 1px solid var(--border);
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(28px, 4vw, 56px); align-items: start;
 }
-.download-card:hover { transform: translateY(-2px); border-color: rgba(157,67,0,.3); box-shadow: var(--shadow-premium); }
-.download-title { font-size: 14px; font-weight: 800; margin: 0; color: var(--bk); }
-.download-desc { font-size: 11.5px; color: var(--g5); margin: 3px 0 0; }
-
-.waitlist-row { max-width: 480px; margin: 26px auto 0; text-align: center; }
-.waitlist-text { font-size: 13.5px; color: var(--g5); margin: 0 0 12px; }
-.waitlist-field { display: flex; gap: 8px; }
+.download-col { min-width: 0; }
+.download-col h2 { font-family: var(--font); font-size: clamp(21px, 2.8vw, 27px); font-weight: 800; letter-spacing: -1px; line-height: 1.2; margin: 0 0 12px; color: var(--bk); }
+.download-col p { font-size: 14px; font-weight: 500; color: var(--g6); line-height: 1.7; margin: 0 0 22px; max-width: 400px; }
+.download-cta {
+  display: inline-flex; font-family: var(--font); font-size: 13.5px; font-weight: 800;
+  color: var(--bk); background: var(--or); padding: 17px 22px; border-radius: 16px;
+}
+.waitlist-field { display: flex; flex-wrap: wrap; gap: 8px; max-width: 400px; }
 .waitlist-field input {
-  flex: 1; min-width: 0; border: 1px solid var(--border-2); border-radius: 10px; padding: 11px 13px;
-  font-size: 14px; font-family: inherit; color: var(--bk); background: var(--white);
+  flex: 1; min-width: 150px; background: var(--white); border: none; border-radius: 16px;
+  padding: 16px; font-family: var(--font); font-size: 13.5px; font-weight: 500; color: var(--bk); outline: none;
 }
-.waitlist-field input:focus { border-color: var(--or); outline: none; }
-.waitlist-success { font-size: 13.5px; font-weight: 700; color: var(--or); margin: 26px auto 0; max-width: 480px; }
+.waitlist-field button {
+  border: none; cursor: pointer; font-family: var(--font); font-size: 13.5px; font-weight: 800;
+  color: var(--bk); background: var(--white); padding: 16px 20px; border-radius: 16px;
+}
+.waitlist-success { font-size: 13.5px; font-weight: 700; color: var(--or); margin: 16px 0 0; max-width: 400px; }
 
 .contact-form { max-width: 560px; margin: 0 auto; text-align: left; display: flex; flex-direction: column; gap: 16px; }
 .contact-field { display: flex; flex-direction: column; gap: 6px; }
