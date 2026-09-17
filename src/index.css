@@ -189,10 +189,6 @@ img { display: block; max-width: 100%; }
 .phone-sm .phone-viewport { width: 240px; height: 492px; border-radius: 31px; }
 .phone-screenshot { width: 100%; height: auto; display: block; }
 
-@media (prefers-reduced-motion: reduce) {
-  .book-glow-ray { animation: none; opacity: .5; }
-}
-
 /* Purpose */
 .purpose { max-width: var(--max-width); margin: 0 auto; width: 100%; padding: 50px 20px 10px; display: flex; flex-direction: column; align-items: center; gap: 28px; }
 .purpose-card {
@@ -266,42 +262,37 @@ img { display: block; max-width: 100%; }
 .why-card blockquote { margin: 0; font-size: 16px; font-style: italic; color: var(--g6); line-height: 1.6; }
 .why-verse-ref { font-size: 12px; font-weight: 700; color: var(--or); letter-spacing: 0.5px; margin: 10px 0 0; }
 
-/* Showcase */
+/* Showcase — Etapa 4 (Bento) "Direto do app": 3 pares texto/celular
+   (era 5, sem cartão de destaque em nenhum — esse tratamento não existe
+   no .dc.html). Alternância texto-imagem/imagem-texto/texto-imagem feita
+   com `order` no grid (o par do meio inverte), não flex-direction:
+   row-reverse — isso deixa a regra do README pro mobile (a moldura
+   sempre depois do texto numa coluna só) só resetar 2 propriedades. */
 .showcase {
-  position: relative;
   max-width: var(--max-width); margin: 0 auto; width: 100%;
-  padding: 40px 20px 90px;
-  display: flex; flex-direction: column; align-items: center; gap: 70px;
+  padding: clamp(40px, 6vw, 72px) 24px;
+  border-top: 1px solid var(--border);
+  display: flex; flex-direction: column; gap: clamp(48px, 7vw, 88px);
 }
-.eyebrow {
-  font-size: 12px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase;
-  color: var(--or); margin-bottom: -30px;
+.showcase-eyebrow {
+  font-family: var(--font); font-size: 10.5px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--g4); margin: 0;
 }
 .showcase-row {
-  display: flex; align-items: center; gap: 60px; width: 100%;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(28px, 4vw, 56px); align-items: center;
 }
-.showcase-row.reverse { flex-direction: row-reverse; }
-.showcase-text { flex: 1; min-width: 280px; }
-.showcase-text h3 { font-family: var(--font-display); font-size: 26px; font-weight: 800; letter-spacing: -0.5px; margin: 0 0 14px; color: var(--bk); }
-.showcase-text p { font-size: 15px; color: var(--g6); line-height: 1.65; margin: 0; max-width: 420px; }
-.showcase-visual { flex: 1; display: flex; justify-content: center; min-width: 260px; perspective: 1800px; }
-
-/* Linha em destaque do Showcase (hoje: o tracker de progresso) — mesmo
-   gradiente quente usado nos cards de destaque do app (--card-highlight-bg). */
-.showcase-row-highlight {
-  background: var(--card-highlight-bg);
-  border: 1px solid rgba(157,67,0,.2);
-  border-radius: 28px;
-  padding: 40px;
-  box-shadow: var(--shadow-premium);
-}
-.showcase-highlight-tag {
-  display: inline-flex; align-items: center; gap: 6px;
-  background: rgba(255,255,255,.55); color: var(--or);
-  border: 1px solid rgba(157,67,0,.28);
-  font-size: 11px; font-weight: 800; letter-spacing: .5px; text-transform: uppercase;
-  padding: 5px 12px; border-radius: 999px; margin-bottom: 14px;
-}
+.showcase-text { min-width: 0; }
+.showcase-text h3 { font-family: var(--font); font-size: clamp(22px, 2.8vw, 28px); font-weight: 800; letter-spacing: -1px; line-height: 1.18; margin: 0 0 12px; color: var(--bk); text-wrap: pretty; }
+.showcase-text p { font-size: 14.5px; font-weight: 500; color: var(--g6); line-height: 1.7; margin: 0; max-width: 430px; text-wrap: pretty; }
+.showcase-bullets { display: flex; flex-direction: column; gap: 10px; max-width: 430px; margin-top: 20px; }
+.showcase-bullet { display: flex; align-items: center; gap: 10px; }
+.showcase-bullet-dot { width: 7px; height: 7px; border-radius: 2px; background: var(--or); flex: none; }
+.showcase-bullet span { font-family: var(--font); font-size: 13.5px; font-weight: 600; line-height: 1.4; color: var(--bk); }
+.showcase-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 20px; font-family: var(--font); font-size: 14px; font-weight: 800; color: var(--or); }
+.showcase-visual { min-width: 0; display: flex; justify-content: center; }
+.showcase-visual-first { order: 1; }
+.showcase-text-last { order: 2; }
 
 /* Sections */
 .section { max-width: var(--max-width); margin: 0 auto; width: 100%; padding: 80px 20px; text-align: center; }
@@ -455,10 +446,11 @@ img { display: block; max-width: 100%; }
   .nav-links { display: none; }
   .nav-hamburger { display: flex; }
   .nav-mobile-menu { display: flex; }
-  .showcase-row, .showcase-row.reverse { flex-direction: column; text-align: center; gap: 30px; }
-  .showcase-text { display: flex; flex-direction: column; align-items: center; }
-  .showcase-row-highlight { padding: 28px 20px; }
-  .eyebrow { margin-bottom: 0; }
+  /* README: "em uma coluna, a moldura vem depois do texto em todas as
+     seções" — o par do meio (Sua caminhada) inverte no desktop via
+     order; aqui volta pra ordem normal do DOM assim que o grid empilha
+     em 1 coluna (mesmo breakpoint do resto da nav mobile). */
+  .showcase-visual-first, .showcase-text-last { order: 0; }
   .pricing-tiers { grid-template-columns: 1fr; max-width: 460px; gap: 24px; }
   .pricing-card { padding: 22px 18px; }
   .pricing-card .btn { margin-top: 16px; }
