@@ -1,5 +1,6 @@
 export const content = {
   pt: {
+    navHow: 'Como funciona',
     navFeatures: 'Recursos',
     navPricing: 'Planos',
     navFaq: 'Perguntas',
@@ -7,11 +8,11 @@ export const content = {
     navCta: 'Entrar',
     navOpenMenu: 'Abrir menu',
     navCloseMenu: 'Fechar menu',
-    heroBadge: 'Disponível agora como Web App',
+    heroBadge: 'Disponível agora no navegador',
     heroTitle: 'Seu tempo. Sua rotina. Sua conexão com Deus.',
-    heroSubtitle: 'O app pra ler a Bíblia com constância: um plano de leitura bíblica no seu ritmo, oração guiada todo dia, e um tempo de qualidade só seu com Deus — sem pressa, sem distração.',
+    heroSubtitle: 'O app pra ler a Bíblia com constância: um plano no seu ritmo, oração guiada todo dia e um tempo de qualidade só seu com Deus — sem pressa, sem distração.',
     heroCtaPrimary: 'Começar agora',
-    heroCtaSecondary: 'Ver recursos',
+    heroCtaSecondary: 'Ver como funciona',
     heroNote: 'Funciona no navegador, sem instalação. Em breve na Play Store e App Store.',
     // Redesign 1h — barra fixa discreta, única outra chamada além do Hero
     // e da Pricing (ver StickyCtaBar em App.jsx).
@@ -205,6 +206,7 @@ export const content = {
     footerRights: 'Todos os direitos reservados.',
   },
   en: {
+    navHow: 'How it works',
     navFeatures: 'Features',
     navPricing: 'Pricing',
     navFaq: 'FAQ',
@@ -212,11 +214,11 @@ export const content = {
     navCta: 'Sign in',
     navOpenMenu: 'Open menu',
     navCloseMenu: 'Close menu',
-    heroBadge: 'Available now as a Web App',
+    heroBadge: 'Available now in your browser',
     heroTitle: 'Your time. Your routine. Your connection with God.',
-    heroSubtitle: 'The app for reading the Bible consistently: a Bible reading plan at your pace, guided prayer every day, and quality time that\'s just yours with God — no rush, no distractions.',
+    heroSubtitle: "The app for reading the Bible consistently: a plan at your pace, guided prayer every day, and quality time that's just yours with God — no rush, no distractions.",
     heroCtaPrimary: 'Get started',
-    heroCtaSecondary: 'See features',
+    heroCtaSecondary: 'See how it works',
     heroNote: 'Works right in your browser, no install needed. Coming soon to the Play Store and App Store.',
     stickyBarText: 'Ready to start your reading?',
     stickyBarBtn: 'Get started',

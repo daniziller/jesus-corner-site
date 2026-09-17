@@ -66,58 +66,67 @@ img { display: block; max-width: 100%; }
 
 .page { display: flex; flex-direction: column; overflow: hidden; }
 
-/* Nav */
+/* Nav — Etapa 2 (Bento): header sticky sem borda, logo desenhada em CSS
+   (mesma marca do app — ver README, seção "Marca"), nav centrada, toggle
+   PT/EN sem bandeira, "Entrar" em botão próprio. Valores exatos do
+   .dc.html (o header não tem variação documentada no README além do que
+   já está na tabela de cores/tipografia). */
 .nav {
-  position: sticky; top: 0; z-index: 20;
+  position: sticky; top: 0; z-index: 30;
   background: var(--header-bg);
   backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--border);
 }
 .nav-inner {
   max-width: var(--max-width); margin: 0 auto;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 14px 20px;
+  padding: 16px 24px; gap: 16px;
 }
-.brand { display: flex; align-items: center; gap: 9px; font-family: var(--font-display); font-weight: 800; font-size: 15px; color: var(--bk); }
-.brand-icon { width: 30px; height: 30px; border-radius: 8px; }
-.nav-links { display: flex; gap: 28px; }
-.nav-links a { font-size: 13px; font-weight: 600; color: var(--g5); transition: color .15s; }
+.brand { display: flex; align-items: center; gap: 10px; color: var(--bk); flex: none; }
+.brand-name { font-family: var(--font); font-weight: 800; font-size: 16px; letter-spacing: -0.5px; line-height: 1; }
+.brand-mark { width: 34px; height: 34px; border-radius: 10px; background: var(--bk); display: flex; align-items: center; justify-content: center; gap: 2.5px; flex: none; }
+.brand-mark-page { width: 9px; height: 16px; background: var(--g4); }
+.brand-mark-page.left { border-radius: 2px 1px 1px 2px; }
+.brand-mark-page.right { border-radius: 1px 2px 2px 1px; }
+.brand-mark-spine { width: 2px; height: 18px; border-radius: 1px; background: var(--or); }
+.nav-links { display: flex; gap: 26px; flex: 1; justify-content: center; flex-wrap: wrap; }
+.nav-links a { font-size: 13px; font-weight: 700; color: var(--g6); transition: color .15s; }
 .nav-links a:hover { color: var(--bk); }
-.nav-actions { display: flex; align-items: center; gap: 10px; }
-.nav-instagram-link {
-  display: flex; align-items: center; justify-content: center; width: 34px; height: 34px;
-  border-radius: 999px; color: var(--g5); border: 1px solid var(--border-2); flex-shrink: 0;
+.nav-actions { display: flex; align-items: center; gap: 8px; flex: none; }
+.nav-cta {
+  font-family: var(--font); font-weight: 800; font-size: 13.5px; line-height: 1;
+  color: var(--bk); background: var(--or); padding: 12px 18px; border-radius: 14px;
+  transition: filter .15s;
 }
-.nav-instagram-link:hover { color: var(--or); border-color: var(--or); }
+.nav-cta:hover { filter: brightness(.92); }
 .lang-toggle {
   display: flex; align-items: center; gap: 2px;
-  border: 1px solid var(--border-2); background: var(--surface-2); border-radius: 10px;
+  background: var(--surface-2); border-radius: 99px;
   padding: 3px;
 }
 .lang-option {
-  border: none; background: transparent; color: var(--g5); border-radius: 7px;
-  padding: 6px 9px; font-size: 11.5px; font-weight: 700; cursor: pointer; font-family: var(--font);
+  border: none; background: transparent; color: var(--g4); border-radius: 99px;
+  padding: 7px 10px; font-size: 11px; font-weight: 800; cursor: pointer; font-family: var(--font);
   line-height: 1; transition: background .15s, color .15s;
 }
 .lang-option:hover { color: var(--bk); }
-.lang-option.active { background: var(--white); color: var(--or); box-shadow: 0 1px 3px rgba(0,0,0,.1); }
+.lang-option.active { background: var(--white); color: var(--bk); }
 .nav-hamburger {
   display: none; align-items: center; justify-content: center;
   width: 36px; height: 36px; border-radius: 10px;
-  border: 1px solid var(--border-2); background: var(--surface-2); color: var(--bk); cursor: pointer;
+  border: none; background: var(--surface-2); color: var(--bk); cursor: pointer;
 }
 .nav-mobile-menu {
   display: none; flex-direction: column;
   border-top: 1px solid var(--border);
-  padding: 6px 20px 14px;
-  background: var(--white);
+  padding: 6px 24px 14px;
+  background: var(--bg);
 }
 .nav-mobile-menu a {
   padding: 13px 0; font-size: 14.5px; font-weight: 700; color: var(--g6);
   border-bottom: 1px solid var(--border);
 }
 .nav-mobile-menu a:last-child { border-bottom: none; }
-.nav-mobile-menu a:hover { color: var(--or); }
+.nav-mobile-menu a:hover { color: var(--bk); }
 
 /* Buttons */
 .btn {
@@ -127,117 +136,58 @@ img { display: block; max-width: 100%; }
 }
 .btn-sm { padding: 8px 15px; font-size: 12px; }
 .btn-lg { padding: 15px 24px; font-size: 15px; }
-.btn-primary { background: var(--grad-primary); color: white; box-shadow: var(--shadow-glow); }
-.btn-primary:hover { transform: translateY(-1px); box-shadow: 0 14px 40px rgba(157,67,0,.4); }
-.btn-ghost { background: var(--surface); color: var(--bk); border: 1px solid var(--border-2); }
-.btn-ghost:hover { background: var(--surface-2); }
+/* Etapa 2 (Bento): botão plano, sem gradiente/sombra — sobre laranja o
+   texto é sempre a tinta, nunca branco (regra do README, "Cores"). Hover:
+   laranja escurece levemente (var(--or-lt), decisão dela — filter em vez
+   de um segundo hex, ver PR); branco vai pra --surface. */
+.btn-primary { background: var(--or); color: var(--bk); }
+.btn-primary:hover { filter: brightness(.92); }
+.btn-ghost { background: var(--white); color: var(--bk); }
+.btn-ghost:hover { background: var(--surface); }
 .btn-disabled { background: var(--surface); color: var(--g4); border: 1px dashed var(--border-2); cursor: default; padding: 10px 16px; font-size: 13px; border-radius: 12px; font-weight: 700; }
 
-/* Hero */
+/* Hero — Etapa 2 (Bento). Grid fluido (auto-fit) em vez de flex de largura
+   fixa, pra virar 1 coluna sozinho abaixo de ~600px de cada lado (regra do
+   README: "grades usam repeat(auto-fit, minmax(Npx,1fr))"). Sem glow
+   decorativo — não existe no .dc.html. */
 .hero {
-  position: relative;
   max-width: var(--max-width); margin: 0 auto; width: 100%;
-  display: flex; align-items: center; gap: 50px;
-  padding: 84px 20px 100px;
-  isolation: isolate;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  align-items: center; gap: clamp(32px, 5vw, 64px);
+  padding: clamp(48px, 7vw, 92px) 24px clamp(40px, 6vw, 72px);
 }
-.hero-glow {
-  position: absolute; top: -160px; left: 50%; transform: translateX(-50%);
-  width: 900px; height: 560px; z-index: -1; pointer-events: none;
-  background: radial-gradient(closest-side, rgba(157,67,0,.16), rgba(157,67,0,.05) 60%, transparent 80%);
-  filter: blur(10px);
+.hero-text { min-width: 0; }
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font); font-size: 10.5px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--g4); margin: 0 0 22px;
 }
-.hero-text { flex: 1.1; min-width: 320px; }
-.badge {
-  display: inline-flex; align-items: center; gap: 7px;
-  background: var(--surface-2); color: var(--or);
-  border: 1px solid rgba(157,67,0,.25);
-  font-size: 12px; font-weight: 700; padding: 7px 13px; border-radius: 999px; margin-bottom: 22px;
+.hero-eyebrow-dot { width: 7px; height: 7px; border-radius: 2px; background: var(--or); flex: none; }
+.hero h1 {
+  font-family: var(--font); font-size: clamp(32px, 5.2vw, 50px); font-weight: 800; letter-spacing: -2px;
+  line-height: 1.06; margin: 0 0 18px; color: var(--bk); text-wrap: pretty;
 }
-.hero h1 { font-family: var(--font-display); font-size: 46px; font-weight: 900; letter-spacing: -1.2px; line-height: 1.12; margin: 0 0 20px; color: var(--bk); }
-.hero-sub { font-size: 17px; color: var(--g5); line-height: 1.6; margin: 0 0 28px; max-width: 480px; }
-.hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 18px; }
-.hero-note { font-size: 12.5px; color: var(--g5); }
-.hero-visual { flex: 1; display: flex; justify-content: center; min-width: 280px; perspective: 1800px; }
+.hero-sub { font-size: 16px; font-weight: 500; color: var(--g6); line-height: 1.65; margin: 0 0 30px; max-width: 440px; text-wrap: pretty; }
+.hero-ctas { display: flex; gap: 8px; flex-wrap: wrap; }
+.hero-btn { padding: 18px 26px; border-radius: 16px; font-size: 15px; }
+.hero-note { font-family: var(--font); font-size: 12.5px; font-weight: 600; color: var(--g4); margin: 20px 0 0; }
+.hero-visual { min-width: 0; display: flex; justify-content: center; }
 
-/* Phone — moldura escura mantida (bezel de celular de verdade, não é
-   "tema" do site) — só o brilho ao redor (phone-glow) segue a paleta nova. */
+/* Phone — moldura de celular de verdade (bezel escuro), a única sombra do
+   site fora dela. Sem inclinação 3D nem brilho decorativo ao redor — não
+   existem no .dc.html; a moldura fica reta. Tamanho/raio base = Hero
+   (274px/38·33px); .phone-sm = Showcase (250px/36·31px, ver README
+   "Molduras de celular"). */
 .phone {
-  position: relative; width: 250px; border-radius: 34px;
-  background: linear-gradient(150deg, #3a3a3d 0%, #0d0d0e 45%, #000 100%);
-  padding: 4px; border: 1px solid rgba(255,255,255,.22); line-height: 0;
-  transform-style: preserve-3d;
-  transition: transform .5s cubic-bezier(.2,.8,.2,1), box-shadow .5s;
-  will-change: transform;
+  width: 274px; border-radius: 38px;
+  background: linear-gradient(150deg, #3a3a3d 0%, #111 45%, #000 100%);
+  padding: 5px; border: 1px solid rgba(255,255,255,.2); line-height: 0;
+  box-shadow: 0 30px 70px -20px rgba(0,0,0,.4), 0 8px 20px rgba(0,0,0,.15);
 }
-.phone.tilt-left {
-  transform: rotateY(-20deg) rotateX(7deg) rotateZ(-2deg);
-  box-shadow:
-    inset 0 1px 1px rgba(255,255,255,.35), inset 0 -1px 1px rgba(0,0,0,.6),
-    0 0 0 1px rgba(0,0,0,.8),
-    0 30px 70px -20px rgba(0,0,0,.35),
-    40px 50px 60px -25px rgba(0,0,0,.25), 14px 18px 26px -12px rgba(0,0,0,.2);
-}
-.phone.tilt-right {
-  transform: rotateY(20deg) rotateX(7deg) rotateZ(2deg);
-  box-shadow:
-    inset 0 1px 1px rgba(255,255,255,.35), inset 0 -1px 1px rgba(0,0,0,.6),
-    0 0 0 1px rgba(0,0,0,.8),
-    0 30px 70px -20px rgba(0,0,0,.35),
-    -40px 50px 60px -25px rgba(0,0,0,.25), -14px 18px 26px -12px rgba(0,0,0,.2);
-}
-.phone:hover { transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg); }
-.phone-sm { width: 220px; }
-.phone-lg { width: 240px; }
-.phone-glow {
-  position: absolute; inset: -46px; z-index: -1;
-  background: radial-gradient(closest-side, rgba(157,67,0,.22), rgba(157,67,0,.05) 55%, transparent 75%);
-  filter: blur(6px);
-}
-.phone-shadow {
-  position: absolute; left: 6%; right: 6%; bottom: -30px; height: 40px; z-index: -2;
-  background: radial-gradient(closest-side, rgba(0,0,0,.18), transparent 75%);
-  filter: blur(8px);
-}
-.phone-screenshot { width: 100%; height: auto; border-radius: 30px; display: block; }
-
-/* Book glow — motivo ilustrado só em CSS, retintado pra ficar sutil sobre
-   fundo claro (era um brilho vivo sobre fundo preto). */
-.book-glow { position: absolute; inset: 0; pointer-events: none; z-index: -1; overflow: hidden; }
-.book-glow-orb {
-  position: absolute; left: 50%; top: 40%; transform: translate(-50%, -50%);
-  width: 560px; height: 560px; border-radius: 50%;
-  background: radial-gradient(closest-side, rgba(157,67,0,.14), rgba(181,0,93,.04) 55%, transparent 78%);
-  filter: blur(20px);
-}
-.book-glow-rays { position: absolute; left: 50%; top: 42%; width: 2px; height: 2px; }
-.book-glow-ray {
-  position: absolute; left: 0; top: 0; width: 3px; height: 240px;
-  background: linear-gradient(to top, rgba(201,154,74,.35), transparent);
-  transform-origin: bottom center;
-  transform: rotate(calc(var(--i) * 18deg - 54deg)) translateY(-30px);
-  border-radius: 3px;
-  animation: book-glow-pulse 5.5s ease-in-out infinite;
-  animation-delay: calc(var(--i) * .3s);
-}
-@keyframes book-glow-pulse { 0%, 100% { opacity: .25; } 50% { opacity: .6; } }
-.book-glow-pages {
-  position: absolute; left: 50%; top: 58%; transform: translate(-50%, -50%);
-  width: 360px; height: 220px;
-}
-.book-glow-page {
-  position: absolute; inset: 0; border-radius: 20px;
-  border: 1px solid var(--border);
-  background: linear-gradient(160deg, rgba(157,67,0,.04), rgba(157,67,0,0));
-}
-.book-glow-page.page-1 { transform: rotate(-7deg) scale(.9); }
-.book-glow-page.page-2 { transform: rotate(4deg) scale(.96); }
-.book-glow-page.page-3 { transform: rotate(-1.5deg); }
-
-.book-glow.book-glow-divider { inset: auto; top: -80px; left: 0; right: 0; height: 340px; }
-.book-glow.book-glow-divider .book-glow-orb { width: 420px; height: 420px; top: 50%; opacity: .8; }
-.book-glow.book-glow-divider .book-glow-ray { height: 160px; }
-.book-glow.book-glow-divider .book-glow-pages { display: none; }
+.phone-viewport { width: 264px; height: 542px; border-radius: 33px; overflow: hidden; }
+.phone-sm { width: 250px; border-radius: 36px; box-shadow: 0 24px 56px -20px rgba(0,0,0,.35); }
+.phone-sm .phone-viewport { width: 240px; height: 492px; border-radius: 31px; }
+.phone-screenshot { width: 100%; height: auto; display: block; }
 
 @media (prefers-reduced-motion: reduce) {
   .book-glow-ray { animation: none; opacity: .5; }

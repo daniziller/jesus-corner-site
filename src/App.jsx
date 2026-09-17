@@ -178,6 +178,20 @@ function InstallGuide({ t, lang }) {
   )
 }
 
+// Marca (README, seção "Marca") — quadrado 34px com duas "páginas" e a
+// lombada, desenhada em CSS (mesmas formas/gap do BrandMark do app; aqui
+// recriada do zero, é outro repo). size=default 34px (header); Footer usa
+// uma versão pequena na sua própria etapa.
+function BrandMark() {
+  return (
+    <span className="brand-mark" aria-hidden="true">
+      <span className="brand-mark-page left" />
+      <span className="brand-mark-spine" />
+      <span className="brand-mark-page right" />
+    </span>
+  )
+}
+
 function Nav({ lang, setLang, t }) {
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -189,24 +203,16 @@ function Nav({ lang, setLang, t }) {
     <header className="nav">
       <div className="nav-inner">
         <a href="/#top" className="brand">
-          <img src="/icon-192.png" alt="" className="brand-icon" />
-          <span>Jesus' <span style={{ color: 'var(--or)' }}>Corner</span></span>
+          <BrandMark />
+          <span className="brand-name">Jesus' <span style={{ color: 'var(--or)' }}>Corner</span></span>
         </a>
         <nav className="nav-links">
-          <a href="/#features">{t.navFeatures}</a>
-          <a href="/#pricing">{t.navPricing}</a>
-          <a href="/#faq">{t.navFaq}</a>
-          <a href="/#contact">{t.navContact}</a>
+          <a href="/#como">{t.navHow}</a>
+          <a href="/#recursos">{t.navFeatures}</a>
+          <a href="/#planos">{t.navPricing}</a>
+          <a href="/#perguntas">{t.navFaq}</a>
         </nav>
         <div className="nav-actions">
-          <a
-            href="https://www.instagram.com/jesuscorner.app/"
-            target="_blank" rel="noreferrer"
-            className="nav-instagram-link"
-            aria-label={t.footerInstagramLabel}
-          >
-            <InstagramIcon size={18} />
-          </a>
           {/* Alterna idioma — mostra as duas opções lado a lado (em vez de só
               a atual) pra deixar claro que dá pra trocar, não é só um rótulo. */}
           <div className="lang-toggle" role="group" aria-label="Idioma / Language">
@@ -215,17 +221,17 @@ function Nav({ lang, setLang, t }) {
               onClick={() => setLang('pt')}
               aria-pressed={lang === 'pt'}
             >
-              🇧🇷 PT
+              PT
             </button>
             <button
               className={`lang-option ${lang === 'en' ? 'active' : ''}`}
               onClick={() => setLang('en')}
               aria-pressed={lang === 'en'}
             >
-              🇺🇸 EN
+              EN
             </button>
           </div>
-          <a href={APP_URL} target="_blank" rel="noreferrer" className="btn btn-primary btn-sm">
+          <a href={APP_URL} target="_blank" rel="noreferrer" className="nav-cta">
             {t.navCta}
           </a>
           {/* Só aparece em telas ≤860px (ver CSS) — abaixo desse ponto
@@ -244,10 +250,10 @@ function Nav({ lang, setLang, t }) {
 
       {menuOpen && (
         <nav className="nav-mobile-menu">
-          <a href="/#features" onClick={closeMenu}>{t.navFeatures}</a>
-          <a href="/#pricing" onClick={closeMenu}>{t.navPricing}</a>
-          <a href="/#faq" onClick={closeMenu}>{t.navFaq}</a>
-          <a href="/#contact" onClick={closeMenu}>{t.navContact}</a>
+          <a href="/#como" onClick={closeMenu}>{t.navHow}</a>
+          <a href="/#recursos" onClick={closeMenu}>{t.navFeatures}</a>
+          <a href="/#planos" onClick={closeMenu}>{t.navPricing}</a>
+          <a href="/#perguntas" onClick={closeMenu}>{t.navFaq}</a>
         </nav>
       )}
     </header>
@@ -257,42 +263,38 @@ function Nav({ lang, setLang, t }) {
 function Hero({ t, lang }) {
   return (
     <section id="top" className="hero">
-      <div className="hero-glow" />
-      <BookGlow variant="hero" />
       <div className="hero-text">
-        <span className="badge">{t.heroBadge}</span>
+        <span className="hero-eyebrow"><span className="hero-eyebrow-dot" />{t.heroBadge}</span>
         <h1>{t.heroTitle}</h1>
         <p className="hero-sub">{t.heroSubtitle}</p>
         <div className="hero-ctas">
-          <a href={APP_URL} target="_blank" rel="noreferrer" className="btn btn-primary btn-lg">
-            {t.heroCtaPrimary} <ArrowRight size={18} />
-          </a>
-          <a href="#features" className="btn btn-ghost btn-lg">{t.heroCtaSecondary}</a>
+          <a href="/#planos" className="btn btn-primary hero-btn">{t.heroCtaPrimary}</a>
+          <a href="/#como" className="btn btn-ghost hero-btn">{t.heroCtaSecondary}</a>
         </div>
         <p className="hero-note">{t.heroNote}</p>
       </div>
       <div className="hero-visual">
-        {/* Tela de Leitura, não a Home (redesign 1h) — é o que a pessoa vai
-            de fato fazer no app, em vez de uma tela de resumo. */}
-        <Phone src={screenshotSrc('leitura', lang)} alt={t.mockSessionLabel} tilt="left" lg />
+        {/* Tela de Leitura, não a Home — é o que a pessoa vai de fato fazer
+            no app, em vez de uma tela de resumo. */}
+        <Phone src={screenshotSrc('leitura', lang)} alt={t.mockSessionLabel} />
       </div>
     </section>
   )
 }
 
-// Os screenshots são capturados direto do app rodando em cada idioma (não
-// são traduzidos via CSS/overlay) — por isso o sufixo de arquivo, em vez de
-// depender de uma imagem só e confiar em alt text.
-function screenshotSrc(name, lang) {
-  return `/screenshot-${name}${lang === 'en' ? '-en' : ''}.png`
+// Os screenshots das telas do app ainda só existem em PT (ver README,
+// "Precisa de decisão" #1) — até termos capturas em EN, as duas versões
+// do site mostram a mesma imagem em vez de tentar carregar um arquivo
+// "-en" que não existe.
+function screenshotSrc(name) {
+  return `/screenshot-${name}.png`
 }
 
-// Motivo ilustrado (só CSS, sem depender de fotos de banco que não temos
-// como buscar): um brilho quente + "páginas" abertas em leque, evocando um
-// livro aberto com luz — pano de fundo decorativo atrás do Hero, e versão
-// mais discreta como divisor antes do Showcase. Puramente decorativo
-// (aria-hidden) e com um brilho sutil que respeita prefers-reduced-motion
-// (ver index.css).
+// Motivo ilustrado do redesign anterior — o Hero (Etapa 2, identidade
+// Bento) não usa mais nenhum glow decorativo, não existe no .dc.html. Só o
+// Showcase ainda chama isso (variant="divider"); sem a classe .book-glow-*
+// (removida de index.css nesta etapa) o componente já não desenha nada —
+// fica assim, inerte, até a etapa do Showcase remover a chamada de vez.
 function BookGlow({ variant = 'hero' }) {
   return (
     <div className={`book-glow book-glow-${variant}`} aria-hidden="true">
@@ -311,12 +313,14 @@ function BookGlow({ variant = 'hero' }) {
   )
 }
 
-function Phone({ src, alt, small, lg, tilt = 'left' }) {
+// Moldura reta (sem inclinação 3D nem brilho ao redor — ver index.css).
+// small = tamanho do Showcase (250px); sem small = tamanho do Hero (274px).
+function Phone({ src, alt, small }) {
   return (
-    <div className={`phone tilt-${tilt} ${small ? 'phone-sm' : ''} ${lg ? 'phone-lg' : ''}`}>
-      <div className="phone-glow" />
-      <div className="phone-shadow" />
-      <img src={src} alt={alt} className="phone-screenshot" />
+    <div className={`phone ${small ? 'phone-sm' : ''}`}>
+      <div className="phone-viewport">
+        <img src={src} alt={alt} className="phone-screenshot" />
+      </div>
     </div>
   )
 }
@@ -340,7 +344,7 @@ function SectionLink({ text }) {
 function HowItWorks({ t }) {
   const ICON_FOR = [HandHeart, BookOpen, PenLine]
   return (
-    <section className="how-it-works">
+    <section id="como" className="how-it-works">
       <span className="eyebrow">{t.howEyebrow}</span>
       <h2>{t.howTitle}</h2>
       <p className="section-sub">{t.howSubtitle}</p>
@@ -413,7 +417,7 @@ function Showcase({ t, lang }) {
 
 function Features({ t }) {
   return (
-    <section id="features" className="section">
+    <section id="recursos" className="section">
       <h2>{t.featuresTitle}</h2>
       <p className="section-sub">{t.featuresSubtitle}</p>
       <div className="features-grid">
@@ -435,7 +439,7 @@ function Features({ t }) {
 
 function Pricing({ t }) {
   return (
-    <section id="pricing" className="section section-alt">
+    <section id="planos" className="section section-alt">
       <h2>{t.pricingTitle}</h2>
       <p className="section-sub">{t.pricingSubtitle}</p>
       <div className="pricing-tiers">
@@ -547,7 +551,7 @@ function FaqAndContact({ t }) {
   }
 
   return (
-    <section id="faq" className="section section-alt">
+    <section id="perguntas" className="section section-alt">
       <h2>{t.faqTitle}</h2>
       <div className="faq-list">
         {t.faq.map((item, i) => (
@@ -558,7 +562,7 @@ function FaqAndContact({ t }) {
         ))}
       </div>
 
-      <div id="contact" className="faq-contact-divider">
+      <div id="contato" className="faq-contact-divider">
         <h3>{t.contactTitle}</h3>
         <p className="section-sub">{t.contactSubtitle}</p>
       </div>
