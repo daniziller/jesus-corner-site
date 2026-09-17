@@ -294,6 +294,20 @@ img { display: block; max-width: 100%; }
 .showcase-visual-first { order: 1; }
 .showcase-text-last { order: 2; }
 
+/* Etapa 5 (Bento) — "Assistente de leitura", seção nova: único bloco
+   escuro full-width da página (fora do header/footer). Marca de IA
+   (losango, README "Marca") sempre que a seção fala do assistente. */
+.assistant { max-width: var(--max-width); margin: 0 auto; width: 100%; padding: clamp(40px, 6vw, 72px) 24px; border-top: 1px solid var(--border); }
+.assistant-block { background: var(--bk); border-radius: 28px; padding: clamp(28px, 4vw, 44px); }
+.assistant-head { display: flex; align-items: center; gap: 10px; margin: 0 0 16px; }
+.assistant-mark { width: 10px; height: 10px; border-radius: 2px; background: var(--or); transform: rotate(45deg); flex: none; }
+.assistant-eyebrow { font-family: var(--font); font-size: 10.5px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.45); }
+.assistant-block h3 { font-family: var(--font); font-size: clamp(21px, 2.8vw, 26px); font-weight: 800; letter-spacing: -.9px; line-height: 1.25; color: #fff; margin: 0 0 12px; max-width: 620px; text-wrap: pretty; }
+.assistant-block p { font-size: 14px; font-weight: 500; color: rgba(255,255,255,.62); line-height: 1.7; margin: 0 0 22px; max-width: 560px; }
+.assistant-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.assistant-chip { font-family: var(--font); font-size: 12px; font-weight: 700; padding: 11px 15px; border-radius: 99px; color: rgba(255,255,255,.9); background: rgba(255,255,255,.06); }
+.assistant-chip-accent { color: var(--or); background: rgba(240,102,43,.14); }
+
 /* Sections */
 .section { max-width: var(--max-width); margin: 0 auto; width: 100%; padding: 80px 20px; text-align: center; }
 .section-alt { background: var(--surface); max-width: none; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
