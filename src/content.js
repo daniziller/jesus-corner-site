@@ -52,17 +52,37 @@ export const content = {
     ctaPurposeBtn: 'Começar agora',
     ctaAboutNameText: 'Seu cantinho com Deus está a um clique de distância.',
     ctaAboutNameBtn: 'Criar meu cantinho',
+    // Etapa 4 (Bento) — "Direto do app": 3 pares (era 5, sem cartão de
+    // destaque em nenhum). O par do meio (progresso) inverte a ordem
+    // (imagem à esquerda no desktop) — ver `order` em index.css/App.jsx.
+    // `body` é sempre um array (1 ou 2 parágrafos, o de progresso tem 2).
     showcaseEyebrow: 'Direto do app',
-    showcaseFeaturedTag: 'Em destaque',
     showcase: [
-      { image: 'leitura', title: 'Leia a Bíblia inteira, capítulo por capítulo', desc: 'Cada capítulo traz o texto bíblico completo, com contexto histórico, mapa e curiosidades — numa coluna larga e confortável de ler. Ouça em voz alta ali mesmo, termine e marque como lido sem sair da tela; um toque leva direto pro próximo capítulo.' },
-      { image: 'progresso', title: 'Veja seu progresso pela Bíblia inteira', desc: 'Um anel mostra quanto você já leu no total, seguido do progresso em cada bloco — Pentateuco, Históricos, Profetas e mais. Some sua sequência de dias, capítulos lidos, níveis e conquistas, tudo numa tela só.' },
-      { image: 'rotina', title: 'Sua rotina com Deus, num só lugar', desc: 'Oração, leitura e reflexão organizadas numa linha do tempo que se preenche conforme você avança. Toque em Iniciar e ela se conduz sozinha, um passo abrindo o próximo — ou faça tudo só ouvindo, no modo mãos-livres.' },
-      { image: 'indutivo', title: 'Monte seu próprio estudo indutivo', desc: 'Escolha um livro inteiro da Bíblia e siga o método indutivo — observe, interprete e aplique cada capítulo, no seu ritmo, sem hora marcada.' },
-      { image: 'notas', title: 'Registre sermões e leituras num só lugar', desc: 'Além das suas anotações de leitura e reflexão, guarde sermões com preletor, igreja e os textos lidos — tudo buscável por palavra ou tema.' },
+      {
+        image: 'hoje',
+        alt: 'Tela Hoje do app: passo atual, sequência e semana',
+        title: 'Sua rotina com Deus, num só lugar',
+        body: ['Oração, leitura e reflexão numa linha do tempo que se preenche conforme você avança. Toque em iniciar e ela se conduz sozinha, um passo abrindo o próximo — ou faça tudo só ouvindo, no modo mãos-livres.'],
+        bullets: ['Cada passo com o seu próprio tempo', 'Meta da semana, nunca sequência quebrada', 'Pule um passo sem perder o dia'],
+      },
+      {
+        image: 'progresso',
+        alt: 'Tela de progresso pela Bíblia inteira',
+        title: 'Veja seu progresso pela Bíblia inteira',
+        body: [
+          'A constância das últimas nove semanas abre a tela, seguida dos três números que só sobem — capítulos lidos, horas de leitura e livros concluídos. Abaixo, onde você está no livro e no bloco, com a fatia da Bíblia inteira já percorrida.',
+          'Um mês fraco não apaga nada: o app mostra que você voltou, não quantos dias você perdeu.',
+        ],
+      },
+      {
+        image: 'plano',
+        alt: 'Tela Meu Plano do app, com os três passos do dia',
+        title: 'O plano mostra só o dia de hoje',
+        body: ['Nada de calendário cheio de dias perdidos: o passo feito fica em areia, o de agora em preto, o que vem depois fica discreto. A semana aparece no fim como resumo, não como placar.'],
+        link: 'recursos',
+      },
     ],
-    ctaShowcaseText: 'Viu como funciona? Agora é sua vez de experimentar.',
-    ctaShowcaseBtn: 'Quero começar',
+    showcaseLinkText: 'Ver todos os recursos',
     featuresTitle: 'Tudo o que você precisa pra ler a Bíblia com constância',
     featuresSubtitle: 'Sem complicação, sem culpa — só um passo de cada vez.',
     features: [
@@ -253,16 +273,32 @@ export const content = {
     ctaAboutNameText: 'Your corner with God is just one click away.',
     ctaAboutNameBtn: 'Create my corner',
     showcaseEyebrow: 'Straight from the app',
-    showcaseFeaturedTag: 'Featured',
     showcase: [
-      { image: 'leitura', title: 'Read the whole Bible, chapter by chapter', desc: 'Every chapter brings the full Bible text, with historical context, a map, and trivia — in a wide, comfortable reading column. Listen to it out loud right there, finish and mark it as read without leaving the screen; one tap takes you straight to the next chapter.' },
-      { image: 'progresso', title: 'See your progress through the whole Bible', desc: 'A ring shows how much you\'ve read overall, followed by progress in each block — Pentateuch, Historical, Prophets, and more. Add your day streak, chapters read, levels, and achievements, all in one screen.' },
-      { image: 'rotina', title: 'Your routine with God, in one place', desc: "Prayer, reading, and reflection laid out on a timeline that fills in as you go. Tap Start and it runs on its own, each step opening the next — or do it all just by listening, in hands-free mode." },
-      { image: 'indutivo', title: 'Build your own inductive study', desc: 'Pick a whole book of the Bible and follow the inductive method — observe, interpret, and apply each chapter, at your own pace, with no set schedule.' },
-      { image: 'notas', title: 'Keep sermons and readings in one place', desc: 'Beyond your reading and reflection notes, save sermons with preacher, church, and the passages covered — all searchable by word or theme.' },
+      {
+        image: 'hoje',
+        alt: "The app's Today screen: current step, streak, and week",
+        title: 'Your routine with God, in one place',
+        body: ["Prayer, reading, and reflection laid out on a timeline that fills in as you go. Tap start and it runs on its own, each step opening the next — or do it all just by listening, in hands-free mode."],
+        bullets: ['Each step keeps its own time', 'A weekly goal, never a broken streak', 'Skip a step without losing the day'],
+      },
+      {
+        image: 'progresso',
+        alt: 'Progress screen for the whole Bible',
+        title: 'See your progress through the whole Bible',
+        body: [
+          "The last nine weeks of consistency open the screen, followed by three numbers that only go up — chapters read, hours reading, and books finished. Below that, where you are in the book and in the block, with how much of the whole Bible you've covered.",
+          "A weak month erases nothing: the app shows that you came back, not how many days you missed.",
+        ],
+      },
+      {
+        image: 'plano',
+        alt: "The app's My Plan screen, with the day's three steps",
+        title: "The plan shows only today",
+        body: ["No calendar full of missed days: the step you finished sits in sand, the current one in black, what's next stays quiet. The week shows up at the end as a summary, not a scoreboard."],
+        link: 'recursos',
+      },
     ],
-    ctaShowcaseText: 'See how it works? Now it\'s your turn to try it.',
-    ctaShowcaseBtn: 'I want to start',
+    showcaseLinkText: 'See all features',
     featuresTitle: 'Everything you need to read the Bible consistently',
     featuresSubtitle: 'No complications, no guilt — just one step at a time.',
     features: [

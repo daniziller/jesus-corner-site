@@ -111,7 +111,7 @@ export default function App({ initialPath } = {}) {
       <Nav lang={lang} setLang={setLang} t={t} />
       <Hero t={t} lang={lang} />
       <HowItWorks t={t} />
-      <Showcase t={t} lang={lang} />
+      <Showcase t={t} />
       <Features t={t} />
       <Pricing t={t} />
       <Download t={t} />
@@ -290,29 +290,6 @@ function screenshotSrc(name) {
   return `/screenshot-${name}.png`
 }
 
-// Motivo ilustrado do redesign anterior — o Hero (Etapa 2, identidade
-// Bento) não usa mais nenhum glow decorativo, não existe no .dc.html. Só o
-// Showcase ainda chama isso (variant="divider"); sem a classe .book-glow-*
-// (removida de index.css nesta etapa) o componente já não desenha nada —
-// fica assim, inerte, até a etapa do Showcase remover a chamada de vez.
-function BookGlow({ variant = 'hero' }) {
-  return (
-    <div className={`book-glow book-glow-${variant}`} aria-hidden="true">
-      <div className="book-glow-orb" />
-      <div className="book-glow-rays">
-        {Array.from({ length: 7 }).map((_, i) => (
-          <span key={i} className="book-glow-ray" style={{ '--i': i }} />
-        ))}
-      </div>
-      <div className="book-glow-pages">
-        <span className="book-glow-page page-1" />
-        <span className="book-glow-page page-2" />
-        <span className="book-glow-page page-3" />
-      </div>
-    </div>
-  )
-}
-
 // Moldura reta (sem inclinação 3D nem brilho ao redor — ver index.css).
 // small = tamanho do Showcase (250px); sem small = tamanho do Hero (274px).
 function Phone({ src, alt, small }) {
@@ -381,34 +358,42 @@ function Why({ t }) {
   )
 }
 
-function Showcase({ t, lang }) {
+function Showcase({ t }) {
   return (
     <section className="showcase">
-      <BookGlow variant="divider" />
-      <span className="eyebrow">{t.showcaseEyebrow}</span>
+      <span className="showcase-eyebrow">{t.showcaseEyebrow}</span>
       {t.showcase.map((item, i) => {
-        // O tracker de progresso ganha um tratamento visual à parte (cartão
-        // com fundo/borda em degradê) pra se destacar das outras 2 linhas,
-        // que ficam só com texto + telefone soltos no fundo escuro.
-        const isHighlight = item.image === 'progresso'
+        // Só o par do meio (progresso) inverte — imagem à esquerda no
+        // desktop, via `order` (ver index.css). No mobile (grid em 1
+        // coluna) os dois resetam pra ordem normal do DOM: texto sempre
+        // primeiro (README, "Interações e comportamento").
+        const reversed = i === 1
+        const hasTrailing = Boolean(item.bullets || item.link)
         return (
-          <div key={i} className={`showcase-row ${i % 2 === 1 ? 'reverse' : ''} ${isHighlight ? 'showcase-row-highlight' : ''}`}>
-            <div className="showcase-text">
-              {isHighlight && (
-                <span className="showcase-highlight-tag">
-                  <BarChart3 size={12} /> {t.showcaseFeaturedTag}
-                </span>
-              )}
+          <div key={i} className="showcase-row">
+            <div className={`showcase-text ${reversed ? 'showcase-text-last' : ''}`}>
               <h3>{item.title}</h3>
-              <p>{item.desc}</p>
+              {item.body.map((p, j) => {
+                const isLast = j === item.body.length - 1
+                return <p key={j} style={{ marginBottom: isLast ? (hasTrailing ? 20 : 0) : 14 }}>{p}</p>
+              })}
+              {item.bullets && (
+                <div className="showcase-bullets">
+                  {item.bullets.map((b, j) => (
+                    <div key={j} className="showcase-bullet"><span className="showcase-bullet-dot" />{b}</div>
+                  ))}
+                </div>
+              )}
+              {item.link && (
+                <a href={`/#${item.link}`} className="showcase-link">{t.showcaseLinkText} <ArrowRight size={15} /></a>
+              )}
             </div>
-            <div className="showcase-visual">
-              <Phone src={screenshotSrc(item.image, lang)} alt={item.title} small tilt={i % 2 === 1 ? 'right' : 'left'} />
+            <div className={`showcase-visual ${reversed ? 'showcase-visual-first' : ''}`}>
+              <Phone src={screenshotSrc(item.image)} alt={item.alt} small />
             </div>
           </div>
         )
       })}
-      <SectionLink text={t.ctaShowcaseBtn} />
     </section>
   )
 }
