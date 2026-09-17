@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import {
-  ArrowRight, Check, Smartphone, ChevronRight, ArrowLeft, CheckCircle2, Menu, X,
+  ArrowRight, Smartphone, ChevronRight, ArrowLeft, CheckCircle2, Menu, X,
 } from 'lucide-react'
 
 // A versão de lucide-react instalada (1.23.0) não inclui o ícone do
@@ -437,28 +437,30 @@ function Features({ t }) {
 
 function Pricing({ t }) {
   return (
-    <section id="planos" className="section section-alt">
+    <section id="planos" className="pricing">
+      <span className="pricing-eyebrow">{t.navPricing}</span>
       <h2>{t.pricingTitle}</h2>
-      <p className="section-sub">{t.pricingSubtitle}</p>
-      <div className="pricing-tiers">
+      <p className="pricing-sub">{t.pricingSubtitle}</p>
+      <div className="pricing-grid">
         {t.pricingTiers.map((tier, i) => (
-          <div className={`pricing-card pricing-tier${tier.badge ? ' pricing-tier-featured' : ''}`} key={i}>
-            {tier.badge && <span className="pricing-plan-badge">{tier.badge}</span>}
-            <p className="pricing-tier-name">{tier.name}</p>
-            <p className="pricing-tier-price">
+          <div key={i} className={`pricing-card ${tier.popular ? 'pricing-card-dark' : ''}`}>
+            {tier.popular ? (
+              <div className="pricing-card-head">
+                <span className="pricing-mark" aria-hidden="true" />
+                <span className="pricing-name">{tier.name} · {t.pricingPopularTag}</span>
+              </div>
+            ) : (
+              <span className="pricing-name">{tier.name}</span>
+            )}
+            <p className="pricing-price">
               {tier.price}
-              {tier.per && <span className="pricing-plan-per">{tier.per}</span>}
+              {tier.per && <span className="pricing-price-unit">{tier.per}</span>}
             </p>
-            <p className="pricing-tier-alt">
-              {tier.priceUsd}{tier.per || ''}{tier.annual ? ` · ${tier.annual}` : ''}
-            </p>
-            <p className="pricing-tier-tagline">{tier.tagline}</p>
-            <ul>
-              {tier.items.map((item, j) => (
-                <li key={j}><Check size={16} color="var(--or-lt)" /> {item}</li>
-              ))}
-            </ul>
-            <a href={APP_URL} target="_blank" rel="noreferrer" className={`btn btn-lg ${tier.badge ? 'btn-primary' : 'btn-ghost'}`}>{tier.cta}</a>
+            <p className="pricing-tagline">{tier.tagline}</p>
+            <div className="pricing-items">
+              {tier.items.map((item, j) => <p key={j}>{item}</p>)}
+            </div>
+            <a href={APP_URL} target="_blank" rel="noreferrer" className={`pricing-cta ${tier.popular ? 'pricing-cta-accent' : ''}`}>{tier.cta}</a>
           </div>
         ))}
       </div>
