@@ -112,6 +112,7 @@ export default function App({ initialPath } = {}) {
       <Hero t={t} lang={lang} />
       <HowItWorks t={t} />
       <Showcase t={t} />
+      <ReadingAssistant t={t} />
       <Features t={t} />
       <Pricing t={t} />
       <Download t={t} />
@@ -394,6 +395,28 @@ function Showcase({ t }) {
           </div>
         )
       })}
+    </section>
+  )
+}
+
+// Etapa 5 (Bento) — "Assistente de leitura", seção nova: único bloco
+// escuro full-width da página inteira (fora do header/footer).
+function ReadingAssistant({ t }) {
+  return (
+    <section className="assistant">
+      <div className="assistant-block">
+        <div className="assistant-head">
+          <span className="assistant-mark" aria-hidden="true" />
+          <span className="assistant-eyebrow">{t.assistantEyebrow}</span>
+        </div>
+        <h3>{t.assistantTitle}</h3>
+        <p>{t.assistantBody}</p>
+        <div className="assistant-chips">
+          {t.assistantChips.map((chip, i) => (
+            <span key={i} className={`assistant-chip ${i === 0 ? 'assistant-chip-accent' : ''}`}>{chip}</span>
+          ))}
+        </div>
+      </div>
     </section>
   )
 }

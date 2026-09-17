@@ -83,6 +83,13 @@ export const content = {
       },
     ],
     showcaseLinkText: 'Ver todos os recursos',
+    // Etapa 5 (Bento) — "Assistente de leitura", seção nova (bloco escuro
+    // full-width, README item 5). Não existia antes — o chat com IA
+    // aparecia só como 1 item na grade de Recursos.
+    assistantEyebrow: 'Assistente de leitura',
+    assistantTitle: 'Pergunte sobre o texto sem sair da leitura',
+    assistantBody: 'Selecione um trecho e pergunte. A resposta sempre cita o versículo que a sustenta e indica onde ler mais — se não houver citação no próprio texto, a resposta não sai.',
+    assistantChips: ['O que isso significa?', 'Por que sete?', 'Contexto histórico'],
     featuresTitle: 'Tudo o que você precisa pra ler a Bíblia com constância',
     featuresSubtitle: 'Sem complicação, sem culpa — só um passo de cada vez.',
     features: [
@@ -299,6 +306,10 @@ export const content = {
       },
     ],
     showcaseLinkText: 'See all features',
+    assistantEyebrow: 'Reading assistant',
+    assistantTitle: 'Ask about the text without leaving your reading',
+    assistantBody: "Select a passage and ask. The answer always cites the verse behind it and points to where to read more — if there's no citation in the text itself, no answer comes back.",
+    assistantChips: ['What does this mean?', 'Why seven?', 'Historical context'],
     featuresTitle: 'Everything you need to read the Bible consistently',
     featuresSubtitle: 'No complications, no guilt — just one step at a time.',
     features: [
