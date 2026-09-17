@@ -19,14 +19,16 @@ export const content = {
     stickyBarText: 'Pronto pra começar sua leitura?',
     stickyBarBtn: 'Começar agora',
     mockSessionLabel: 'Tela de leitura do app, com o texto bíblico completo',
-    // Redesign 1h — "Como funciona", seção nova.
+    // Etapa 3 (Bento) — "Como funciona": texto puro, sem cartão. Cada
+    // passo ganha um campo de tempo (time) que não existia antes — o
+    // quadrado laranja mostra o número do passo, o tempo fica ao lado.
     howEyebrow: 'Como funciona',
     howTitle: 'Três passos, todo dia',
-    howSubtitle: 'Oração, leitura e reflexão — cada um abre o próximo sozinho, sem voltar pro menu.',
+    howSubtitle: 'Oração, leitura e reflexão — cada um abre o próximo sozinho, sem voltar pro menu. Você escolhe o tempo de cada passo.',
     howSteps: [
-      { title: 'Oração', desc: 'Comece o dia com um roteiro guiado (Adoração, Confissão, Gratidão, Súplica), com temporizador que avança sozinho de etapa em etapa.' },
-      { title: 'Leitura', desc: 'O capítulo do dia, no seu ritmo — com contexto histórico, mapa e a opção de ouvir em voz alta.' },
-      { title: 'Reflexão', desc: 'Feche o dia em 3 passos — Reviver, Entender e Aplicar — com o que Deus falou com você nessa leitura.' },
+      { time: '10 min', title: 'Oração', desc: 'Roteiro ACTS — Adoração, Confissão, Gratidão e Súplica — com temporizador que avança sozinho de etapa em etapa.' },
+      { time: '15 min', title: 'Leitura', desc: 'O capítulo do dia, no seu ritmo — com contexto histórico, marcação de trechos e a opção de ouvir em voz alta.' },
+      { time: '5 min', title: 'Reflexão', desc: 'Feche o dia em três perguntas curtas — Reviver, Entender e Aplicar — com o que Deus falou com você na leitura.' },
     ],
     // Redesign 1h — "Por que fiz o app": propósito + origem do nome
     // fundidos num parágrafo só, em primeira pessoa (antes eram duas seções
@@ -225,11 +227,11 @@ export const content = {
     mockSessionLabel: 'The app reading screen, with the full Bible text',
     howEyebrow: 'How it works',
     howTitle: 'Three steps, every day',
-    howSubtitle: 'Prayer, reading, and reflection — each one opens the next on its own, no going back to the menu.',
+    howSubtitle: 'Prayer, reading, and reflection — each one opens the next on its own, no going back to the menu. You choose how long each step takes.',
     howSteps: [
-      { title: 'Prayer', desc: 'Start the day with a guided routine (Adoration, Confession, Thanksgiving, Supplication), with a timer that moves through each step on its own.' },
-      { title: 'Reading', desc: "The day's chapter, at your pace — with historical context, a map, and the option to listen out loud." },
-      { title: 'Reflection', desc: 'Close the day in 3 steps — Recall, Understand, and Apply — with what God spoke to you through the reading.' },
+      { time: '10 min', title: 'Prayer', desc: 'The ACTS routine — Adoration, Confession, Thanksgiving, and Supplication — with a timer that moves through each step on its own.' },
+      { time: '15 min', title: 'Reading', desc: "The day's chapter, at your pace — with historical context, passage highlighting, and the option to listen out loud." },
+      { time: '5 min', title: 'Reflection', desc: 'Close the day with three short questions — Recall, Understand, and Apply — with what God spoke to you through the reading.' },
     ],
     whyEyebrow: 'Why I built this',
     whyTitle: 'The most beautiful love story ever told — and it\'s for everyone.',

@@ -228,21 +228,28 @@ img { display: block; max-width: 100%; }
 }
 .section-link:hover { text-decoration: underline; }
 
-/* Redesign 1h — "Como funciona", os 3 passos do dia. */
-.how-it-works { max-width: var(--max-width); margin: 0 auto; width: 100%; padding: 70px 20px 30px; text-align: center; }
-.how-it-works h2 { font-family: var(--font-display); font-size: 32px; font-weight: 900; letter-spacing: -0.6px; margin: 0 0 12px; color: var(--bk); }
-.how-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: left; margin-top: 20px; }
-.how-step { position: relative; background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 30px 24px 26px; }
+/* Etapa 3 (Bento) — "Como funciona": texto direto sobre o areia, sem
+   cartão. Quadrado laranja com o NÚMERO do passo (não ícone) + o tempo ao
+   lado, em vez do cartão com borda e ícone Lucide de antes. */
+.how-it-works {
+  max-width: var(--max-width); margin: 0 auto; width: 100%;
+  padding: clamp(40px, 6vw, 72px) 24px;
+  border-top: 1px solid var(--border);
+}
+.how-eyebrow { display: block; }
+.how-it-works h2 { font-family: var(--font); font-size: clamp(25px, 3.4vw, 34px); font-weight: 800; letter-spacing: -1.3px; line-height: 1.1; margin: 0 0 10px; color: var(--bk); }
+.how-subtitle { font-size: 15px; font-weight: 500; color: var(--g6); line-height: 1.65; margin: 0 0 40px; max-width: 520px; }
+.how-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: clamp(24px, 3vw, 40px); text-align: left; }
+.how-step { min-width: 0; }
+.how-step-head { display: flex; align-items: center; gap: 12px; margin: 0 0 14px; }
 .how-step-number {
-  position: absolute; top: 20px; right: 22px; font-family: var(--font-display); font-size: 13px; font-weight: 800;
-  color: var(--g4);
+  width: 32px; height: 32px; border-radius: 12px; background: var(--or); flex: none;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font); font-size: 13.5px; font-weight: 800; color: var(--bk);
 }
-.how-step-icon {
-  width: 44px; height: 44px; border-radius: 12px; background: var(--card-highlight-bg);
-  display: flex; align-items: center; justify-content: center; margin-bottom: 16px;
-}
-.how-step h3 { font-family: var(--font-display); font-size: 19px; font-weight: 800; color: var(--bk); margin: 0 0 8px; }
-.how-step p { font-size: 14px; color: var(--g6); line-height: 1.6; margin: 0; }
+.how-step-time { font-family: var(--font); font-size: 11.5px; font-weight: 700; color: var(--g4); }
+.how-step h3 { font-family: var(--font); font-size: 18px; font-weight: 800; letter-spacing: -.5px; margin: 0 0 8px; color: var(--bk); }
+.how-step p { font-size: 13.5px; font-weight: 500; color: var(--g6); line-height: 1.65; margin: 0; }
 
 /* Redesign 1h — "Por que fiz o app" (Purpose + AboutName fundidos). */
 .why { max-width: var(--max-width); margin: 0 auto; width: 100%; padding: 70px 20px 40px; display: flex; flex-direction: column; align-items: center; gap: 14px; }
@@ -437,14 +444,13 @@ img { display: block; max-width: 100%; }
 .install-cta { display: inline-flex; margin-top: 10px; }
 
 @media (max-width: 860px) {
-  .hero { flex-direction: column; padding-top: 50px; text-align: center; }
-  .hero-text { display: flex; flex-direction: column; align-items: center; }
-  .hero h1 { font-size: 34px; }
-  .hero-sub { max-width: 460px; }
+  /* Hero e "Como funciona" (Etapa 2/3, Bento) não precisam de override
+     manual aqui — o grid auto-fit + clamp() já reflete sozinho em
+     qualquer largura, é a regra do README ("grades usam
+     repeat(auto-fit,minmax(Npx,1fr))"). */
   .purpose-title { font-size: 27px; }
   .purpose-card, .why-card { padding: 36px 26px; }
   .why-card h2 { font-size: 23px; }
-  .how-steps { grid-template-columns: 1fr; }
   .features-grid { grid-template-columns: 1fr 1fr; }
   .nav-links { display: none; }
   .nav-hamburger { display: flex; }
@@ -458,8 +464,11 @@ img { display: block; max-width: 100%; }
   .pricing-card .btn { margin-top: 16px; }
 }
 @media (max-width: 520px) {
+  /* .phone não precisa mais de override aqui — 274px (o maior tamanho,
+     o do Hero) cabe com sobra até ~322px de viewport (274px + 24px de
+     padding de cada lado do container). A moldura agora tem um viewport
+     interno de tamanho fixo (264×542, README) — encolher só a largura de
+     fora sem encolher o de dentro junto quebraria a proporção. */
   .features-grid { grid-template-columns: 1fr; }
-  .phone { width: 210px; }
-  .phone-sm { width: 190px; }
   .waitlist-field { flex-direction: column; }
 }
