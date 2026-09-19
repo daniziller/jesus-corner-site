@@ -7,14 +7,14 @@
     <meta name="theme-color" content="#FFFFFF" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://jesuscorner.app/" />
-    <meta name="description" content="Jesus' Corner — o app pra ler a Bíblia com constância. Plano de leitura bíblica no seu ritmo, oração guiada (ACTS), plano cronológico e por tema com IA, e acompanhamento de progresso. Assinatura mensal ou anual a partir de R$16,90." />
+    <meta name="description" content="Jesus' Corner — o app pra ler a Bíblia com constância. Plano de leitura bíblica no seu ritmo, oração guiada (ACTS), plano cronológico e por tema com IA, e acompanhamento de progresso. Comece de graça — Premium a partir de R$12,90/mês." />
     <title>Jesus' Corner — App de leitura bíblica e oração guiada</title>
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Jesus' Corner" />
     <meta property="og:url" content="https://jesuscorner.app/" />
     <meta property="og:title" content="Jesus' Corner — App de leitura bíblica e oração guiada" />
-    <meta property="og:description" content="O app pra ler a Bíblia com constância. Plano de leitura bíblica no seu ritmo, oração guiada (ACTS), plano cronológico e por tema com IA, e acompanhamento de progresso." />
+    <meta property="og:description" content="O app pra ler a Bíblia com constância. Plano de leitura bíblica no seu ritmo, oração guiada (ACTS), plano cronológico e por tema com IA, e acompanhamento de progresso. Comece de graça." />
     <meta property="og:image" content="https://jesuscorner.app/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -23,7 +23,7 @@
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Jesus' Corner — App de leitura bíblica e oração guiada" />
-    <meta name="twitter:description" content="O app pra ler a Bíblia com constância. Plano de leitura bíblica no seu ritmo, oração guiada (ACTS), plano cronológico e por tema com IA, e acompanhamento de progresso." />
+    <meta name="twitter:description" content="O app pra ler a Bíblia com constância. Plano de leitura bíblica no seu ritmo, oração guiada (ACTS), plano cronológico e por tema com IA, e acompanhamento de progresso. Comece de graça." />
     <meta name="twitter:image" content="https://jesuscorner.app/og-image.png" />
 
     <script type="application/ld+json">
@@ -32,17 +32,34 @@
       "@type": "SoftwareApplication",
       "name": "Jesus' Corner",
       "url": "https://jesuscorner.app",
-      "description": "Leitura bíblica estruturada (padrão, cronológica ou por tema com IA), oração guiada (método ACTS) e reflexão guiada, com contexto histórico dos 66 livros da Bíblia e marcação de trechos com anotações. Assinatura mensal ou anual, com plano fixo.",
+      "description": "Leitura bíblica estruturada (padrão, cronológica ou por tema com IA), oração guiada (método ACTS) e reflexão guiada, com contexto histórico dos 66 livros da Bíblia e marcação de trechos com anotações. Plano grátis pra começar; Premium e Premium + IA como assinatura mensal ou anual.",
       "applicationCategory": "LifestyleApplication",
       "operatingSystem": "Web, Android, iOS",
       "inLanguage": ["pt-BR", "en"],
       "image": "https://jesuscorner.app/og-image.png",
-      "offers": {
-        "@type": "Offer",
-        "price": "16.90",
-        "priceCurrency": "BRL",
-        "description": "Assinatura mensal (R$16,90) ou anual (R$169,90) — sem anúncios, sem versão limitada."
-      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Grátis",
+          "price": "0",
+          "priceCurrency": "BRL",
+          "description": "Bíblia inteira em qualquer ritmo, oração e reflexão guiadas, áudio com a voz do aparelho, progresso e capítulos lidos."
+        },
+        {
+          "@type": "Offer",
+          "name": "Premium",
+          "price": "12.90",
+          "priceCurrency": "BRL",
+          "description": "R$12,90/mês ou R$119,90/ano. Tudo do Grátis, mais voz natural, modo mãos-livres, plano cronológico, marcações, notas, conquistas e Comunidade."
+        },
+        {
+          "@type": "Offer",
+          "name": "Premium + IA",
+          "price": "21.90",
+          "priceCurrency": "BRL",
+          "description": "R$21,90/mês ou R$199,90/ano. Tudo do Premium, mais perguntas sobre qualquer passagem, planos e estudos por tema e contexto gerado por IA."
+        }
+      ],
       "publisher": {
         "@type": "Organization",
         "name": "JCORNER DESENVOLVIMENTO DE SOFTWARE LTDA",
@@ -52,6 +69,13 @@
     }
     </script>
 
+    <!-- Bug real (varredura geral, 2026-09-19): este bloco tinha 7
+         perguntas com respostas desatualizadas (preço antigo, perfil
+         público por padrão, Comunidade liberada a partir de 16) — o
+         scripts/prerender.mjs nunca toca em application/ld+json, então
+         ficava permanentemente fora de sincronia com o conteúdo real da
+         página. Reescrito pra ser exatamente as 5 perguntas/respostas
+         visíveis em src/content.js (faq) — mesma fonte, mesmo texto. -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -59,38 +83,28 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Preciso pagar pra usar o Jesus' Corner?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Sim. O Jesus' Corner é uma assinatura mensal (R$16,90) ou anual (R$169,90), sem anúncios e sem versão limitada — a assinatura já dá acesso a tudo: leitura diária em todos os planos (incluindo o plano cronológico e o plano por tema com IA), oração guiada, os 4 estudos aprofundados, reflexão guiada, contexto histórico dos 66 livros da Bíblia, marcação de trechos com anotações, Comunidade (amigos, grupos e desafios), estatísticas completas e notas ilimitadas." }
+          "name": "Preciso pagar pra usar?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Não. O plano grátis já dá pra ler a Bíblia inteira em qualquer ritmo, fazer a oração e a reflexão guiadas, ouvir com a voz do aparelho e acompanhar seu progresso. Sem anúncios em nenhum plano." }
         },
         {
           "@type": "Question",
           "name": "Funciona sem internet?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Sim. Como é um Web App instalável (PWA), o conteúdo já visitado fica salvo no seu dispositivo e funciona offline." }
-        },
-        {
-          "@type": "Question",
-          "name": "Em quais idiomas o app está disponível?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Português e inglês, com troca de idioma a qualquer momento direto no seu perfil." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Sim. Leitura, áudio baixado e notas funcionam offline; só o assistente fica indisponível — e o app diz isso na hora, não depois de esperar." }
         },
         {
           "@type": "Question",
           "name": "Qual versão da Bíblia o app usa?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Hoje o texto bíblico completo já está disponível no app em duas versões licenciadas via API.Bible: Nova Versão Transformadora — NVT (português) e New Living Translation — NLT (inglês). Mais versões serão adicionadas em breve." }
+          "acceptedAnswer": { "@type": "Answer", "text": "NVT em português e NLT em inglês, licenciadas via API.Bible. Trocar de versão não mexe no seu progresso. Mais versões em breve." }
         },
         {
           "@type": "Question",
-          "name": "Vai ter versão nativa na Play Store e App Store?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Sim, estão em preparação. Enquanto isso, você já pode instalar o Web App na tela inicial do seu celular e usar como um app normal." }
+          "name": "Meus amigos veem meu progresso?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Por padrão seu perfil é privado — só nome, foto e mensagem ficam visíveis pros seus amigos. Você pode deixá-lo público a qualquer momento, pra eles verem seu progresso também." }
         },
         {
           "@type": "Question",
-          "name": "Meus amigos veem meu progresso de leitura?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Por padrão, sim — seu perfil já nasce público pros seus amigos, que veem seu progresso geral de leitura, o que você está lendo e seus grupos, além de nome, foto e mensagem. Se preferir mais privacidade, você pode deixar o perfil privado a qualquer momento em Perfil." }
-        },
-        {
-          "@type": "Question",
-          "name": "Tem restrição de idade pra usar a Comunidade?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Sim — a Comunidade (amigos, grupos e desafios) é liberada só a partir de 16 anos, com base na data de nascimento informada no cadastro. O resto do app não tem essa restrição." }
+          "name": "Tem restrição de idade?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Sim, o app é destinado a maiores de 18 anos — você confirma isso ao criar a conta." }
         }
       ]
     }
