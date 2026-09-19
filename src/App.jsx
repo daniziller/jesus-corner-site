@@ -11,6 +11,21 @@ import { submitContactMessage, submitWaitlistSignup } from './lib/supabaseClient
 const APP_URL = 'https://app.jesuscorner.app'
 const LANG_KEY = 'jc_site_lang'
 
+// Título da aba por rota+idioma. O HTML pré-renderizado (scripts/
+// prerender.mjs) grava um título sempre em PT no <head> — de propósito,
+// pra robô que não roda JS (WhatsApp/Twitter, buscador simples) ver algo
+// coerente sem depender do idioma real do visitante. Depois que o React
+// monta por cima, aqui é onde a aba passa a refletir o idioma de verdade
+// (detecção por IP, toggle, ou ?lang= vindo do app). Chave '' = home,
+// porque currentPath tira a barra final (window.location.pathname de "/"
+// vira '').
+const PAGE_TITLES = {
+  '': { pt: "Jesus' Corner — App de leitura bíblica e oração guiada", en: "Jesus' Corner — Bible reading and guided prayer app" },
+  '/instalar': { pt: "Instale no seu celular — Jesus' Corner", en: "Install on your phone — Jesus' Corner" },
+  '/privacidade': { pt: "Política de Privacidade — Jesus' Corner", en: "Privacy Policy — Jesus' Corner" },
+  '/termos': { pt: "Termos de Uso — Jesus' Corner", en: "Terms of Use — Jesus' Corner" },
+}
+
 // O app (outro domínio, outro localStorage) linka pras páginas legais com
 // ?lang=pt|en pra abrir no mesmo idioma da conta — sem isso não teria como
 // o site saber em que idioma o app estava. Tratamos como escolha explícita,
@@ -56,6 +71,11 @@ export default function App({ initialPath } = {}) {
     localStorage.setItem(LANG_KEY, l)
     setLangState(l)
   }
+
+  useEffect(() => {
+    const entry = PAGE_TITLES[currentPath] ?? PAGE_TITLES['']
+    document.title = entry[lang] ?? entry.pt
+  }, [lang, currentPath])
 
   const t = content[lang]
 
