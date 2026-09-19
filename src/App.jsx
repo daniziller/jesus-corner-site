@@ -284,18 +284,10 @@ function Hero({ t, lang }) {
       <div className="hero-visual">
         {/* Tela de Leitura, não a Home — é o que a pessoa vai de fato fazer
             no app, em vez de uma tela de resumo. */}
-        <Phone src={screenshotSrc('leitura', lang)} alt={t.mockSessionLabel} />
+        <Phone src={t.heroImage} alt={t.mockSessionLabel} />
       </div>
     </section>
   )
-}
-
-// Os screenshots das telas do app ainda só existem em PT (ver README,
-// "Precisa de decisão" #1) — até termos capturas em EN, as duas versões
-// do site mostram a mesma imagem em vez de tentar carregar um arquivo
-// "-en" que não existe.
-function screenshotSrc(name) {
-  return `/screenshot-${name}.png`
 }
 
 // Moldura reta (sem inclinação 3D nem brilho ao redor — ver index.css).
@@ -304,7 +296,7 @@ function Phone({ src, alt, small }) {
   return (
     <div className={`phone ${small ? 'phone-sm' : ''}`}>
       <div className="phone-viewport">
-        <img src={src} alt={alt} className="phone-screenshot" />
+        <img src={`/${src}`} alt={alt} className="phone-screenshot" />
       </div>
     </div>
   )
@@ -385,7 +377,7 @@ function Showcase({ t }) {
               )}
             </div>
             <div className={`showcase-visual ${reversed ? 'showcase-visual-first' : ''}`}>
-              <Phone src={screenshotSrc(item.image)} alt={item.alt} small />
+              <Phone src={item.image} alt={item.alt} small />
             </div>
           </div>
         )
