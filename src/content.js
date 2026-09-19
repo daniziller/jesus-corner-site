@@ -33,12 +33,14 @@ export const content = {
     // Redesign 1h — "Por que fiz o app": propósito + origem do nome
     // fundidos num parágrafo só, em primeira pessoa (antes eram duas seções
     // separadas, Purpose e AboutName).
+    // Etapa 9 (Bento) — "Por que fiz o app": 2 colunas (texto solto +
+    // bloco terra só com o versículo), sem cartão nem link no fim —
+    // whyLinkText saiu (não existe no .dc.html).
     whyEyebrow: 'Por que fiz o app',
     whyTitle: 'A história de amor mais bonita já contada — e ela é pra todo mundo.',
-    whyBody: 'Criei o Jesus\' Corner porque a Bíblia conta a história de um Deus que ama, busca e nunca desiste do Seu povo — do Éden até a eternidade — e eu queria uma forma simples de voltar a essa história todo dia. O nome vem de um "quarto": o lugar que Jesus descreve em Mateus 6, um cantinho só seu, sem plateia, sem comparação, só você, a Bíblia e Deus. Não é sobre grandes gestos religiosos — é sobre abrir esse espaço todo dia, no seu tempo, pra um tempo de qualidade que é só seu.',
+    whyBody: 'Criei o Jesus\' Corner porque a Bíblia conta a história de um Deus que ama, busca e nunca desiste do Seu povo — do Éden até a eternidade — e eu queria uma forma simples de voltar a essa história todo dia. O nome vem de um "quarto": um cantinho só seu, sem plateia, sem comparação, só você, a Bíblia e Deus.',
     whyVerseText: 'Mas, quando orarem, cada um vá para seu quarto, feche a porta e ore a seu Pai, em segredo. Então seu Pai, que observa em segredo, os recompensará.',
-    whyVerseRef: 'Mateus 6:6 · Nova Versão Transformadora (NVT)',
-    whyLinkText: 'Comece o seu cantinho agora',
+    whyVerseRef: 'Mateus 6:6 · NVT',
     purposeEyebrow: 'Nosso propósito',
     purposeTitle: 'A história de amor mais bonita já contada.',
     purposeSubtitle: 'E ela é pra todo mundo.',
@@ -249,10 +251,9 @@ export const content = {
     ],
     whyEyebrow: 'Why I built this',
     whyTitle: 'The most beautiful love story ever told — and it\'s for everyone.',
-    whyBody: "I built Jesus' Corner because the Bible tells the story of a God who loves, pursues, and never gives up on His people — from Eden to eternity — and I wanted a simple way to come back to that story every day. The name comes from a \"room\": the place Jesus describes in Matthew 6, a corner that's just yours, no audience, no comparison, just you, the Bible, and God. It's not about grand religious gestures — it's about opening that space every day, in your own time, for quality time that's yours alone.",
+    whyBody: "I built Jesus' Corner because the Bible tells the story of a God who loves, pursues, and never gives up on His people — from Eden to eternity — and I wanted a simple way to come back to that story every day. The name comes from a \"room\": a corner that's just yours, no audience, no comparison, just you, the Bible, and God.",
     whyVerseText: 'But when you pray, go away by yourself, shut the door behind you, and pray to your Father in private. Then your Father, who sees everything, will reward you.',
-    whyVerseRef: 'Matthew 6:6 · New Living Translation (NLT)',
-    whyLinkText: 'Start your own corner now',
+    whyVerseRef: 'Matthew 6:6 · NLT',
     purposeEyebrow: 'Our purpose',
     purposeTitle: "The most beautiful love story ever told.",
     purposeSubtitle: "And it's for everyone.",
