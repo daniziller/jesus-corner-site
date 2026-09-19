@@ -97,11 +97,13 @@ export default function App({ initialPath } = {}) {
     )
   }
 
-  // Redesign 1h — nova ordem: Hero → Como funciona (nova) → Telas → Recursos
-  // → Preço → Instalar → Por que fiz o app → Perguntas+Contato. Só duas
-  // chamadas em destaque na página inteira (Hero e Preço) — as demais viram
-  // link de texto (ver SectionLink) + a barra fixa discreta abaixo, que só
-  // aparece depois da primeira dobra.
+  // Ordem da identidade Bento (README, "Estrutura da página"): Hero →
+  // Como funciona → Direto do app → Assistente de leitura → Recursos →
+  // Planos → Baixe onde quiser/Lista de espera → Por que fiz o app →
+  // Perguntas+Contato → (CTA final, etapa 11) → Footer. A barra fixa
+  // abaixo (StickyCtaBar) ainda é a única chamada que persiste na
+  // rolagem fora do Hero/Planos — sai quando a etapa do CTA final
+  // decidir seu destino.
   return (
     <div className="page">
       <Nav lang={lang} setLang={setLang} t={t} />
@@ -299,19 +301,6 @@ function Phone({ src, alt, small }) {
   )
 }
 
-// Link de texto reaproveitado depois de seções intermediárias — redesign
-// 1h: só o Hero e a Pricing têm botão em destaque; qualquer convite no meio
-// da página vira um link discreto com a frase daquela seção, não o mesmo
-// botão laranja repetido (ver "barra fixa" mais abaixo pra o convite que
-// persiste na rolagem).
-function SectionLink({ text }) {
-  return (
-    <a href={APP_URL} target="_blank" rel="noreferrer" className="section-link">
-      {text} <ArrowRight size={15} />
-    </a>
-  )
-}
-
 // Seção "Como funciona" (nova, redesign 1h) — os três passos do dia (Oração
 // → Leitura → Reflexão) são a ideia central do app e não apareciam em
 // lugar nenhum do site.
@@ -343,14 +332,15 @@ function HowItWorks({ t }) {
 function Why({ t }) {
   return (
     <section className="why">
-      <div className="why-card">
-        <span className="eyebrow">{t.whyEyebrow}</span>
+      <div className="why-text">
+        <span className="why-eyebrow">{t.whyEyebrow}</span>
         <h2>{t.whyTitle}</h2>
         <p className="why-body">{t.whyBody}</p>
-        <blockquote>"{t.whyVerseText}"</blockquote>
-        <p className="why-verse-ref">{t.whyVerseRef}</p>
       </div>
-      <SectionLink text={t.whyLinkText} />
+      <div className="why-verse">
+        <blockquote>"{t.whyVerseText}"</blockquote>
+        <span className="why-verse-ref">{t.whyVerseRef}</span>
+      </div>
     </section>
   )
 }

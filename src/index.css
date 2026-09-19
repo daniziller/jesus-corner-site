@@ -215,15 +215,6 @@ img { display: block; max-width: 100%; }
 .about-name-ref { font-size: 12px; font-weight: 700; color: var(--or); letter-spacing: 0.5px; margin: 10px 0 22px; }
 .about-name-body { font-size: 14px; color: var(--g5); line-height: 1.65; margin: 0; }
 
-/* Redesign 1h — link de texto no lugar do botão repetido em seções
-   intermediárias (ver SectionLink em App.jsx); só Hero e Pricing têm botão
-   em destaque agora. */
-.section-link {
-  display: inline-flex; align-items: center; gap: 6px; margin-top: 40px;
-  font-size: 15px; font-weight: 700; color: var(--or); text-decoration: none;
-}
-.section-link:hover { text-decoration: underline; }
-
 /* Etapa 3 (Bento) — "Como funciona": texto direto sobre o areia, sem
    cartão. Quadrado laranja com o NÚMERO do passo (não ícone) + o tempo ao
    lado, em vez do cartão com borda e ícone Lucide de antes. */
@@ -237,7 +228,7 @@ img { display: block; max-width: 100%; }
    do body em vez do rótulo pequeno e discreto. Corrigido na etapa 6, e
    compartilhada com Recursos/Planos desde então — um lugar só pro rótulo
    pequeno em maiúsculas que se repete no topo de cada seção. */
-.how-eyebrow, .features-eyebrow, .pricing-eyebrow, .download-eyebrow {
+.how-eyebrow, .features-eyebrow, .pricing-eyebrow, .download-eyebrow, .why-eyebrow {
   display: block;
   font-family: var(--font); font-size: 10.5px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
   color: var(--g4); margin: 0 0 14px;
@@ -256,20 +247,22 @@ img { display: block; max-width: 100%; }
 .how-step h3 { font-family: var(--font); font-size: 18px; font-weight: 800; letter-spacing: -.5px; margin: 0 0 8px; color: var(--bk); }
 .how-step p { font-size: 13.5px; font-weight: 500; color: var(--g6); line-height: 1.65; margin: 0; }
 
-/* Redesign 1h — "Por que fiz o app" (Purpose + AboutName fundidos). */
-.why { max-width: var(--max-width); margin: 0 auto; width: 100%; padding: 70px 20px 40px; display: flex; flex-direction: column; align-items: center; gap: 14px; }
-.why-card {
-  max-width: 720px; text-align: center; background: var(--surface); border: 1px solid var(--border);
-  border-radius: 22px; padding: 44px 40px;
+/* Etapa 9 (Bento) — "Por que fiz o app": 2 colunas, texto solto à
+   esquerda (sem cartão) + bloco terra só com o versículo à direita — era
+   1 cartão centralizado com tudo dentro (texto degradê + citação juntos). */
+.why {
+  max-width: var(--max-width); margin: 0 auto; width: 100%;
+  padding: clamp(40px, 6vw, 72px) 24px;
+  border-top: 1px solid var(--border);
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: clamp(28px, 4vw, 56px); align-items: center;
 }
-.why-card .eyebrow { display: block; margin-bottom: 10px; }
-.why-card h2 {
-  font-family: var(--font-display); font-size: 28px; font-weight: 800; letter-spacing: -0.5px; line-height: 1.25; margin: 0 0 20px;
-  background: var(--grad-vivid); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
-}
-.why-body { font-size: 15px; color: var(--g6); line-height: 1.7; margin: 0 0 24px; text-align: left; }
-.why-card blockquote { margin: 0; font-size: 16px; font-style: italic; color: var(--g6); line-height: 1.6; }
-.why-verse-ref { font-size: 12px; font-weight: 700; color: var(--or); letter-spacing: 0.5px; margin: 10px 0 0; }
+.why-text { min-width: 0; }
+.why-text h2 { font-family: var(--font); font-size: clamp(22px, 2.9vw, 29px); font-weight: 800; letter-spacing: -1.1px; line-height: 1.2; margin: 0 0 16px; color: var(--bk); text-wrap: pretty; }
+.why-body { font-size: 14.5px; font-weight: 500; color: var(--g6); line-height: 1.75; margin: 0; text-wrap: pretty; }
+.why-verse { min-width: 0; background: var(--terra); border-radius: 28px; padding: clamp(26px, 3.4vw, 38px); }
+.why-verse blockquote { margin: 0 0 16px; font-family: var(--font); font-size: clamp(16px, 1.9vw, 19px); font-weight: 500; font-style: italic; line-height: 1.6; color: var(--terra-ink); text-wrap: pretty; }
+.why-verse-ref { display: block; font-family: var(--font); font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--terra-label); margin: 0; }
 
 /* Showcase — Etapa 4 (Bento) "Direto do app": 3 pares texto/celular
    (era 5, sem cartão de destaque em nenhum — esse tratamento não existe
@@ -490,8 +483,7 @@ img { display: block; max-width: 100%; }
      qualquer largura, é a regra do README ("grades usam
      repeat(auto-fit,minmax(Npx,1fr))"). */
   .purpose-title { font-size: 27px; }
-  .purpose-card, .why-card { padding: 36px 26px; }
-  .why-card h2 { font-size: 23px; }
+  .purpose-card { padding: 36px 26px; }
   .nav-links { display: none; }
   .nav-hamburger { display: flex; }
   .nav-mobile-menu { display: flex; }
