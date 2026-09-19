@@ -5,6 +5,7 @@ import {
 import { content } from './content'
 import { privacyContent } from './privacyContent'
 import { termsContent } from './termsContent'
+import { deleteAccountContent } from './deleteAccountContent'
 import { detectLanguageFromIp } from './langDetect'
 import { submitContactMessage, submitWaitlistSignup } from './lib/supabaseClient'
 
@@ -24,6 +25,7 @@ const PAGE_TITLES = {
   '/instalar': { pt: "Instale no seu celular — Jesus' Corner", en: "Install on your phone — Jesus' Corner" },
   '/privacidade': { pt: "Política de Privacidade — Jesus' Corner", en: "Privacy Policy — Jesus' Corner" },
   '/termos': { pt: "Termos de Uso — Jesus' Corner", en: "Terms of Use — Jesus' Corner" },
+  '/excluir-conta': { pt: "Excluir sua conta — Jesus' Corner", en: "Delete your account — Jesus' Corner" },
 }
 
 // O app (outro domínio, outro localStorage) linka pras páginas legais com
@@ -43,6 +45,7 @@ export default function App({ initialPath } = {}) {
   const currentPath = initialPath ?? (typeof window !== 'undefined' ? window.location.pathname.replace(/\/$/, '') : '')
   const isPrivacyPath = currentPath === '/privacidade'
   const isTermsPath = currentPath === '/termos'
+  const isDeletePath = currentPath === '/excluir-conta'
   const isInstallPath = currentPath === '/instalar'
 
   const [lang, setLangState] = useState(() => {
@@ -88,8 +91,8 @@ export default function App({ initialPath } = {}) {
 
   const t = content[lang]
 
-  if (isPrivacyPath || isTermsPath) {
-    const legalContent = isPrivacyPath ? privacyContent : termsContent
+  if (isPrivacyPath || isTermsPath || isDeletePath) {
+    const legalContent = isPrivacyPath ? privacyContent : isTermsPath ? termsContent : deleteAccountContent
     return (
       <div className="page">
         <Nav lang={lang} setLang={setLang} t={t} />

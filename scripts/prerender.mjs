@@ -46,6 +46,12 @@ const ROUTES = [
     title: "Termos de Uso — Jesus' Corner",
     description: "Estes termos explicam as regras pra usar o Jesus' Corner, em linguagem simples, sem juridiquês desnecessário.",
   },
+  {
+    path: '/excluir-conta',
+    outFile: 'excluir-conta/index.html',
+    title: "Excluir sua conta — Jesus' Corner",
+    description: "Como excluir sua conta do Jesus' Corner e todos os seus dados, direto pelo app ou por e-mail — sem precisar reinstalar o app.",
+  },
 ]
 
 function injectRoute(template, route) {
