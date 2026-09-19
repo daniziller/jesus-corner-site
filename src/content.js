@@ -15,6 +15,7 @@ export const content = {
     heroCtaSecondary: 'Ver como funciona',
     heroNote: 'Funciona no navegador, sem instalação. Em breve na Play Store e App Store.',
     mockSessionLabel: 'Tela de leitura do app, com o texto bíblico completo',
+    heroImage: 'screenshot-leitura.png',
     // Etapa 3 (Bento) — "Como funciona": texto puro, sem cartão. Cada
     // passo ganha um campo de tempo (time) que não existia antes — o
     // quadrado laranja mostra o número do passo, o tempo fica ao lado.
@@ -44,14 +45,14 @@ export const content = {
     showcaseEyebrow: 'Direto do app',
     showcase: [
       {
-        image: 'hoje',
+        image: 'screenshot-hoje.png',
         alt: 'Tela Hoje do app: passo atual, sequência e semana',
         title: 'Sua rotina com Deus, num só lugar',
         body: ['Oração, leitura e reflexão numa linha do tempo que se preenche conforme você avança. Toque em iniciar e ela se conduz sozinha, um passo abrindo o próximo — ou faça tudo só ouvindo, no modo mãos-livres.'],
         bullets: ['Cada passo com o seu próprio tempo', 'Meta da semana, nunca sequência quebrada', 'Pule um passo sem perder o dia'],
       },
       {
-        image: 'progresso',
+        image: 'screenshot-progresso.png',
         alt: 'Tela de progresso pela Bíblia inteira',
         title: 'Veja seu progresso pela Bíblia inteira',
         body: [
@@ -60,7 +61,7 @@ export const content = {
         ],
       },
       {
-        image: 'plano',
+        image: 'screenshot-plano.png',
         alt: 'Tela Meu Plano do app, com os três passos do dia',
         title: 'O plano mostra só o dia de hoje',
         body: ['Nada de calendário cheio de dias perdidos: o passo feito fica em areia, o de agora em preto, o que vem depois fica discreto. A semana aparece no fim como resumo, não como placar.'],
@@ -232,6 +233,7 @@ export const content = {
     heroCtaSecondary: 'See how it works',
     heroNote: 'Works right in your browser, no install needed. Coming soon to the Play Store and App Store.',
     mockSessionLabel: 'The app reading screen, with the full Bible text',
+    heroImage: 'screenshot-leitura-en.png',
     howEyebrow: 'How it works',
     howTitle: 'Three steps, every day',
     howSubtitle: 'Prayer, reading, and reflection — each one opens the next on its own, no going back to the menu. You choose how long each step takes.',
@@ -248,14 +250,14 @@ export const content = {
     showcaseEyebrow: 'Straight from the app',
     showcase: [
       {
-        image: 'hoje',
+        image: 'screenshot-hoje-en.png',
         alt: "The app's Today screen: current step, streak, and week",
         title: 'Your routine with God, in one place',
         body: ["Prayer, reading, and reflection laid out on a timeline that fills in as you go. Tap start and it runs on its own, each step opening the next — or do it all just by listening, in hands-free mode."],
         bullets: ['Each step keeps its own time', 'A weekly goal, never a broken streak', 'Skip a step without losing the day'],
       },
       {
-        image: 'progresso',
+        image: 'screenshot-progresso-en.png',
         alt: 'Progress screen for the whole Bible',
         title: 'See your progress through the whole Bible',
         body: [
@@ -264,7 +266,7 @@ export const content = {
         ],
       },
       {
-        image: 'plano',
+        image: 'screenshot-plano-en.png',
         alt: "The app's My Plan screen, with the day's three steps",
         title: "The plan shows only today",
         body: ["No calendar full of missed days: the step you finished sits in sand, the current one in black, what's next stays quiet. The week shows up at the end as a summary, not a scoreboard."],
