@@ -100,10 +100,7 @@ export default function App({ initialPath } = {}) {
   // Ordem da identidade Bento (README, "Estrutura da página"): Hero →
   // Como funciona → Direto do app → Assistente de leitura → Recursos →
   // Planos → Baixe onde quiser/Lista de espera → Por que fiz o app →
-  // Perguntas+Contato → (CTA final, etapa 11) → Footer. A barra fixa
-  // abaixo (StickyCtaBar) ainda é a única chamada que persiste na
-  // rolagem fora do Hero/Planos — sai quando a etapa do CTA final
-  // decidir seu destino.
+  // Perguntas+Contato → CTA final → Footer.
   return (
     <div className="page">
       <Nav lang={lang} setLang={setLang} t={t} />
@@ -116,8 +113,8 @@ export default function App({ initialPath } = {}) {
       <Download t={t} />
       <Why t={t} />
       <FaqAndContact t={t} />
+      <CtaFinal t={t} />
       <Footer t={t} />
-      <StickyCtaBar t={t} />
     </div>
   )
 }
@@ -580,34 +577,20 @@ function FaqAndContact({ t }) {
   )
 }
 
-// Barra fixa discreta (redesign 1h) — aparece só depois da primeira dobra
-// (passar da altura do Hero), pra manter o cadastro sempre a 1 toque sem
-// repetir o botão grande do Hero a cada seção. Some de novo perto do
-// rodapé, que já tem seus próprios links — não faz sentido flutuar por
-// cima dele.
-function StickyCtaBar({ t }) {
-  const [visible, setVisible] = useState(false)
-
-  useEffect(() => {
-    function onScroll() {
-      const heroHeight = document.getElementById('top')?.offsetHeight ?? 600
-      const footer = document.querySelector('.footer')
-      const nearFooter = footer ? window.scrollY + window.innerHeight > footer.offsetTop : false
-      setVisible(window.scrollY > heroHeight && !nearFooter)
-    }
-    window.addEventListener('scroll', onScroll, { passive: true })
-    onScroll()
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
-
-  if (!visible) return null
+// CTA final (Etapa 11, Bento) — título + nota em linha com o botão, sem
+// bloco. Fecha a página antes do rodapé; substitui a barra fixa
+// (StickyCtaBar) que existia antes — não está na estrutura do README nem
+// no .dc.html, e com um CTA de fechamento de verdade ela vira peso
+// repetido em vez de ajuda.
+function CtaFinal({ t }) {
   return (
-    <div className="sticky-cta-bar" role="complementary">
-      <span className="sticky-cta-text">{t.stickyBarText}</span>
-      <a href={APP_URL} target="_blank" rel="noreferrer" className="btn btn-primary btn-sm">
-        {t.stickyBarBtn}
-      </a>
-    </div>
+    <section className="cta-final">
+      <div className="cta-final-text">
+        <h2>{t.ctaFinalTitle}</h2>
+        <p>{t.ctaFinalSub}</p>
+      </div>
+      <a href={APP_URL} target="_blank" rel="noreferrer" className="cta-final-btn">{t.ctaFinalBtn}</a>
+    </section>
   )
 }
 

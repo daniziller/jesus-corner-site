@@ -14,10 +14,6 @@ export const content = {
     heroCtaPrimary: 'Começar agora',
     heroCtaSecondary: 'Ver como funciona',
     heroNote: 'Funciona no navegador, sem instalação. Em breve na Play Store e App Store.',
-    // Redesign 1h — barra fixa discreta, única outra chamada além do Hero
-    // e da Pricing (ver StickyCtaBar em App.jsx).
-    stickyBarText: 'Pronto pra começar sua leitura?',
-    stickyBarBtn: 'Começar agora',
     mockSessionLabel: 'Tela de leitura do app, com o texto bíblico completo',
     // Etapa 3 (Bento) — "Como funciona": texto puro, sem cartão. Cada
     // passo ganha um campo de tempo (time) que não existia antes — o
@@ -41,19 +37,6 @@ export const content = {
     whyBody: 'Criei o Jesus\' Corner porque a Bíblia conta a história de um Deus que ama, busca e nunca desiste do Seu povo — do Éden até a eternidade — e eu queria uma forma simples de voltar a essa história todo dia. O nome vem de um "quarto": um cantinho só seu, sem plateia, sem comparação, só você, a Bíblia e Deus.',
     whyVerseText: 'Mas, quando orarem, cada um vá para seu quarto, feche a porta e ore a seu Pai, em segredo. Então seu Pai, que observa em segredo, os recompensará.',
     whyVerseRef: 'Mateus 6:6 · NVT',
-    purposeEyebrow: 'Nosso propósito',
-    purposeTitle: 'A história de amor mais bonita já contada.',
-    purposeSubtitle: 'E ela é pra todo mundo.',
-    purposeBody: 'A Bíblia conta a história de um Deus que ama, busca e nunca desiste do Seu povo — do Éden até a eternidade. O Jesus\' Corner existe pra te aproximar dessa história todos os dias, com uma plataforma completa pra acompanhar sua caminhada de leitura.',
-    aboutNameEyebrow: 'A origem do nome',
-    aboutNameTitle: 'Por que "Jesus\' Corner"?',
-    aboutNameVerseText: 'Mas, quando orarem, cada um vá para seu quarto, feche a porta e ore a seu Pai, em segredo. Então seu Pai, que observa em segredo, os recompensará.',
-    aboutNameVerseRef: 'Mateus 6:6 · Nova Versão Transformadora (NVT)',
-    aboutNameBody: 'O nome nasce desse "quarto": um cantinho só seu, sem plateia, sem comparação — só você, a Bíblia e Deus. Não é sobre grandes gestos religiosos, é sobre criar esse espaço todo dia, no seu tempo, pra um tempo de qualidade que é só seu.',
-    ctaPurposeText: 'Comece hoje mesmo — o primeiro passo é só seu.',
-    ctaPurposeBtn: 'Começar agora',
-    ctaAboutNameText: 'Seu cantinho com Deus está a um clique de distância.',
-    ctaAboutNameBtn: 'Criar meu cantinho',
     // Etapa 4 (Bento) — "Direto do app": 3 pares (era 5, sem cartão de
     // destaque em nenhum). O par do meio (progresso) inverte a ordem
     // (imagem à esquerda no desktop) — ver `order` em index.css/App.jsx.
@@ -218,6 +201,11 @@ export const content = {
     contactSuccessTitle: 'Mensagem enviada!',
     contactSuccessSub: 'Obrigado por escrever — vamos responder no e-mail que você deixou assim que possível.',
     contactSendAnother: 'Enviar outra mensagem',
+    // Etapa 11 (Bento) — CTA final: título + nota em linha com o botão,
+    // sem bloco. Seção nova, fecha a página antes do rodapé.
+    ctaFinalTitle: 'Seu cantinho com Deus começa hoje.',
+    ctaFinalSub: 'Sem conta, sem cartão — abra e comece a ler.',
+    ctaFinalBtn: 'Começar a ler',
     footerTagline: 'Feito com fé, um capítulo de cada vez.',
     footerInstagramLabel: 'Instagram do Jesus\' Corner',
     footerPrivacyLink: 'Política de Privacidade',
@@ -239,8 +227,6 @@ export const content = {
     heroCtaPrimary: 'Get started',
     heroCtaSecondary: 'See how it works',
     heroNote: 'Works right in your browser, no install needed. Coming soon to the Play Store and App Store.',
-    stickyBarText: 'Ready to start your reading?',
-    stickyBarBtn: 'Get started',
     mockSessionLabel: 'The app reading screen, with the full Bible text',
     howEyebrow: 'How it works',
     howTitle: 'Three steps, every day',
@@ -255,19 +241,6 @@ export const content = {
     whyBody: "I built Jesus' Corner because the Bible tells the story of a God who loves, pursues, and never gives up on His people — from Eden to eternity — and I wanted a simple way to come back to that story every day. The name comes from a \"room\": a corner that's just yours, no audience, no comparison, just you, the Bible, and God.",
     whyVerseText: 'But when you pray, go away by yourself, shut the door behind you, and pray to your Father in private. Then your Father, who sees everything, will reward you.',
     whyVerseRef: 'Matthew 6:6 · NLT',
-    purposeEyebrow: 'Our purpose',
-    purposeTitle: "The most beautiful love story ever told.",
-    purposeSubtitle: "And it's for everyone.",
-    purposeBody: "The Bible tells the story of a God who loves, pursues, and never gives up on His people — from Eden to eternity. Jesus' Corner exists to bring you closer to that story every day, with a complete platform to track your reading journey.",
-    aboutNameEyebrow: 'Where the name comes from',
-    aboutNameTitle: 'Why "Jesus\' Corner"?',
-    aboutNameVerseText: 'But when you pray, go away by yourself, shut the door behind you, and pray to your Father in private. Then your Father, who sees everything, will reward you.',
-    aboutNameVerseRef: 'Matthew 6:6 · New Living Translation (NLT)',
-    aboutNameBody: "The name comes from that \"room\": a corner that's just yours, no audience, no comparison — just you, the Bible, and God. It's not about grand religious gestures, it's about creating that space every day, in your own time, for quality time that's yours alone.",
-    ctaPurposeText: 'Start today — the first step is yours to take.',
-    ctaPurposeBtn: 'Get started',
-    ctaAboutNameText: 'Your corner with God is just one click away.',
-    ctaAboutNameBtn: 'Create my corner',
     showcaseEyebrow: 'Straight from the app',
     showcase: [
       {
@@ -408,6 +381,9 @@ export const content = {
     contactSuccessTitle: 'Message sent!',
     contactSuccessSub: "Thanks for writing — we'll reply to the email you left as soon as we can.",
     contactSendAnother: 'Send another message',
+    ctaFinalTitle: 'Your corner with God starts today.',
+    ctaFinalSub: 'No account, no card — open and start reading.',
+    ctaFinalBtn: 'Start reading',
     footerTagline: 'Made in faith, one chapter at a time.',
     footerInstagramLabel: "Jesus' Corner on Instagram",
     footerPrivacyLink: 'Privacy Policy',

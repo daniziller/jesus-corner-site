@@ -189,32 +189,6 @@ img { display: block; max-width: 100%; }
 .phone-sm .phone-viewport { width: 240px; height: 492px; border-radius: 31px; }
 .phone-screenshot { width: 100%; height: auto; display: block; }
 
-/* Purpose */
-.purpose { max-width: var(--max-width); margin: 0 auto; width: 100%; padding: 50px 20px 10px; display: flex; flex-direction: column; align-items: center; gap: 28px; }
-.purpose-card {
-  max-width: 720px; text-align: center; background: var(--surface); border: 1px solid var(--border);
-  border-radius: 22px; padding: 44px 40px;
-}
-.purpose-card .eyebrow { display: block; margin-bottom: 10px; }
-.purpose-title {
-  font-family: var(--font-display); font-size: 34px; font-weight: 800; font-style: italic; letter-spacing: -0.6px; line-height: 1.2; margin: 0 0 8px;
-  background: var(--grad-vivid); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
-}
-.purpose-subtitle { font-size: 17px; font-weight: 700; color: var(--bk); margin: 0 0 18px; }
-.purpose-body { font-size: 15px; color: var(--g6); line-height: 1.7; margin: 0; }
-
-/* About the name */
-.about-name { max-width: var(--max-width); margin: 0 auto; width: 100%; padding: 10px 20px 60px; display: flex; flex-direction: column; align-items: center; gap: 28px; }
-.about-name-card {
-  max-width: 720px; text-align: center; background: var(--surface); border: 1px solid var(--border);
-  border-radius: 22px; padding: 44px 40px;
-}
-.about-name-card .eyebrow { display: block; margin-bottom: 10px; }
-.about-name-card h2 { font-family: var(--font-display); font-size: 26px; font-weight: 900; color: var(--bk); letter-spacing: -0.4px; margin: 0 0 20px; }
-.about-name-card blockquote { margin: 0; font-size: 17px; font-style: italic; color: var(--g6); line-height: 1.6; }
-.about-name-ref { font-size: 12px; font-weight: 700; color: var(--or); letter-spacing: 0.5px; margin: 10px 0 22px; }
-.about-name-body { font-size: 14px; color: var(--g5); line-height: 1.65; margin: 0; }
-
 /* Etapa 3 (Bento) — "Como funciona": texto direto sobre o areia, sem
    cartão. Quadrado laranja com o NÚMERO do passo (não ícone) + o tempo ao
    lado, em vez do cartão com borda e ícone Lucide de antes. */
@@ -436,20 +410,21 @@ img { display: block; max-width: 100%; }
 .contact-success h3 { font-size: 20px; font-weight: 800; color: var(--bk); margin: 14px 0 8px; }
 .contact-success p { font-size: 14px; color: var(--g6); line-height: 1.6; margin: 0 0 20px; }
 
-/* Redesign 1h — barra fixa discreta (ver StickyCtaBar em App.jsx): a única
-   chamada que persiste na rolagem, fora do Hero e da Pricing. */
-.sticky-cta-bar {
-  position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%); z-index: 40;
-  display: flex; align-items: center; gap: 14px;
-  background: var(--bk); color: var(--white); border-radius: 999px;
-  padding: 10px 10px 10px 20px; box-shadow: 0 12px 30px rgba(0,0,0,.25);
-  max-width: calc(100% - 32px);
+/* Etapa 11 (Bento) — CTA final: título + nota em linha, botão laranja à
+   direita, sem bloco/cartão — a única chamada de fechamento da página,
+   fora do Hero e de Planos. Substitui a barra fixa (StickyCtaBar), que
+   não existe na estrutura do README nem no .dc.html — junto com um CTA
+   de verdade no fim da página, mantê-la seria peso repetido. */
+.cta-final {
+  max-width: var(--max-width); margin: 0 auto; width: 100%;
+  padding: clamp(40px, 6vw, 64px) 24px clamp(48px, 7vw, 80px);
+  border-top: 1px solid var(--border);
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px;
 }
-.sticky-cta-text { font-size: 13.5px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-@media (max-width: 560px) {
-  .sticky-cta-text { display: none; }
-  .sticky-cta-bar { padding: 8px 8px 8px 16px; }
-}
+.cta-final-text { min-width: 0; }
+.cta-final-text h2 { font-family: var(--font); font-size: clamp(24px, 3.2vw, 32px); font-weight: 800; letter-spacing: -1.3px; line-height: 1.15; margin: 0 0 8px; color: var(--bk); text-wrap: pretty; }
+.cta-final-text p { font-size: 14.5px; font-weight: 500; color: var(--g6); line-height: 1.6; margin: 0; }
+.cta-final-btn { font-family: var(--font); font-size: 15.5px; font-weight: 800; color: var(--bk); background: var(--or); padding: 19px 28px; border-radius: 16px; flex: none; }
 
 .footer { text-align: center; padding: 56px 20px 44px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
 .footer-icon { width: 40px; height: 40px; border-radius: 10px; }
@@ -488,8 +463,6 @@ img { display: block; max-width: 100%; }
      manual aqui — o grid auto-fit + clamp() já reflete sozinho em
      qualquer largura, é a regra do README ("grades usam
      repeat(auto-fit,minmax(Npx,1fr))"). */
-  .purpose-title { font-size: 27px; }
-  .purpose-card { padding: 36px 26px; }
   .nav-links { display: none; }
   .nav-hamburger { display: flex; }
   .nav-mobile-menu { display: flex; }
