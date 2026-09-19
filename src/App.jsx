@@ -118,7 +118,7 @@ export default function App({ initialPath } = {}) {
       <Nav lang={lang} setLang={setLang} t={t} />
       <Hero t={t} lang={lang} />
       <HowItWorks t={t} />
-      <Showcase t={t} />
+      <Showcase t={t} lang={lang} />
       <ReadingAssistant t={t} />
       <Features t={t} />
       <Pricing t={t} />
@@ -290,12 +290,17 @@ function Hero({ t, lang }) {
   )
 }
 
-// Os screenshots das telas do app ainda só existem em PT (ver README,
-// "Precisa de decisão" #1) — até termos capturas em EN, as duas versões
-// do site mostram a mesma imagem em vez de tentar carregar um arquivo
-// "-en" que não existe.
-function screenshotSrc(name) {
-  return `/screenshot-${name}.png`
+// Os screenshots das telas do app (varredura geral, 2026-09-19: achado
+// real — "os screenshots quando muda pra inglês estão em português").
+// Item já disclosed desde o handoff original ("Precisa de decisão" #1) —
+// as capturas em EN não existem ainda (scripts/site-screenshots.mjs, no
+// repo do app, é o jeito de gerá-las — precisa de login de verdade, então
+// só ela pode rodar). Pede o arquivo "-en" quando lang='en'; o <img> abaixo
+// tem fallback pro arquivo sem sufixo (PT) se o "-en" ainda não existir
+// (404) — assim que ela capturar e soltar os 4 arquivos "-en" na pasta
+// public/, aparecem sozinhos, sem precisar mexer em código de novo.
+function screenshotSrc(name, lang) {
+  return `/screenshot-${name}${lang === 'en' ? '-en' : ''}.png`
 }
 
 // Moldura reta (sem inclinação 3D nem brilho ao redor — ver index.css).
@@ -304,7 +309,16 @@ function Phone({ src, alt, small }) {
   return (
     <div className={`phone ${small ? 'phone-sm' : ''}`}>
       <div className="phone-viewport">
-        <img src={src} alt={alt} className="phone-screenshot" />
+        <img
+          src={src} alt={alt} className="phone-screenshot"
+          onError={e => {
+            // Captura EN ainda não existe — cai pro PT (sem sufixo) em vez
+            // de mostrar a imagem quebrada. Guarda contra loop se o PT
+            // também falhar por algum motivo (troca o src só uma vez).
+            const fallback = e.currentTarget.src.replace('-en.png', '.png')
+            if (e.currentTarget.src !== fallback) e.currentTarget.src = fallback
+          }}
+        />
       </div>
     </div>
   )
@@ -354,7 +368,7 @@ function Why({ t }) {
   )
 }
 
-function Showcase({ t }) {
+function Showcase({ t, lang }) {
   return (
     <section className="showcase">
       <span className="showcase-eyebrow">{t.showcaseEyebrow}</span>
@@ -385,7 +399,7 @@ function Showcase({ t }) {
               )}
             </div>
             <div className={`showcase-visual ${reversed ? 'showcase-visual-first' : ''}`}>
-              <Phone src={screenshotSrc(item.image)} alt={item.alt} small />
+              <Phone src={screenshotSrc(item.image, lang)} alt={item.alt} small />
             </div>
           </div>
         )
