@@ -77,6 +77,15 @@ export default function App({ initialPath } = {}) {
     document.title = entry[lang] ?? entry.pt
   }, [lang, currentPath])
 
+  // Bug real (varredura geral, 2026-09-19): document.title já trocava com
+  // o idioma (acima) mas document.documentElement.lang nunca era tocado —
+  // ficava travado em "pt-BR" (o valor do HTML pré-renderizado) mesmo
+  // depois de trocar pra EN. Leitor de tela pronunciava o texto em inglês
+  // com regras de pronúncia do português.
+  useEffect(() => {
+    document.documentElement.lang = lang === 'en' ? 'en' : 'pt-BR'
+  }, [lang])
+
   const t = content[lang]
 
   if (isPrivacyPath || isTermsPath) {
@@ -533,7 +542,15 @@ function FaqAndContact({ t }) {
       setSent(true)
       setMessage('')
     } catch (err) {
-      setError(err.message)
+      // Bug real (varredura geral, 2026-09-19): mostrava err.message cru —
+      // se as variáveis do Supabase não estivessem configuradas, era
+      // literalmente a string em inglês "Supabase not configured" mesmo
+      // pra quem estava em português; numa violação de RLS ou falha de
+      // rede, um erro técnico do Postgrest/JS, nunca localizado. O
+      // formulário de lista de espera ao lado (handleWaitlist) já seguia
+      // o padrão certo — mensagem amigável fixa, sem vazar o erro cru.
+      console.error('Failed to submit contact message', err)
+      setError(t.contactError)
     } finally {
       setSending(false)
     }
