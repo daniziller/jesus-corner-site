@@ -540,48 +540,42 @@ function FaqAndContact({ t }) {
   }
 
   return (
-    <section id="perguntas" className="section section-alt">
-      <h2>{t.faqTitle}</h2>
-      <div className="faq-list">
-        {t.faq.map((item, i) => (
-          <details key={i} className="faq-item">
-            <summary>{item.q}</summary>
-            <p>{item.a}</p>
-          </details>
-        ))}
+    <section id="perguntas" className="faq-contact">
+      <div className="faq-col">
+        <span className="faq-eyebrow">{t.faqTitle}</span>
+        <div className="faq-list">
+          {t.faq.map((item, i) => (
+            <details key={i} className="faq-item">
+              <summary>{item.q}</summary>
+              <p>{item.a}</p>
+            </details>
+          ))}
+        </div>
       </div>
 
-      <div id="contato" className="faq-contact-divider">
-        <h3>{t.contactTitle}</h3>
-        <p className="section-sub">{t.contactSubtitle}</p>
+      <div id="contato" className="contact-card">
+        <span className="contact-eyebrow">{t.navContact}</span>
+        <h2>{t.contactTitle}</h2>
+        <p>{t.contactSubtitle}</p>
+        {sent ? (
+          <div className="contact-success">
+            <CheckCircle2 size={38} color="var(--gr)" />
+            <h3>{t.contactSuccessTitle}</h3>
+            <p>{t.contactSuccessSub}</p>
+            <button className="btn btn-ghost btn-sm" onClick={() => setSent(false)}>{t.contactSendAnother}</button>
+          </div>
+        ) : (
+          <form className="contact-form" onSubmit={handleSubmit}>
+            <input type="text" value={name} onChange={e => setName(e.target.value)} placeholder={t.contactNamePlaceholder} aria-label={t.contactNameLabel} />
+            <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder={t.contactEmailPlaceholder} aria-label={t.contactEmailLabel} />
+            <textarea rows={4} value={message} onChange={e => setMessage(e.target.value)} placeholder={t.contactMessagePlaceholder} aria-label={t.contactMessageLabel} />
+            {error && <p className="contact-error">{error}</p>}
+            <button type="submit" className="contact-submit" disabled={sending}>
+              {sending ? t.contactSending : t.contactSubmitBtn}
+            </button>
+          </form>
+        )}
       </div>
-      {sent ? (
-        <div className="contact-success">
-          <CheckCircle2 size={38} color="var(--gr)" />
-          <h3>{t.contactSuccessTitle}</h3>
-          <p>{t.contactSuccessSub}</p>
-          <button className="btn btn-ghost btn-sm" onClick={() => setSent(false)}>{t.contactSendAnother}</button>
-        </div>
-      ) : (
-        <form className="contact-form" onSubmit={handleSubmit}>
-          <div className="contact-field">
-            <label htmlFor="contact-name">{t.contactNameLabel}</label>
-            <input id="contact-name" type="text" value={name} onChange={e => setName(e.target.value)} placeholder={t.contactNamePlaceholder} />
-          </div>
-          <div className="contact-field">
-            <label htmlFor="contact-email">{t.contactEmailLabel}</label>
-            <input id="contact-email" type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder={t.contactEmailPlaceholder} />
-          </div>
-          <div className="contact-field">
-            <label htmlFor="contact-message">{t.contactMessageLabel}</label>
-            <textarea id="contact-message" rows={6} value={message} onChange={e => setMessage(e.target.value)} placeholder={t.contactMessagePlaceholder} />
-          </div>
-          {error && <p className="contact-error">{error}</p>}
-          <button type="submit" className="btn btn-primary btn-lg" disabled={sending}>
-            {sending ? t.contactSending : t.contactSubmitBtn}
-          </button>
-        </form>
-      )}
     </section>
   )
 }
