@@ -7,12 +7,12 @@
 export const deleteAccountContent = {
   pt: {
     title: 'Excluir sua conta',
-    updated: 'Última atualização: setembro de 2026',
+    updated: 'Última atualização: novembro de 2026',
     intro: 'Você pode excluir sua conta do Jesus\' Corner e todos os seus dados a qualquer momento, de duas formas — direto pelo app, ou por e-mail se preferir (ou se já tiver desinstalado o app).',
     sections: [
       {
         heading: 'Direto pelo app',
-        body: 'Abra o Jesus\' Corner, vá em Perfil → Excluir conta, e confirme digitando seu e-mail. A exclusão é imediata e não pode ser desfeita: seu e-mail, senha, anotações, pedidos de oração privados, progresso de leitura e assinatura são apagados de vez do nosso banco de dados. A única exceção são comentários que você tenha postado em grupos de leitura — eles continuam visíveis para os outros membros do grupo, mas totalmente desvinculados da sua identidade.',
+        body: 'Abra o Jesus\' Corner, vá em Perfil → Excluir conta, e confirme digitando seu e-mail. A exclusão é imediata e não pode ser desfeita: seu e-mail, senha, anotações, pedidos de oração privados e para amigos, progresso de leitura, histórico, nome de usuário, foto e assinatura são apagados de vez do nosso banco de dados. A única exceção são pedidos de oração, recados e comentários que você tenha postado em grupos de leitura — eles continuam visíveis para os outros membros do grupo, mas aparecem sem o seu nome. Se a assinatura foi feita pela Google Play ou App Store, cancele também por lá: só a loja consegue parar a cobrança.',
       },
       {
         heading: 'Por e-mail',
@@ -26,12 +26,12 @@ export const deleteAccountContent = {
   },
   en: {
     title: 'Delete your account',
-    updated: 'Last updated: September 2026',
+    updated: 'Last updated: November 2026',
     intro: 'You can delete your Jesus\' Corner account and all your data at any time, in two ways — right from the app, or by email if you\'d rather (or if you\'ve already uninstalled the app).',
     sections: [
       {
         heading: 'From the app',
-        body: 'Open Jesus\' Corner, go to Profile → Delete account, and confirm by typing your email. Deletion is immediate and cannot be undone: your email, password, notes, private prayer requests, reading progress, and subscription are permanently erased from our database. The one exception is comments you posted in reading groups — they stay visible to other members, but fully unlinked from your identity.',
+        body: 'Open Jesus\' Corner, go to Profile → Delete account, and confirm by typing your email. Deletion is immediate and cannot be undone: your email, password, notes, private and friends-only prayer requests, reading progress, history, username, photo, and subscription are permanently erased from our database. The one exception is prayer requests, messages, and comments you posted in reading groups — they stay visible to other members, but show without your name. If you subscribed through Google Play or the App Store, cancel there too: only the store can stop the billing.',
       },
       {
         heading: 'By email',
